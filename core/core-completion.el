@@ -1,5 +1,7 @@
 ;;; core-completion.el --- Completion settings -*- lexical-binding: t; -*-
 
+;;; Ivy
+
 (use-package ivy
   :demand
   :bind (:map ivy-minibuffer-map
@@ -34,6 +36,24 @@
   :after counsel)
 
 (use-package swiper)
+
+;;; Company
+
+(use-package company
+  :demand
+  :commands company-complete-common
+  :config
+  (setq company-idle-delay nil
+        company-frontends
+        '(company-pseudo-tooltip-frontend
+          company-echo-metadata-frontend)
+        company-require-match 'never
+        company-tooltip-align-annotations t
+        company-dabbrev-downcase nil
+        company-dabbrev-ignore-case nil
+        company-dabbrev-code-other-buffers t
+        )
+ (global-company-mode 1))
 
 (provide 'core-completion)
 ;;; core-completion.el ends here
