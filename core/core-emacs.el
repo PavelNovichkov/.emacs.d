@@ -39,9 +39,6 @@
   (unless (server-running-p)
     (server-start)))
 
-(use-package doom-modeline
-  :hook (after-init . doom-modeline-init))
-
 (use-package undo-tree
   :demand
   :config
