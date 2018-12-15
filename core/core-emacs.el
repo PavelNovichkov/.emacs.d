@@ -46,6 +46,8 @@
   :demand
   :config
   (setq undo-tree-auto-save-history t)
+  ;; Undo in region is buggy, so disable it.
+  (setq undo-tree-enable-undo-in-region nil)
   (global-undo-tree-mode))
 
 (provide 'core-emacs)
