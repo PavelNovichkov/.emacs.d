@@ -16,7 +16,10 @@
 ;;; Modeline
 
 (use-package doom-modeline
-  :hook (after-init . doom-modeline-init))
+  :hook (after-init . doom-modeline-init)
+  :config
+  ; Don't include project name in the file name as it is very slow.
+  (setq doom-modeline-buffer-file-name-style 'file-name))
 
 (provide 'core-ui)
 ;;; core-ui.el ends here
