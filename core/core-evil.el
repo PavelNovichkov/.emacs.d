@@ -8,7 +8,8 @@
         evil-want-C-u-scroll t
         evil-want-C-i-jump nil
         evil-want-Y-yank-to-eol t
-        evil-want-integration nil
+        evil-want-keybinding nil
+        evil-want-integration t
         evil-mode-line-format nil
         evil-symbol-word-search t
         evil-respect-visual-line-mode t
