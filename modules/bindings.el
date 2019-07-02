@@ -198,6 +198,11 @@ window, and switch to it."
 (general-define-key
  "M-o" #'other-window)
 
+;; Rebind C-h to backspace globally.
+(general-define-key
+ :keymaps 'key-translation-map
+ "C-h" "DEL")
+
 ;;; Evil collection
 
 (use-package evil-collection
