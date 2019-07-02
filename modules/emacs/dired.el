@@ -26,7 +26,7 @@
   :init
   (general-define-key
    :states 'normal
-   :maps 'dired-mode-map
+   :keymaps 'dired-mode-map
    "TAB" #'dired-subtree-toggle)
   :config
   (setq dired-subtree-use-backgrounds nil))
