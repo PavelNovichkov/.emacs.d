@@ -35,12 +35,15 @@
   (setq mu4e-hide-index-messages t)
   ;; mbsync specific.
   (setq mu4e-change-filenames-when-moving t)
-  ;; Move to trash without 'trashed' flag (otherwise server deletes message completely).
-  ;; TODO replace this workaround with mu4e action like in Doom Emacs.
-  (general-define-key
-   :states '(normal emacs)
-   :keymaps '(mu4e-headers-mode-map mu4e-view-mode-map)
-   "d" (general-simulate-key "mt"))
+  ;; Move to trash without 'trashed' flag (otherwise server deletes
+  ;; message completely), see https://github.com/djcb/mu/issues/1136.
+  (setf (alist-get 'trash mu4e-marks)
+        (list :char '("d" . "▼")
+              :prompt "dtrash"
+              :dyn-target (lambda (target msg) (mu4e-get-trash-folder msg))
+              ;; No +T before -N so the message is not marked as IMAP-deleted:
+              :action (lambda (docid msg target)
+                        (mu4e~proc-move docid (mu4e~mark-check-target target) "-N"))))
   (setq mu4e-contexts
         `( ,(make-mu4e-context
              :name "personal"
