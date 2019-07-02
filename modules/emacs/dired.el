@@ -3,6 +3,8 @@
 (use-package dired ; built-in
   :ensure nil
   :config
+  ;; Hide details.
+  (add-hook 'dired-mode-hook #'dired-hide-details-mode)
   ;; Allow 'a' command in dired-mode.
   (put 'dired-find-alternate-file 'disabled nil)
   (setq dired-dwim-target t)
