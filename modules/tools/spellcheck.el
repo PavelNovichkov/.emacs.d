@@ -10,6 +10,14 @@
 
 (use-package flyspell ; built-in
   :hook ((text-mode . flyspell-mode)
-         (prog-mode . flyspell-prog-mode)))
+         (prog-mode . flyspell-prog-mode))
+  :config
+  (defun my/straighten-underline (face)
+    "Change underline style of FACE from wave to straight line."
+    (let ((underline (face-attribute face :underline)))
+      (when (eq (plist-get underline :style) 'wave)
+        (plist-put underline :style 'line)
+        (set-face-attribute face nil :underline underline))))
+  (seq-do 'my/straighten-underline '(flyspell-duplicate flyspell-incorrect)))
 
 ;; TODO: add flyspell-correct-ivy.
