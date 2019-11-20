@@ -22,6 +22,11 @@
   (ivy-set-actions t '(("y" kill-new "yank")))
   (ivy-mode 1))
 
+(use-package ivy-hydra
+  :demand :after ivy
+  :config
+  (setq ivy-read-action-function #'ivy-hydra-read-action))
+
 (use-package counsel
   :config
   (setq counsel-find-file-ignore-regexp
