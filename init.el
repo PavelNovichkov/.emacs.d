@@ -6,6 +6,7 @@
                        "ui/color-theme"
                        "evil/plugins"
                        "emacs/dired"
+                       "emacs/ediff"
                        "emacs/helpful"
                        "emacs/ibuffer"
                        "emacs/paradox"
