@@ -90,6 +90,7 @@ window, and switch to it."
   "x" '(counsel-M-x :which-key "M-x")
   "." '(repeat :which-key "repeat")
   "/" '(swiper :which-key "swiper")
+  "?" '(swiper-isearch :which-key "swiper")
   "SPC" '(ivy-resume :which-key "repeat ivy query")
 
   "a" '(:ignore t :which-key "application")
@@ -106,9 +107,9 @@ window, and switch to it."
   "bn" '(evil-buffer-new :which-key "new")
   "bo" '(:ignore t :which-key "other window")
   "boc" '(clone-indirect-buffer-other-window :which-key "clone")
-  "bos" '(ivy-switch-buffer-other-window :which-key "switch")
+  "bos" '(counsel-switch-buffer-other-window :which-key "switch")
   "br" '(revert-buffer :which-key "revert")
-  "bs" '(ivy-switch-buffer :which-key "switch")
+  "bs" '(counsel-switch-buffer :which-key "switch")
 
   "d" '(:ignore t :which-key "dictionary")
   "ds" '(powerthesaurus-lookup-word :which-key "synonyms")
