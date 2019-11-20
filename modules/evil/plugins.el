@@ -16,6 +16,13 @@
                 evil-escape-unordered-key-sequence t)
   (evil-escape-mode))
 
+(use-package evil-snipe
+  :demand :after evil
+  :config
+  (add-to-list 'evil-snipe-disabled-modes 'pdf-view-mode)
+  (evil-snipe-mode 1)
+  (evil-snipe-override-mode 1))
+
 (use-package evil-surround
   :commands (evil-surround-edit
              evil-Surround-edit
