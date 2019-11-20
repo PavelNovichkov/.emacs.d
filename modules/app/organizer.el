@@ -102,7 +102,8 @@
           ("\\.pdf\\'" . default)))
   ;; Org-babel.
   (org-babel-do-load-languages 'org-babel-load-languages
-                               '((shell . t)))
+                               '((latex . t)
+                                 (shell . t)))
   ;; Images.
   (setq org-image-actual-width `(,(/ (display-pixel-width) 4)))
   ;; LaTeX.
