@@ -114,6 +114,8 @@
   (add-to-list 'mu4e-view-actions '("View in browser" . mu4e-action-view-in-browser) t)
   ;; Sort order.
   (setq mu4e-headers-show-threads nil)
+  ;; Date format.
+  (setq mu4e-headers-date-format "%d/%m/%Y")
   ;; Exclude related messages.
   (setq mu4e-headers-include-related nil)
   ;; Show duplicates.
