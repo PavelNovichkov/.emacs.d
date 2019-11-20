@@ -37,7 +37,9 @@
           ( ?= "\\mathbb" nil t nil nil )
           ( ?/ "\\slashed" nil t nil nil )))
   (setq cdlatex-math-symbol-alist
-        '(( ?F ("\\Phi"))))
+        '(( ?F ("\\Phi"))
+          ( ?+ ("\\oplus" "\\cup"))
+          ( ?* ("\\otimes" "\\times"))))
   ;; TODO: Rewrite with advice-add.
   (defadvice cdlatex-sub-superscript (around my-cdlatex-sub-superscript activate)
     "Use only in math-mode."
