@@ -104,7 +104,7 @@
   (org-babel-do-load-languages 'org-babel-load-languages
                                '((shell . t)))
   ;; Images.
-  (setq org-image-actual-width (/ (display-pixel-width) 4))
+  (setq org-image-actual-width `(,(/ (display-pixel-width) 4)))
   ;; LaTeX.
   (setq org-preview-latex-default-process 'imagemagick)
   (add-to-list 'org-latex-packages-alist '("" "mathrsfs"))
@@ -197,7 +197,7 @@
                (string-match org-priority-regexp (org-get-heading t t nil)))
       (org-priority ?\ )))
   (add-hook 'org-after-todo-state-change-hook
-            'my/remove-priority-when-task-done))
+            #'my/remove-priority-when-task-done))
 
 ;;; Password manager
 
