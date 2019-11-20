@@ -29,6 +29,9 @@
  word-wrap t
  )
 
+;; Wrap lines in all text buffers.
+(add-hook 'text-mode-hook #'visual-line-mode)
+
 ;; Replace yes/no with y/n.
 (fset #'yes-or-no-p #'y-or-n-p)
 
