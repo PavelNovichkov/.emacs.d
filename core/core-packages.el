@@ -17,6 +17,8 @@
 (setq use-package-always-defer t
       use-package-always-ensure t)
 
+(setq use-package-compute-statistics t)
+
 ;;; Use consistent configuration paths.
 (use-package no-littering
   :demand
