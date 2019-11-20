@@ -213,3 +213,17 @@ window, and switch to it."
   (setq evil-collection-key-blacklist
         (list leader-key local-leader-key))
   (evil-collection-init))
+
+;; Setup ivy for evil states in minibuffer.
+(general-define-key
+ :states 'insert
+ :keymaps 'ivy-minibuffer-map
+ "DEL" #'ivy-backward-delete-char
+ "C-r" #'evil-paste-from-register
+ "C-o" #'hydra-ivy/body)
+
+(general-define-key
+ :states 'normal
+ :keymaps 'ivy-minibuffer-map
+ "/" #'ivy-reverse-i-search
+ "?" #'ivy-reverse-i-search)
