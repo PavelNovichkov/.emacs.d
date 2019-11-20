@@ -145,6 +145,40 @@
   :config
   (evil-org-agenda-set-keys))
 
+;;; Attachments
+
+(use-package org-attach
+  :ensure nil ;; part of org
+  :demand :after org
+  :config
+  (setq org-attach-directory "~/org/db")
+  (setq org-attach-auto-tag "attach")
+  (add-to-list 'org-link-abbrev-alist '("attach" . org-attach-expand-link)))
+
+(use-package org-download
+  :demand :after org
+  :config
+  (setq org-download-method 'attach)
+  (setq org-download-timestamp "")
+  ;; Redefine org-download-insert-link in the following ways:
+  ;; - do not insert link annotation
+  ;; - use absolute path to attachment
+  ;; - do not turn on inline images display
+  (defun my/org-download-insert-link (link filename)
+    (if (looking-back "^[ \t]+" (line-beginning-position))
+        (delete-region (match-beginning 0) (match-end 0))
+      (newline))
+    (insert
+     (concat
+      (if (= org-download-image-html-width 0)
+          ""
+        (format "#+attr_html: :width %dpx\n" org-download-image-html-width))
+      (if (= org-download-image-latex-width 0)
+          ""
+        (format "#+attr_latex: :width %dcm\n" org-download-image-latex-width))
+      (format "[[attach:%s]]" (file-name-nondirectory filename)))))
+  (advice-add 'org-download-insert-link :override #'my/org-download-insert-link))
+
 ;;; Priorities
 
 (use-package org-fancy-priorities
