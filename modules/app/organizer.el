@@ -122,7 +122,7 @@
     "te" '(org-toggle-pretty-entities :which-key "entities")
     "th" '(org-toggle-link-display :which-key "hyperlinks")
     "ti" '(org-toggle-inline-images :which-key "images")
-    "tl" '(org-toggle-latex-fragment :which-key "latex")
+    "tl" '(org-latex-preview :which-key "latex")
     "tt" '(org-toggle-time-stamp-overlays :which-key "timestamps")
     ))
 
@@ -152,9 +152,8 @@
   :ensure nil ;; part of org
   :demand :after org
   :config
-  (setq org-attach-directory "~/org/db")
-  (setq org-attach-auto-tag "attach")
-  (add-to-list 'org-link-abbrev-alist '("attach" . org-attach-expand-link)))
+  (setq org-attach-id-dir "~/org/db")
+  (setq org-attach-auto-tag "attach"))
 
 (use-package org-download
   :demand :after org
@@ -177,7 +176,7 @@
       (if (= org-download-image-latex-width 0)
           ""
         (format "#+attr_latex: :width %dcm\n" org-download-image-latex-width))
-      (format "[[attach:%s]]" (file-name-nondirectory filename)))))
+      (format "[[attachment:%s]]" (file-name-nondirectory filename)))))
   (advice-add 'org-download-insert-link :override #'my/org-download-insert-link))
 
 ;;; Priorities
