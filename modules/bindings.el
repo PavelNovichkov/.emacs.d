@@ -126,6 +126,7 @@ window, and switch to it."
   "fr" '(my/rename-file-and-buffer :which-key "rename")
   "fs" '(save-buffer :which-key "save")
   "fw" '(write-file :which-key "write")
+  "f/" '(counsel-fzf :which-key "search")
 
   "h" '(:keymap help-map :which-key "help")
   "hh" '(helpful-at-point :which-key "help at point")
