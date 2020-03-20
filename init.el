@@ -9,6 +9,7 @@
                        "emacs/ediff"
                        "emacs/helpful"
                        "emacs/ibuffer"
+                       "emacs/outline"
                        "emacs/paradox"
                        "emacs/smartparens"
                        "emacs/tramp"
