@@ -52,6 +52,10 @@
         ivy-posframe-min-width 50)
   (ivy-posframe-mode))
 
+;;; Avy
+
+(use-package avy)
+
 ;;; Company
 
 (use-package company
