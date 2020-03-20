@@ -52,6 +52,10 @@
         ivy-posframe-min-width 50)
   (ivy-posframe-mode))
 
+(use-package wgrep
+  :config
+  (setq wgrep-auto-save-buffer t))
+
 ;;; Avy
 
 (use-package avy)
