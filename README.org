@@ -1,0 +1,27 @@
+* Loading packages
+
+By default, all packages are loaded with =:ensure= and =:defer= keywords.
+
+To load a =library= which is not a package, one has to use =:ensure nil= statement in the =use-package= declaration:
+#+begin_src emacs-lisp
+(use-package library
+  :ensure nil)
+#+end_src
+
+If a =package= (or library) has to be loaded as soon as some =feature= loads with the use of =:after= keyword, then one has to explicitly add also =:demand= keyword to the =use-package= declaration:
+#+begin_src emacs-lisp
+(use-package package
+  :demand :after feature)
+#+end_src
+Note that =:demand= will not force the package to be loaded at startup in this case.
+It will actually be deferred until =feature= is loaded.
+
+* Adding a hook to run in a particular mode
+
+Use the following snippet:
+#+begin_src emacs-lisp
+(defun my/setup-<smth>-in-<some>-mode ()
+  "Description."
+  (add-hook '<hook-name> #'<smth> nil t))
+(add-hook '<some>-mode-hook #'my/setup-<smth>-in-<some>-mode)
+#+end_src
