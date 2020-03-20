@@ -128,6 +128,9 @@ window, and switch to it."
   "fw" '(write-file :which-key "write")
   "f/" '(counsel-fzf :which-key "search")
 
+  "g" '(:ignore t :which-key "go")
+  "gl" '(link-hint-open-link :which-key "link")
+
   "h" '(:keymap help-map :which-key "help")
   "hh" '(helpful-at-point :which-key "help at point")
   "hf" '(helpful-callable :which-key "function")

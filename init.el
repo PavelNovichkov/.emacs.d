@@ -25,6 +25,7 @@
                        "app/rss"
                        "tools/bibliography"
                        "tools/dictionary"
+                       "tools/link-hint"
                        "tools/magit"
                        "tools/pdf"
                        "tools/spellcheck"
