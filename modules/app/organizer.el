@@ -47,7 +47,7 @@
   ;; Agenda.
   (setq org-agenda-buffer-name "Org Agenda") ; Remove asterisks to be included in iflipb list.
   (setq org-agenda-custom-commands
-        '((" " "Export Schedule"
+        '(("v" "Main view"
            ((agenda
              ""
              ((org-agenda-overriding-header "Schedule:")
