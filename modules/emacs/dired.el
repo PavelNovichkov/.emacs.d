@@ -32,3 +32,8 @@
    "TAB" #'dired-subtree-toggle)
   :config
   (setq dired-subtree-use-backgrounds nil))
+
+(use-package diredfl
+  :demand :after dired
+  :config
+  (diredfl-global-mode))
