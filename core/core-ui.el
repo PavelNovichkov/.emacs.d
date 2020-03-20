@@ -21,5 +21,12 @@
   ; Don't include project name in the file name as it is very slow.
   (setq doom-modeline-buffer-file-name-style 'file-name))
 
+;;; Posframe
+
+(use-package posframe
+  :demand :if window-system
+  :config
+  (setq posframe-mouse-banish nil))
+
 (provide 'core-ui)
 ;;; core-ui.el ends here

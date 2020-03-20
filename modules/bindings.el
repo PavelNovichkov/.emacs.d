@@ -204,6 +204,10 @@ window, and switch to it."
  :keymaps 'key-translation-map
  "C-h" "DEL")
 
+(general-define-key
+ :states 'insert
+ "C-n" #'counsel-company)
+
 ;;; Evil collection
 
 (use-package evil-collection

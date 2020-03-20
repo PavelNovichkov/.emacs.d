@@ -42,6 +42,16 @@
 
 (use-package swiper)
 
+(use-package ivy-posframe
+  :demand :if window-system
+  :config
+  (setq ivy-posframe-display-functions-alist
+        '((counsel-company . ivy-posframe-display-at-point)))
+  (setq ivy-posframe-border-width 2
+        ivy-posframe-width 50
+        ivy-posframe-min-width 50)
+  (ivy-posframe-mode))
+
 ;;; Company
 
 (use-package company
