@@ -2,10 +2,11 @@
 
 (use-package tex
   :ensure auctex
+  :hook ((TeX-mode . outline-minor-mode)
+         (TeX-mode . TeX-source-correlate-mode))
   :config
   (setcar (cdr (assoc 'output-pdf TeX-view-program-selection)) "PDF Tools")
   (add-hook 'TeX-after-compilation-finished-functions #'TeX-revert-document-buffer)
-  (add-hook 'TeX-mode-hook #'TeX-source-correlate-mode)
   (setq-default TeX-engine 'luatex)
   ;; Bindings.
   (local-leader-def
