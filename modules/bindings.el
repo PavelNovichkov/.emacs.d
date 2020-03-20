@@ -129,7 +129,9 @@ window, and switch to it."
   "f/" '(counsel-fzf :which-key "search")
 
   "g" '(:ignore t :which-key "go")
+  "gi" '(counsel-imenu :which-key "imenu")
   "gl" '(link-hint-open-link :which-key "link")
+  "go" '(counsel-outline :which-key "outline")
 
   "h" '(:keymap help-map :which-key "help")
   "hh" '(helpful-at-point :which-key "help at point")
