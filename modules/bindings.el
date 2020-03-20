@@ -84,7 +84,6 @@ window, and switch to it."
 ;;; Global leader bindings
 
 (leader-def
-  "g" '(avy-goto-char-timer :which-key "go to char")
   "n" '(my/narrow-or-widen-dwim :which-key "narrow")
   "u" '(my/universal-argument :which-key "universal argument")
   "x" '(counsel-M-x :which-key "M-x")
@@ -207,6 +206,10 @@ window, and switch to it."
 (general-define-key
  :states 'insert
  "C-n" #'counsel-company)
+
+(general-define-key
+ :states 'motion
+ "C-/" #'evil-avy-goto-char-timer)
 
 ;;; Evil collection
 
