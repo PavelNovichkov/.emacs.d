@@ -17,15 +17,23 @@
 (use-package cdlatex
   :hook ((LaTeX-mode . turn-on-cdlatex)
          (org-mode . turn-on-org-cdlatex))
-  ;; Use smartparens to do parens pairing.
-  ;; TODO: move to :config and rewrite with general.
-  :bind (:map cdlatex-mode-map
-              ("(" . nil)
-              ("{" . nil)
-              ("[" . nil)
-              ("|" . nil)
-              ("<" . nil))
   :config
+  (general-define-key
+   :keymaps 'cdlatex-mode-map
+   ;; Use smartparens to do parens pairing.
+   "(" nil
+   "{" nil
+   "[" nil
+   "|" nil
+   "<" nil
+   "TAB" nil
+   "<tab>" nil)
+  ;; TODO: make cdlatex active in insert mode only.
+  (general-define-key
+   :states 'insert
+   :keymaps 'cdlatex-mode-map
+   "TAB" #'cdlatex-tab
+   "<tab>" #'cdlatex-tab)
   (setq cdlatex-command-alist
         '(("cfr" "Insert \\cfrac{}{}"
            "\\cfrac{?}{}" cdlatex-position-cursor nil nil t)
