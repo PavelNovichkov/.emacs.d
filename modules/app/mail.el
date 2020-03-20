@@ -80,7 +80,7 @@
              `((mu4e-sent-folder . "/sissa/Sent")
                (mu4e-drafts-folder . "/sissa/Drafts")
                (mu4e-trash-folder . "/sissa/Trash")
-               (mu4e-refile-folder . "/sissa/Archives/2019")
+               (mu4e-refile-folder . "/sissa/Archives/2020")
                (user-full-name . ,sissa-user-full-name)
                (user-mail-address . ,sissa-user-mail-address)
                (smtpmail-default-smtp-server . "smtp.sissa.it")
@@ -94,7 +94,7 @@
                                           ("/sissa/Sent" . ?s)
                                           ("/sissa/Drafts" . ?d)
                                           ("/sissa/Trash" . ?t)
-                                          ("/sissa/Archives/2019" . ?a)
+                                          ("/sissa/Archives/2020" . ?a)
                                           ("/sissa/Junk" . ?j)))))))
   (setq mu4e-context-policy 'pick-first)
   ;; No auto-fill when composing a message.
