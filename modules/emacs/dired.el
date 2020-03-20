@@ -21,7 +21,26 @@
         (dolist (file files)
           (call-process "xdg-open"
                         nil 0 nil file)))))
-  (define-key dired-mode-map (kbd "s-o") #'my/dired-open-native))
+  (define-key dired-mode-map (kbd "s-o") #'my/dired-open-native)
+  ;; Ediff marked files, taken from
+  ;; https://oremacs.com/2017/03/18/dired-ediff/.
+  (defun my/dired-ediff-files ()
+    "Ediff files from dired."
+    (interactive)
+    (let ((files (dired-get-marked-files)))
+      (if (<= (length files) 2)
+          (let ((file1 (car files))
+                (file2 (if (cdr files)
+                           (cadr files)
+                         (read-file-name
+                          "File B to compare: "
+                          (dired-dwim-target-directory)))))
+            (ediff-files file1 file2))
+        (error "No more than 2 files should be marked"))))
+  (general-define-key
+   :states 'normal
+   :keymaps 'dired-mode-map
+   "=" #'my/dired-ediff-files))
 
 (use-package dired-subtree
   :commands dired-subtree-toggle
