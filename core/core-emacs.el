@@ -36,6 +36,7 @@
 (fset #'yes-or-no-p #'y-or-n-p)
 
 (use-package server ; built-in
+  :straight nil
   :if (display-graphic-p)
   :defer 1
   :config

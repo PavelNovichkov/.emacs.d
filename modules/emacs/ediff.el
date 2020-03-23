@@ -1,6 +1,7 @@
 ;;; emacs/ediff.el -*- lexical-binding: t; -*-
 
 (use-package ediff ; built-in
+  :straight nil
   :config
   (setq ediff-window-setup-function 'ediff-setup-windows-plain
         ediff-split-window-function 'split-window-horizontally

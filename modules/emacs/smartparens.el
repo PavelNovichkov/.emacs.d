@@ -1,7 +1,7 @@
 ;;; emacs/smartparens.el -*- lexical-binding: t; -*-
 
 (use-package smartparens-config
-  :ensure smartparens
+  :straight smartparens
   :demand
   :config
   (setq sp-message-width nil)

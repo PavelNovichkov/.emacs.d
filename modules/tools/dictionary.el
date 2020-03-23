@@ -1,7 +1,7 @@
 ;;; tools/dictionary.el -*- lexical-binding: t; -*-
 
 (use-package google-translate-smooth-ui
-  :ensure google-translate
+  :straight google-translate
   :commands google-translate-smooth-translate
   :config
   (setq google-translate-backend-method 'curl) ;; built-in method causes errors

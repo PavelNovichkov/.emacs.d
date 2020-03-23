@@ -141,7 +141,7 @@
                                     org-meta-return)))))
 
 (use-package evil-org-agenda
-  :ensure nil ;; part of evil-org
+  :straight nil ;; part of evil-org
   :demand :after org-agenda
   :config
   (evil-org-agenda-set-keys))
@@ -149,7 +149,7 @@
 ;;; Attachments
 
 (use-package org-attach
-  :ensure nil ;; part of org
+  :straight nil ;; part of org
   :demand :after org
   :config
   (setq org-attach-id-dir "~/org/db")

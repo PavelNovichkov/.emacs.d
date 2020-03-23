@@ -1,7 +1,7 @@
 ;;; emacs/dired.el -*- lexical-binding: t; -*-
 
 (use-package dired ; built-in
-  :ensure nil
+  :straight nil
   :config
   ;; Hide details.
   (add-hook 'dired-mode-hook #'dired-hide-details-mode)

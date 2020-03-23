@@ -1,6 +1,7 @@
 ;;; tools/spellcheck.el -*- lexical-binding: t; -*-
 
 (use-package ispell ; built-in
+  :straight nil
   :config
   (setq ispell-program-name "hunspell")
   (ispell-set-spellchecker-params)
@@ -9,6 +10,7 @@
   (setq ispell-dictionary "en_US,ru_RU"))
 
 (use-package flyspell ; built-in
+  :straight nil
   :hook ((text-mode . flyspell-mode)
          (prog-mode . flyspell-prog-mode))
   :config

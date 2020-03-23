@@ -1,6 +1,7 @@
 ;;; emacs/ibuffer.el -*- lexical-binding: t; -*-
 
 (use-package ibuffer ; built-in
+  :straight nil
   :config
   (setq ibuffer-saved-filter-groups
         '(("default"

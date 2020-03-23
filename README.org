@@ -1,11 +1,11 @@
 * Loading packages
 
-By default, all packages are loaded with =:ensure= and =:defer= keywords.
+By default, all packages are loaded with =:straight= and =:defer= keywords.
 
-To load a =library= which is not a package, one has to use =:ensure nil= statement in the =use-package= declaration:
+To load a =library= which is not a package, one has to use =:straight nil= statement in the =use-package= declaration:
 #+begin_src emacs-lisp
 (use-package library
-  :ensure nil)
+  :straight nil)
 #+end_src
 
 If a =package= (or library) has to be loaded as soon as some =feature= loads with the use of =:after= keyword, then one has to explicitly add also =:demand= keyword to the =use-package= declaration:

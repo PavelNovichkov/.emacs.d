@@ -1,6 +1,7 @@
 ;;; emacs/outline.el -*- lexical-binding: t; -*-
 
 (use-package outline ; built-in
+  :straight nil
   :config
   ;; Customize the folding marker to be " +" instead of "...". For details, see
   ;; https://www.reddit.com/r/emacs/comments/e2u5n9/code_folding_with_outlineminormode/

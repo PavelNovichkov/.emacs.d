@@ -1,7 +1,7 @@
 ;;; lang/latex.el -*- lexical-binding: t; -*-
 
 (use-package tex
-  :ensure auctex
+  :straight auctex
   :hook ((TeX-mode . outline-minor-mode)
          (TeX-mode . TeX-source-correlate-mode))
   :config

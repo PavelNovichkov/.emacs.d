@@ -5,7 +5,7 @@
 
 ;; TODO refactor.
 (use-package mu4e
-  :ensure nil ;; FIXME add dependency on external package.
+  :straight nil ;; FIXME add dependency on external package.
   :bind (:map mu4e-main-mode-map
               ("q" . quit-window)
               ("Q" . mu4e-quit)
@@ -143,7 +143,7 @@
         mu4e-headers-unread-mark '("u" . " ")))
 
 (use-package org-mu4e
-  :ensure nil ;; FIXME add dependency on external package.
+  :straight nil ;; FIXME add dependency on external package.
   :demand :after (org mu4e)
   :config
   (setq org-mu4e-convert-to-html t)
