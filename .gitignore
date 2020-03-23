@@ -1,4 +1,6 @@
 /elpa
 /etc
 /modules/secrets.el
+/straight/*
+!/straight/versions
 /var
