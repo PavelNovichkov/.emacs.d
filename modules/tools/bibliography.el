@@ -1,15 +1,39 @@
 ;;; tools/bibliography.el -*- lexical-binding: t; -*-
 
-;; FIXME: does not load.
-(use-package org-ref
-  :after org
-  :init
-  (setq org-ref-bibliography-notes (expand-file-name "~/org/reference/papers/notes.org")
-        org-ref-default-bibliography `(,(expand-file-name "~/org/reference/papers/master.bib"))
-        org-ref-pdf-directory (expand-file-name "~/org/reference/papers/pdfs/"))
-  (setq bibtex-completion-bibliography org-ref-default-bibliography
-        bibtex-completion-library-path org-ref-pdf-directory
-        bibtex-completion-notes-path org-ref-bibliography-notes))
+(defconst my/bibliography-bibtex
+  (expand-file-name "~/org/reference/papers/master.bib"))
+(defconst my/bibliography-pdf-directory
+  (expand-file-name "~/org/reference/papers/pdfs/"))
+(defconst my/bibliography-notes
+  (expand-file-name "~/org/reference/papers/notes.org"))
+
+(use-package ivy-bibtex
+  :after ivy
+  :commands ivy-bibtex
+  :config
+  (add-to-list 'ivy-re-builders-alist '(ivy-bibtex . ivy--regex-ignore-order))
+  (setq bibtex-completion-bibliography my/bibliography-bibtex
+        bibtex-completion-library-path my/bibliography-pdf-directory
+        bibtex-completion-notes-path my/bibliography-notes 
+        ;; notes template
+        bibtex-completion-notes-template-one-file "
+* ${author-or-editor} (${year}): ${title}
+:PROPERTIES:
+:Custom_ID: ${=key=}
+:INTERLEAVE_PDF: ./pdfs/${=key=}.pdf
+:END:
+"
+        ;; do not prompt for pre- and post-notes for LaTeX citations
+        bibtex-completion-cite-prompt-for-optional-arguments nil)
+  ;; Add action for opening PDFs externally.
+  (defun my/bibtex-completion-open-pdf-external (keys &optional fallback-action)
+    (let ((bibtex-completion-pdf-open-function
+           (lambda (fpath) (call-process "xdg-open" nil 0 nil fpath))))
+      (bibtex-completion-open-pdf keys fallback-action)))
+  (ivy-bibtex-ivify-action my/bibtex-completion-open-pdf-external my/ivy-bibtex-open-pdf-external)
+  (ivy-add-actions
+   'ivy-bibtex
+   '(("x" my/ivy-bibtex-open-pdf-external "Open PDF file in external viewer (if present)"))))
 
 (use-package org-noter
   :after org
