@@ -131,6 +131,24 @@
     "tt" '(org-toggle-time-stamp-overlays :which-key "timestamps")
     ))
 
+(use-package org-protocol
+  :straight nil
+  :init
+  (defun my/org-protocol-lazy-load (orig-fun &rest args)
+    "Lazy load org-protocol when visited file matches \":/+\".
+When one of the visited files matches \":/+\", remove this advice and
+apply the version of `server-visited-files' advised by `org-protocol'.
+Otherwise, use the original version of `server-visited-files'."
+    (let ((files (car args)))
+      (catch 'greedy
+        (dolist (var files)
+          (when (string-match-p ":/+" (car var))
+            (advice-remove #'server-visit-files #'my/org-protocol-lazy-load)
+            (require 'org-protocol)
+            (throw 'greedy (apply #'server-visit-files args))))
+        (apply orig-fun args))))
+  (advice-add #'server-visit-files :around #'my/org-protocol-lazy-load))
+
 ;;; Integration with evil
 
 (use-package evil-org
