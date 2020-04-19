@@ -139,7 +139,7 @@
            "* NEXT [#C] %?Read %:annotation :read:\n:PROPERTIES:\n:CREATED:  %U\n:END:"))))
 
 (use-package org-protocol
-  :straight nil
+  :straight nil ;; part of org
   :init
   (defun my/org-protocol-lazy-load (orig-fun &rest args)
     "Lazy load org-protocol when visited file matches \":/+\".
