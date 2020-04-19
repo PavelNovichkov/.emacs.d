@@ -44,6 +44,7 @@
 
 (use-package ivy-posframe
   :demand :if window-system
+  :disabled ;; TODO: breaks ivy-read-action-function
   :config
   (setq ivy-posframe-display-functions-alist
         '((counsel-company . ivy-posframe-display-at-point)))
@@ -76,7 +77,9 @@
         company-dabbrev-ignore-case nil
         company-dabbrev-code-other-buffers t
         )
- (global-company-mode 1))
+  (add-to-list 'ivy-display-functions-alist
+               '(counsel-company . ivy-display-function-overlay))
+  (global-company-mode 1))
 
 ;;; Yasnippet
 
