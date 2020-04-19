@@ -222,6 +222,15 @@ Otherwise, use the original version of `server-visited-files'."
   (add-hook 'org-after-todo-state-change-hook
             #'my/remove-priority-when-task-done))
 
+;;; Slip-box aka Zettelkasten
+
+(use-package org-roam
+  :commands (org-roam-insert org-roam-find-file org-roam)
+  :init
+  (setq org-roam-directory "~/org/slip-box/")
+  :config
+  (org-roam-mode))
+
 ;;; Password manager
 
 (use-package org-password-manager
