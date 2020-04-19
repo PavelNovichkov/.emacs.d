@@ -13,7 +13,6 @@
               ("C-c [" . nil)
               ("C-c ]" . nil))
   :commands (org-agenda
-             org-capture
              org-store-link)
   :config
   ;; Paths.
@@ -67,16 +66,6 @@
            ((org-agenda-prefix-format
              '((tags . "  %-23(truncate-string-to-width (or (cadr (org-get-outline-path)) \"Task\") 23 nil nil \"...\") ")))
             (org-agenda-start-with-log-mode '(closed clock state))))))
-  ;; Capture.
-  (setq org-capture-templates
-        '(("i" "Inbox" entry (file "inbox.org")
-           "* %?\n:PROPERTIES:\n:CREATED:  %U\n:END:")
-          ("t" "Tickler" entry (file "tickler.org")
-           "* TODO %?\nSCHEDULED: %^t\n:PROPERTIES:\n:CREATED:  %U\n:END:")
-          ("c" "Calendar" entry (file "calendar.org")
-           "* %?\n%^t")
-          ("d" "Diary" entry (file+datetree "reference/diary.org")
-          "* %?\n:PROPERTIES:\n:CREATED:  %U\n:END:")))
   ;; Refile.
   (setq org-refile-targets
         '(("gtd.org" :maxlevel . 3)
@@ -130,6 +119,24 @@
     "tl" '(org-latex-preview :which-key "latex")
     "tt" '(org-toggle-time-stamp-overlays :which-key "timestamps")
     ))
+
+(use-package org-capture
+  :straight nil ;; part of org
+  :commands (org-capture)
+  :config
+  (setq org-capture-templates
+        '(("i" "Inbox" entry (file "inbox.org")
+           "* %?\n:PROPERTIES:\n:CREATED:  %U\n:END:")
+          ("t" "Tickler" entry (file "tickler.org")
+           "* TODO %?\nSCHEDULED: %^t\n:PROPERTIES:\n:CREATED:  %U\n:END:")
+          ("c" "Calendar" entry (file "calendar.org")
+           "* %?\n%^t")
+          ("l" "Link" entry (file "inbox.org")
+           "* %a%?\n:PROPERTIES:\n:CREATED:  %U\n:END:")
+          ("d" "Diary" entry (file+olp+datetree "reference/diary.org")
+           "* %?\n:PROPERTIES:\n:CREATED:  %U\n:END:")
+          ("W" "Web browser link" entry (file+headline "gtd.org" "Tasks")
+           "* NEXT [#C] %?Read %:annotation :read:\n:PROPERTIES:\n:CREATED:  %U\n:END:"))))
 
 (use-package org-protocol
   :straight nil
