@@ -16,6 +16,16 @@
 
 (setq straight-check-for-modifications nil)
 
+(defun my/update-packages ()
+  "Update packages and lockfile."
+  (interactive)
+  (let ((lockfile (straight--versions-file "default.el"))
+        (backup-lockfile (straight--versions-file "backup.el")))
+    (copy-file lockfile backup-lockfile t))
+  (straight-pull-all)
+  (straight-rebuild-all)
+  (straight-freeze-versions))
+
 ;;; use-package
 (straight-use-package 'use-package)
 
