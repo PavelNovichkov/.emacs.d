@@ -10,13 +10,14 @@
         pdf-view-resize-factor 1.1))
 
 ;; Add support for org links.
-(use-package org-pdfview
+(use-package org-pdftools
   :after org
-  :commands (org-pdfview-open
-             org-pdfview-store-link)
+  :commands (org-pdftools-open
+             org-pdftools-store-link)
   :init
-  ;; Make pdfview hyperlink known to org before the package is loaded.
-  (org-link-set-parameters "pdfview"
-                           :follow #'org-pdfview-open
-                           :complete #'org-pdfview-complete-link
-                           :store #'org-pdfview-store-link))
+  ;; Make pdf hyperlink known to org before the package is loaded.
+  (org-link-set-parameters "pdf"
+                           :follow #'org-pdftools-open
+                           :complete #'org-pdftools-complete-link
+                           :store #'org-pdftools-store-link
+                           :export #'org-pdftools-export))
