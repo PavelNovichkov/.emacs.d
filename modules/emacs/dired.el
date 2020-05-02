@@ -2,6 +2,16 @@
 
 (use-package dired ; built-in
   :straight nil
+  :init
+  (defun my/dired-update-default-directory ()
+    "Update `default-directory' to parent directory at point."
+    (ignore-errors
+      (setq-local default-directory
+                  (file-name-directory (dired-get-file-for-visit)))))
+  (defun my/add-hooks-in-dired-mode ()
+    "Add hooks to run in dired mode."
+    (add-hook 'post-command-hook #'my/dired-update-default-directory nil t))
+  (add-hook 'dired-mode-hook #'my/add-hooks-in-dired-mode)
   :config
   ;; Hide details.
   (add-hook 'dired-mode-hook #'dired-hide-details-mode)
