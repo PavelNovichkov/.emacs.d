@@ -3,6 +3,12 @@
 (use-package ispell ; built-in
   :straight nil
   :config
+  ;; Advice to inhibit the minibuffer message.
+  (defun my/ispell-quiet-init (orig-fun &rest args)
+    "Inhibit \"Starting new Ispell process\" message in the minibuffer."
+    (let ((inhibit-message t))
+      (apply orig-fun args)))
+  (advice-add #'ispell-init-process :around #'my/ispell-quiet-init)
   (setq ispell-program-name "hunspell")
   (ispell-set-spellchecker-params)
   ;; Use both english and russian dictionaries at once.
