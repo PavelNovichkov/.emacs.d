@@ -1,11 +1,11 @@
 ;;; tools/bibliography.el -*- lexical-binding: t; -*-
 
 (defconst my/bibliography-bibtex
-  (expand-file-name "~/org/reference/papers/master.bib"))
-(defconst my/bibliography-pdf-directory
-  (expand-file-name "~/org/reference/papers/pdfs/"))
+  (expand-file-name "~/org/slip-box/literature/master.bib"))
+(defconst my/bibliography-doc-directory
+  (expand-file-name "~/org/slip-box/literature/docs"))
 (defconst my/bibliography-notes
-  (expand-file-name "~/org/reference/papers/notes.org"))
+  (expand-file-name "~/org/slip-box/literature"))
 
 (use-package ivy-bibtex
   :after ivy
@@ -13,14 +13,17 @@
   :config
   (add-to-list 'ivy-re-builders-alist '(ivy-bibtex . ivy--regex-ignore-order))
   (setq bibtex-completion-bibliography my/bibliography-bibtex
-        bibtex-completion-library-path my/bibliography-pdf-directory
+        bibtex-completion-library-path my/bibliography-doc-directory
         bibtex-completion-notes-path my/bibliography-notes 
         ;; notes template
-        bibtex-completion-notes-template-one-file "
-* ${author-or-editor} (${year}): ${title}
+        bibtex-completion-notes-template-multiple-files
+        "#+TITLE: ${author-or-editor} - ${title}
+#+ROAM_KEY: cite:${=key=}
+#+CREATED:  %U
+
+* Notes
 :PROPERTIES:
-:Custom_ID: ${=key=}
-:INTERLEAVE_PDF: ./pdfs/${=key=}.pdf
+:NOTER_DOCUMENT: ./docs/${=key=}.pdf
 :END:
 "
         ;; do not prompt for pre- and post-notes for LaTeX citations
@@ -41,10 +44,8 @@
   :config
   ;; Don't add notes count to the modeline.
   (advice-add #'org-noter--mode-line-text :override #'ignore)
-  (setq org-noter-property-doc-file "INTERLEAVE_PDF"
-        org-noter-property-note-location "INTERLEAVE_PAGE_NOTE"
-        org-noter-always-create-frame nil
-        org-noter-default-notes-file-names `(,org-ref-bibliography-notes)
+  (setq org-noter-always-create-frame nil
+        org-noter-default-notes-file-names nil
         org-noter-doc-split-fraction '(0.7 . 0.5)
         org-noter-hide-other t
         org-noter-insert-note-no-questions t))
