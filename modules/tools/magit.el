@@ -1,7 +1,9 @@
 ;;; tools/magit.el -*- lexical-binding: t; -*-
 
 (use-package magit
-  :commands magit-status)
+  :commands magit-status
+  :config
+  (setq magit-section-visibility-indicator nil))
 
 (use-package evil-magit
   :demand :after magit
