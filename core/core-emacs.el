@@ -23,6 +23,7 @@
  scroll-preserve-screen-position t
  ;; editor
  indent-tabs-mode nil
+ prettify-symbols-unprettify-at-point 'right-edge
  require-final-newline t
  save-interprogram-paste-before-kill t
  sentence-end-double-space nil

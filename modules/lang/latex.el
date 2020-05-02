@@ -3,6 +3,7 @@
 (use-package tex
   :straight auctex
   :hook ((TeX-mode . outline-minor-mode)
+         (TeX-mode . prettify-symbols-mode)
          (TeX-mode . TeX-source-correlate-mode))
   :config
   (setcar (cdr (assoc 'output-pdf TeX-view-program-selection)) "PDF Tools")
