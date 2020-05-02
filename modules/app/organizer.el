@@ -234,8 +234,32 @@ Otherwise, use the original version of `server-visited-files'."
 (use-package org-roam
   :commands (org-roam-insert org-roam-find-file org-roam)
   :init
-  (setq org-roam-directory "~/org/slip-box/")
+  ;; Org-roam extends org-protocol, so lazy-load it.
+  (with-eval-after-load 'org-protocol
+    (require 'org-roam-protocol))
   :config
+  (setq org-roam-directory (expand-file-name "slip-box" org-directory)
+        org-roam-completion-system 'ivy
+        org-roam-capture-templates
+        '(("d" "default" plain #'org-roam-capture--get-point
+           "%?"
+           :file-name "%<%Y%m%d%H%M%S>"
+           :head "#+TITLE: ${title}\n#+CREATED:  %U\n\n- tags :: \n"
+           :unnarrowed t
+           :immediate-finish)
+          ("t" "talk" plain #'org-roam-capture--get-point
+           "%?"
+           :file-name "talks/%<%Y%m%d%H%M%S>"
+           :head "#+TITLE: ${title}\n#+CREATED:  %U\n\n- tags :: \n- speaker :: \n"
+           :unnarrowed t
+           :immediate-finish))
+        org-roam-capture-ref-templates
+        '(("w" "web" plain #'org-roam-capture--get-point
+           "%?"
+           :file-name "web/%<%Y%m%d%H%M%S>"
+           :head "#+TITLE: ${title}\n#+ROAM_KEY: ${ref}\n#+CREATED:  %U\n\n- source :: ${ref}\n- tags :: \n"
+           :unnarrowed t
+           :immediate-finish)))
   (org-roam-mode))
 
 ;;; Password manager
