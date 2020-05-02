@@ -28,4 +28,12 @@
         (set-face-attribute face nil :underline underline))))
   (seq-do 'my/straighten-underline '(flyspell-duplicate flyspell-incorrect)))
 
-;; TODO: add flyspell-correct-ivy.
+(use-package flyspell-correct
+  :commands (flyspell-correct-previous)
+  :init
+  (general-define-key :states 'normal "z=" #'flyspell-correct-previous))
+
+(use-package flyspell-correct-ivy
+  :demand :after flyspell-correct)
+
+;; TODO: add spellcheck hydra.
