@@ -136,7 +136,7 @@
           ("d" "Diary" entry (file+olp+datetree "reference/diary.org")
            "* %?\n:PROPERTIES:\n:CREATED:  %U\n:END:")
           ("W" "Web browser link" entry (file+headline "gtd.org" "Tasks")
-           "* NEXT [#C] %?Read %:annotation :read:\n:PROPERTIES:\n:CREATED:  %U\n:END:"))))
+           "* NEXT [#C] %?Read %:annotation :@computer:@read:\n:PROPERTIES:\n:CREATED:  %U\n:END:"))))
 
 (use-package org-protocol
   :straight nil ;; part of org
