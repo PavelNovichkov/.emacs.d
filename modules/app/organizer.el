@@ -238,6 +238,11 @@ Otherwise, use the original version of `server-visited-files'."
   ;; Org-roam extends org-protocol, so lazy-load it.
   (with-eval-after-load 'org-protocol
     (require 'org-roam-protocol))
+  ;; Pretend org-ref is installed so that citation links work.
+  (defvar org-ref-cite-types '("cite"))
+  (defun org-ref-split-and-strip-string (string)
+    (split-string string ","))
+  (provide 'org-ref)
   :config
   (setq org-roam-directory (expand-file-name "slip-box" org-directory)
         org-roam-completion-system 'ivy

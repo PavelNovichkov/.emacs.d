@@ -9,7 +9,28 @@
 
 (use-package ivy-bibtex
   :after ivy
-  :commands ivy-bibtex
+  :commands (ivy-bibtex my/org-cite-open)
+  :init
+  ;; Define cite: org-link to be opened with bibtex-completion
+  (with-eval-after-load 'org
+    (defun my/org-cite-open (link)
+      (let ((keys (list link)))
+        (funcall
+         (defhydra my/org-cite (:color teal :columns 2)
+           "Cite"
+           ("p" (bibtex-completion-open-pdf keys) "open pdf file (if present)")
+           ("u" (bibtex-completion-open-url-or-doi keys) "open url or doi in browser")
+           ("c" (bibtex-completion-insert-citation keys) "insert citation")
+           ("r" (bibtex-completion-insert-reference keys) "insert reference")
+           ("k" (bibtex-completion-insert-key keys) "insert bibtex key")
+           ("b" (bibtex-completion-insert-bibtex keys) "insert bibtex entry")
+           ("a" (bibtex-completion-add-PDF-attachment keys) "attach pdf to email")
+           ("e" (bibtex-completion-edit-notes keys) "edit notes")
+           ("s" (bibtex-completion-show-entry keys) "show entry")
+           ("l" (bibtex-completion-add-pdf-to-library keys) "Add PDF to library")
+           ("x" (my/bibtex-completion-open-pdf-external keys) "Open PDF file in external viewer (if present)")))))
+    (org-link-set-parameters "cite"
+                             :follow #'my/org-cite-open))
   :config
   (add-to-list 'ivy-re-builders-alist '(ivy-bibtex . ivy--regex-ignore-order))
   (setq bibtex-completion-bibliography my/bibliography-bibtex
@@ -36,7 +57,13 @@
   (ivy-bibtex-ivify-action my/bibtex-completion-open-pdf-external my/ivy-bibtex-open-pdf-external)
   (ivy-add-actions
    'ivy-bibtex
-   '(("x" my/ivy-bibtex-open-pdf-external "Open PDF file in external viewer (if present)"))))
+   '(("x" my/ivy-bibtex-open-pdf-external "Open PDF file in external viewer (if present)")))
+  ;; Insert citation with "cite:" prefix in org mode.
+  (defun my/bibtex-completion-format-citation-org-cite (keys)
+    "Format org cite references for keys in KEYS."
+    (s-join ", " (--map (format "cite:%s" it) keys)))
+  (setf (alist-get 'org-mode bibtex-completion-format-citation-functions)
+        #'my/bibtex-completion-format-citation-org-cite))
 
 (use-package org-noter
   :after org
