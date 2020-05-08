@@ -101,7 +101,8 @@
   ;; Images.
   (setq org-image-actual-width `(,(/ (display-pixel-width) 4)))
   ;; LaTeX.
-  (setq org-preview-latex-default-process 'dvisvgm)
+  (setq org-preview-latex-default-process 'dvisvgm
+        org-preview-latex-image-directory ".ltximg/")
   (add-to-list 'org-latex-packages-alist '("" "mathrsfs"))
   (plist-put org-format-latex-options :scale 1.4)
   (setq org-highlight-latex-and-related '(latex))
