@@ -28,5 +28,11 @@
   :config
   (setq posframe-mouse-banish nil))
 
+;;; All the icons
+
+(use-package all-the-icons
+  :config
+  (setq all-the-icons-scale-factor 1.0))
+
 (provide 'core-ui)
 ;;; core-ui.el ends here
