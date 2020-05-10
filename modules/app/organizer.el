@@ -208,7 +208,7 @@ Otherwise, use the original version of `server-visited-files'."
           ""
         (format "#+attr_latex: :width %dcm\n" org-download-image-latex-width))
       (format "[[attachment:%s]]" (file-name-nondirectory filename)))))
-  (advice-add 'org-download-insert-link :override #'my/org-download-insert-link))
+  (advice-add #'org-download-insert-link :override #'my/org-download-insert-link))
 
 ;;; Priorities
 
