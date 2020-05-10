@@ -21,6 +21,7 @@
                        "app/ledger"
                        "app/mail"
                        "app/organizer"
+                       "app/system-packages"
                        "app/rss"
                        "tools/bibliography"
                        "tools/dictionary"

@@ -95,6 +95,7 @@ window, and switch to it."
   "a" '(:ignore t :which-key "application")
   "ag" '(magit-status :which-key "git")
   "am" '(mu4e :which-key "mail")
+  "ap" '(my/system-packages/body :which-key "system packages")
   "ar" '(elfeed :which-key "RSS")
 
   "b" '(:ignore t :which-key "buffer")
