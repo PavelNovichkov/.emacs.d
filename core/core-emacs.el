@@ -28,6 +28,8 @@
  save-interprogram-paste-before-kill t
  sentence-end-double-space nil
  word-wrap t
+ ;; use system trash
+ delete-by-moving-to-trash t
  )
 
 ;; Wrap lines in all text buffers.
