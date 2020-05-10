@@ -35,6 +35,9 @@
 
 (setq use-package-compute-statistics t)
 
+(use-package use-package-ensure-system-package
+  :ensure t)
+
 ;;; Use consistent configuration paths.
 (use-package no-littering
   :demand

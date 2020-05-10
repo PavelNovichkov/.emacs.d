@@ -5,7 +5,8 @@
 
 ;; TODO refactor.
 (use-package mu4e
-  :straight nil ;; FIXME add dependency on external package.
+  :straight nil
+  :ensure-system-package mu
   :bind (:map mu4e-main-mode-map
               ("q" . quit-window)
               ("Q" . mu4e-quit)

@@ -1,6 +1,7 @@
 ;;; tools/spellcheck.el -*- lexical-binding: t; -*-
 
 (use-package ispell ; built-in
+  :ensure-system-package hunspell
   :straight nil
   :config
   ;; Advice to inhibit the minibuffer message.
