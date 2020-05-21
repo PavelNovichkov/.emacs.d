@@ -14,7 +14,10 @@
     :keymaps 'TeX-mode-map
     "a" '(TeX-command-run-all :which-key "run all")
     "c" '(TeX-command-master :which-key "run command")
-    "v" '(TeX-view :which-key "view")))
+    "v" '(TeX-view :which-key "view"))
+  ;; Pretty symbols.
+  (add-to-list 'tex--prettify-symbols-alist
+               '("\\pm" . ?±)))
 
 (use-package cdlatex
   :hook ((LaTeX-mode . turn-on-cdlatex)
