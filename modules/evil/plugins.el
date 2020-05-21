@@ -16,6 +16,21 @@
                 evil-escape-unordered-key-sequence t)
   (evil-escape-mode))
 
+(use-package evil-exchange
+  :commands evil-exchange
+  :init
+  (general-define-key
+   :states '(normal visual)
+   "zx" #'evil-exchange)
+  :config
+  ;; Cancel exchange on escape.
+  (defun my/escape-evil-exchange ()
+    "Cancel evil-exchange."
+    (when evil-exchange--overlays
+      (evil-exchange-cancel)
+      t))
+  (add-hook 'my/escape-hook #'my/escape-evil-exchange))
+
 (use-package evil-owl
   :demand :after evil
   :config
