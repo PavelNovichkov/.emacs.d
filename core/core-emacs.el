@@ -46,13 +46,9 @@
   (unless (server-running-p)
     (server-start)))
 
-(use-package undo-tree
-  :demand
+(use-package undo-fu
   :config
-  (setq undo-tree-auto-save-history t)
-  ;; Undo in region is buggy, so disable it.
-  (setq undo-tree-enable-undo-in-region nil)
-  (global-undo-tree-mode))
+  (general-define-key [remap undo] #'undo-fu-only-undo))
 
 ;; Workaround fixing Emacs crash on GTK when showing Noto Color Emoji
 ;; fonts. References:

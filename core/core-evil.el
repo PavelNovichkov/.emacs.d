@@ -24,7 +24,13 @@
         )
   :config
   (evil-mode)
-  (general-define-key :states 'normal "<escape>" #'evil-ex-nohighlight))
+  (general-define-key :states 'normal "<escape>" #'evil-ex-nohighlight)
+  ;; Disable undo-tree in favor of undo-fu.
+  (global-undo-tree-mode -1)
+  (general-define-key
+   :states 'normal
+   "u" #'undo-fu-only-undo
+   "C-r" #'undo-fu-only-redo))
 
 (provide 'core-evil)
 ;;; core-evil.el ends here
