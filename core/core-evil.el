@@ -24,7 +24,19 @@
         )
   :config
   (evil-mode)
-  (general-define-key :states 'normal "<escape>" #'evil-ex-nohighlight)
+  ;; Make ESC from normal mode the universal escaper.
+  (defun my/evil-normal-state-escape (&rest _)
+  "Call `my/escape' if `evil-force-normal-state' is called interactively."
+  (when (called-interactively-p 'any)
+    (call-interactively #'my/escape)))
+  (advice-add #'evil-force-normal-state :after #'my/evil-normal-state-escape)
+  ;; Disable highlights on escape.
+  (defun my/disable-ex-highlights ()
+      "Disable ex search buffer highlights."
+      (when (evil-ex-hl-active-p 'evil-ex-search)
+        (evil-ex-nohighlight)
+        t))
+  (add-hook 'my/escape-hook #'my/disable-ex-highlights)
   ;; Disable undo-tree in favor of undo-fu.
   (global-undo-tree-mode -1)
   (general-define-key

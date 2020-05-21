@@ -39,5 +39,25 @@
 (use-package hydra
   :commands defhydra)
 
+;;; Universal escape (stolen from Doom Emacs).
+
+(defvar my/escape-hook nil
+  "A hook run when C-g or ESC is pressed.")
+
+(defun my/escape ()
+  "Universal escape function."
+  (interactive)
+  (cond ((minibuffer-window-active-p (minibuffer-window))
+         ;; quit the minibuffer if open.
+         (abort-recursive-edit))
+        ;; Run all escape hooks. If any returns non-nil, then stop there.
+        ((run-hook-with-args-until-success 'my/escape-hook))
+        ;; don't abort macros
+        ((or defining-kbd-macro executing-kbd-macro) nil)
+        ;; Back to the default
+        ((keyboard-quit))))
+
+(general-define-key [remap keyboard-quit] #'my/escape)
+
 (provide 'core-keybindings)
 ;;; core-keybindings.el ends here
