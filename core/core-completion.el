@@ -18,6 +18,7 @@
         ivy-magic-slash-non-match-action nil
         ;; Use current prompt as a candidate.
         ivy-use-selectable-prompt t
+        ivy-use-virtual-buffers 'bookmarks
         ivy-wrap t)
   (ivy-set-actions t '(("y" kill-new "yank")))
   (ivy-mode 1))
