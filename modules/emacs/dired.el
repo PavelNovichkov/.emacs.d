@@ -12,7 +12,12 @@
     "Add hooks to run in dired mode."
     (add-hook 'post-command-hook #'my/dired-update-default-directory nil t))
   (add-hook 'dired-mode-hook #'my/add-hooks-in-dired-mode)
+  (add-hook 'dired-mode-hook #'hl-line-mode)
   :config
+  (setq dired-auto-revert-buffer t
+        dired-hide-details-hide-symlink-targets nil
+        dired-recursive-copies 'always
+        dired-recursive-deletes 'top)
   ;; Hide details.
   (add-hook 'dired-mode-hook #'dired-hide-details-mode)
   ;; Allow 'a' command in dired-mode.
