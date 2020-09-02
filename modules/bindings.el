@@ -156,6 +156,7 @@ window, and switch to it."
   "ld" '(eyebrowse-close-window-config :which-key "delete")
   "lj" '(eyebrowse-next-window-config :which-key "next")
   "lk" '(eyebrowse-prev-window-config :which-key "previous")
+  "ll" '(eyebrowse-last-window-config :which-key "most recent")
   "ln" '(eyebrowse-create-window-config :which-key "new")
   "lr" '(eyebrowse-rename-window-config :which-key "rename")
   "ls" '(eyebrowse-switch-to-window-config :which-key "switch")
