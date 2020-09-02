@@ -28,10 +28,6 @@
   (setq message-kill-buffer-on-exit t)
   ;; Don't reply to myself.
   (setq mu4e-compose-dont-reply-to-self t)
-  (setq mu4e-user-mail-address-list
-        `(,yandex-user-mail-address
-          ,sissa-user-mail-address
-          ,sissa-user-alternative-mail-address))
   ;; Hide messages.
   (setq mu4e-hide-index-messages t)
   ;; Complete with ivy.
@@ -107,12 +103,7 @@
   (when (fboundp 'imagemagick-register-types)
     (imagemagick-register-types))
   ;; Rich-text messages.
-  (defun my/render-html-message ()
-    (let ((dom (libxml-parse-html-region (point-min) (point-max))))
-      (erase-buffer)
-      (shr-insert-document dom)
-      (goto-char (point-min))))
-  (setq mu4e-html2text-command 'my/render-html-message)
+  (setq mu4e-html2text-command 'mu4e-shr2text)
   ;; View in browser.
   (add-to-list 'mu4e-view-actions '("View in browser" . mu4e-action-view-in-browser) t)
   ;; Sort order.
