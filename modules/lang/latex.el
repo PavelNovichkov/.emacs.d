@@ -77,3 +77,6 @@
     (if (texmathp)
         ad-do-it
       (insert (event-basic-type last-command-event)))))
+
+(use-package evil-tex
+  :hook (LaTeX-mode . evil-tex-mode))
