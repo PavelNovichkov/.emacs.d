@@ -52,6 +52,11 @@
    :keymaps 'dired-mode-map
    "=" #'my/dired-ediff-files))
 
+(use-package dired-filter
+  :demand :after dired
+  :init
+  (setq dired-filter-stack nil))
+
 (use-package dired-subtree
   :commands dired-subtree-toggle
   :init
