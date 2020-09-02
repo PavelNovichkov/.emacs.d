@@ -15,6 +15,24 @@
     "a" '(TeX-command-run-all :which-key "run all")
     "c" '(TeX-command-master :which-key "run command")
     "v" '(TeX-view :which-key "view"))
+  ;; Do not use LaTeX-indent-tabular as it breaks complex tabular-type environments.
+  (setq LaTeX-indent-environment-list
+        '(("verbatim" current-indentation)
+          ("verbatim*" current-indentation)
+          ("filecontents" current-indentation)
+          ("filecontents*" current-indentation)
+          ("tabular")
+          ("tabular*")
+          ("align")
+          ("align*")
+          ("array")
+          ("eqnarray")
+          ("eqnarray*")
+          ("displaymath")
+          ("equation")
+          ("equation*")
+          ("picture")
+          ("tabbing")))
   ;; Pretty symbols.
   (add-to-list 'tex--prettify-symbols-alist
                '("\\pm" . ?±)))
