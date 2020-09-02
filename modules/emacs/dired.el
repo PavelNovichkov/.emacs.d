@@ -25,18 +25,6 @@
   (setq dired-dwim-target t)
   ;; Human-readable sizes; directories first.
   (setq dired-listing-switches "-alh --group-directories-first")
-  ;; Native open.
-  (defun my/dired-open-native ()
-    "Open marked files (or the file the cursor is on) from dired."
-    (interactive)
-    (let* ((files (dired-get-marked-files t current-prefix-arg))
-           (n (length files)))
-      (when (or (<= n 3)
-                (y-or-n-p (format "Open %d files?" n)))
-        (dolist (file files)
-          (call-process "xdg-open"
-                        nil 0 nil file)))))
-  (define-key dired-mode-map (kbd "s-o") #'my/dired-open-native)
   ;; Ediff marked files, taken from
   ;; https://oremacs.com/2017/03/18/dired-ediff/.
   (defun my/dired-ediff-files ()
