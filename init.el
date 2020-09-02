@@ -17,6 +17,7 @@
                        "layouts"
                        "projects"
                        "ui/evil-goggles"
+                       "ui/ivy-rich"
                        "app/irc"
                        "app/ledger"
                        "app/mail"
