@@ -112,6 +112,7 @@ window, and switch to it."
   "bs" '(counsel-switch-buffer :which-key "switch")
 
   "d" '(:ignore t :which-key "dictionary")
+  "dd" '(lexic-search :which-key "meaning")
   "ds" '(powerthesaurus-lookup-word :which-key "synonyms")
   "dt" '(google-translate-smooth-translate :which-key "translate")
 

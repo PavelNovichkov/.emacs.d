@@ -18,3 +18,7 @@
 
 (use-package powerthesaurus
   :commands powerthesaurus-lookup-word)
+
+(use-package lexic
+  :straight (:host github :repo "tecosaur/lexic")
+  :ensure-system-package sdcv)
