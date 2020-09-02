@@ -76,3 +76,8 @@
         org-noter-doc-split-fraction '(0.7 . 0.5)
         org-noter-hide-other t
         org-noter-insert-note-no-questions t))
+
+;; arxiv links.
+(with-eval-after-load 'org
+  (add-to-list 'org-link-abbrev-alist
+               '("arxiv" . "https://arxiv.org/abs/")))
