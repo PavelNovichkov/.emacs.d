@@ -33,7 +33,8 @@
                              :follow #'my/org-cite-open))
   :config
   (add-to-list 'ivy-re-builders-alist '(ivy-bibtex . ivy--regex-ignore-order))
-  (setq bibtex-completion-bibliography my/bibliography-bibtex
+  (setq bibtex-completion-find-additional-pdfs t
+        bibtex-completion-bibliography my/bibliography-bibtex
         bibtex-completion-library-path my/bibliography-doc-directory
         bibtex-completion-notes-path my/bibliography-notes 
         ;; notes template
