@@ -64,3 +64,10 @@
   :demand :after dired
   :config
   (diredfl-global-mode))
+
+(use-package all-the-icons-dired
+  :hook (dired-mode . all-the-icons-dired-mode)
+  :config
+  ;; Fix icons in subtrees, see
+  ;; https://github.com/jtbm37/all-the-icons-dired/issues/22.
+  (advice-add #'dired-subtree-toggle :around #'all-the-icons-dired--refresh-advice))
