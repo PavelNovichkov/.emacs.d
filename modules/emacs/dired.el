@@ -15,6 +15,7 @@
   (add-hook 'dired-mode-hook #'hl-line-mode)
   :config
   (setq dired-auto-revert-buffer t
+        dired-create-destination-dirs 'ask
         dired-hide-details-hide-symlink-targets nil
         dired-recursive-copies 'always
         dired-recursive-deletes 'top)
