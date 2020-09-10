@@ -188,6 +188,7 @@ window, and switch to it."
   "r" '(counsel-recentf :which-key "recent file")
 
   "t" '(:ignore t :which-key "toggle")
+  "tc" '(display-fill-column-indicator-mode :which-key "fill column")
   "tf" '(toggle-frame-fullscreen :which-key "fullscreen")
   "tl" '(display-line-numbers-mode :which-key "line numbers")
   "tm" '(toggle-frame-maximized :which-key "maximize")
