@@ -50,12 +50,5 @@
   :config
   (general-define-key [remap undo] #'undo-fu-only-undo))
 
-;; Workaround fixing Emacs crash on GTK when showing Noto Color Emoji
-;; fonts. References:
-;; - https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=893319
-;; - https://askubuntu.com/questions/1076735/emacs-crashes-on-pasting-the-unicode-symbol
-(when window-system
-  (push "Noto Color Emoji" face-ignored-fonts))
-
 (provide 'core-emacs)
 ;;; core-emacs.el ends here
