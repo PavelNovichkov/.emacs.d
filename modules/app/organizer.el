@@ -111,6 +111,8 @@
     :keymaps 'org-mode-map
     "a" '(org-attach :which-key "attachments")
     "d" '(org-deadline :which-key "deadline")
+    "f" '(counsel-org-file :which-key "browse file attachments")
+    "q" '(counsel-org-tag :which-key "tags")
     "r" '(org-refile :which-key "refile")
     "s" '(org-schedule :which-key "schedule")
     "t" '(:ignore t :which-key "toggle")
@@ -118,8 +120,10 @@
     "th" '(org-toggle-link-display :which-key "hyperlinks")
     "ti" '(org-toggle-inline-images :which-key "images")
     "tl" '(org-latex-preview :which-key "latex")
-    "tt" '(org-toggle-time-stamp-overlays :which-key "timestamps")
-    ))
+    "tt" '(org-toggle-time-stamp-overlays :which-key "timestamps"))
+  (general-define-key
+   :states 'motion :keymaps 'org-agenda-mode-map
+   "cq" '(counsel-org-tag-agenda :which-key "tags")))
 
 (use-package org-capture
   :straight nil ;; part of org

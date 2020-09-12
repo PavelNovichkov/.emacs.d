@@ -155,6 +155,7 @@ window, and switch to it."
   ;; "ic" '(:keymap iso-transl-ctl-x-8-map :package iso-transl :which-key "compose")
   "ic" `(,(general-simulate-key "C-x 8") :which-key "compose")
   "ik" '(counsel-yank-pop :which-key "kill ring")
+  "io" '(counsel-org-entity :which-key "org entity")
   "ir" '(counsel-evil-registers :which-key "registers")
   "iu" '(counsel-unicode-char :which-key "unicode")
 
@@ -171,6 +172,7 @@ window, and switch to it."
   "oa" '(org-agenda :which-key "agenda")
   "oc" '(org-capture :which-key "capture")
   "og" '(org-password-manager-generate-password :which-key "generate password")
+  "oh" '(counsel-org-agenda-headlines :which-key "go to headline")
   "ol" '(org-store-link :which-key "store link")
   "op" '(org-password-manager-get-password :which-key "get password")
   "ot" '(org-mru-clock-in :which-key "timer")
