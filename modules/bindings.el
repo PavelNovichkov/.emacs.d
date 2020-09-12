@@ -81,6 +81,11 @@ window, and switch to it."
   (other-window 1)
   (switch-to-buffer (other-buffer)))
 
+(defun my/switch-to-recent-buffer ()
+  "Switch to the most recently visited buffer."
+  (interactive)
+  (switch-to-buffer nil))
+
 ;;; Global leader bindings
 
 (leader-def
@@ -99,6 +104,7 @@ window, and switch to it."
   "ar" '(elfeed :which-key "RSS")
 
   "b" '(:ignore t :which-key "buffer")
+  "bb" '(my/switch-to-recent-buffer :which-key "most recent")
   "bc" '(clone-indirect-buffer :which-key "clone")
   "be" '(revert-buffer-with-coding-system :which-key "revert encoding")
   "bk" '(kill-current-buffer :which-key "kill")
