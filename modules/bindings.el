@@ -237,7 +237,8 @@ window, and switch to it."
 (use-package evil-collection
   :demand :after evil
   :init
-  (setq evil-collection-setup-minibuffer t)
+  (setq evil-collection-setup-minibuffer t
+        evil-collection-want-unimpaired-p nil)
   :config
   (setq evil-collection-key-blacklist
         (list leader-key local-leader-key))
