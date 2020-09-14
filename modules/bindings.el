@@ -98,6 +98,7 @@ window, and switch to it."
   "SPC" '(ivy-resume :which-key "repeat ivy query")
 
   "a" '(:ignore t :which-key "application")
+  "ab" '(ivy-bibtex :which-key "bibliography")
   "ag" '(magit-status :which-key "git")
   "am" '(mu4e :which-key "mail")
   "ap" '(my/system-packages/body :which-key "system packages")
