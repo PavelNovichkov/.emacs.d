@@ -16,11 +16,10 @@
              org-store-link)
   :config
   ;; Paths.
-  (setq org-directory "~/org"
-        org-agenda-files '("~/org/gtd.org"
-                           "~/org/inbox.org"
-                           "~/org/calendar.org"
-                           "~/org/tickler.org"))
+  (setq org-directory (file-truename "~/org")
+        org-agenda-files
+        (mapcar (lambda (name) (expand-file-name name org-directory))
+                '("gtd.org" "calendar.org" "tickler.org")))
   ;; Variables.
   (add-to-list 'org-modules 'org-habit t)
   (setq org-enforce-todo-dependencies t
