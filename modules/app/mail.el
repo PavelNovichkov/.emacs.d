@@ -143,3 +143,28 @@
   (setq org-mu4e-convert-to-html t)
   ;; Store link to message if in header view, not to header query.
   (setq org-mu4e-link-query-in-headers-mode nil))
+
+;;; Attach files from dired
+
+(use-package gnus-dired
+  :straight nil ; built-in
+  :commands gnus-dired-attach
+  :init
+  (local-leader-def
+   :keymaps 'dired-mode-map
+   "a" '(gnus-dired-attach :which-key "attach"))
+  :config
+  (require 'mu4e)
+  ;; See https://www.djcbsoftware.nl/code/mu/mu4e/Dired.html.
+  (defun my/gnus-dired-mail-buffers ()
+    "Return a list of active message buffers."
+    (let (buffers)
+      (save-current-buffer
+        (dolist (buffer (buffer-list t))
+          (set-buffer buffer)
+          (when (and (derived-mode-p 'message-mode)
+                     (null message-sent-message-via))
+            (push (buffer-name buffer) buffers))))
+      (nreverse buffers)))
+  (advice-add #'gnus-dired-mail-buffers :override #'my/gnus-dired-mail-buffers)
+  (setq gnus-dired-mail-mode 'mu4e-user-agent))
