@@ -28,6 +28,8 @@
   (setq message-kill-buffer-on-exit t)
   ;; Don't reply to myself.
   (setq mu4e-compose-dont-reply-to-self t)
+  ;; Don't insert signature by default.
+  (setq mu4e-compose-signature-auto-include nil)
   ;; Hide messages.
   (setq mu4e-hide-index-messages t)
   ;; Complete with ivy.
