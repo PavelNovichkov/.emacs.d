@@ -139,9 +139,11 @@ window, and switch to it."
 
   "g" '(:ignore t :which-key "go")
   "gb" '(counsel-bookmark :which-key "bookmark")
+  "gg" '(evil-avy-goto-char-timer :which-key "string")
   "gi" '(counsel-imenu :which-key "imenu")
   "gl" '(link-hint-open-link :which-key "link")
   "go" '(counsel-outline :which-key "outline")
+  "gw" '(evil-avy-goto-word-1 :which-key "word")
 
   "h" '(:keymap help-map :which-key "help")
   "hh" '(helpful-at-point :which-key "help at point")
@@ -227,10 +229,6 @@ window, and switch to it."
 (general-define-key
  :states 'insert
  "C-n" #'counsel-company)
-
-(general-define-key
- :states 'motion
- "C-/" #'evil-avy-goto-char-timer)
 
 ;;; Evil collection
 
