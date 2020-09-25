@@ -30,6 +30,7 @@
         org-src-window-setup 'current-window
         org-edit-src-content-indentation 0  ;; another option is (setq org-src-preserve-indentation t)
         org-list-allow-alphabetical t
+        org-startup-folded t
         org-startup-indented t
         org-catch-invisible-edits 'show-and-error
         org-log-done 'time
