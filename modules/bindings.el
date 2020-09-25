@@ -125,7 +125,7 @@ window, and switch to it."
 
   "f" '(:ignore t :which-key "file")
   "fa" '(find-alternate-file :which-key "find alternate")
-  "fd" '(my/delete-file-and-buffer :which-key "delete")
+  "fD" '(my/delete-file-and-buffer :which-key "delete")
   "ff" '(counsel-find-file :which-key "find")
   "fl" '(counsel-find-library :which-key "find library")
   "fo" '(:ignore t :which-key "other window")
