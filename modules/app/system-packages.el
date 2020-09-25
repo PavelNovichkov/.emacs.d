@@ -3,7 +3,7 @@
 (use-package system-packages
   :commands my/system-packages/body
   :init
-  (defhydra my/system-packages (:color teal :columns 2)
+  (defhydra my/system-packages (:color blue :columns 2)
     "Manage system packages"
     ("u" system-packages-update "update")
     ("i" system-packages-install "install")
