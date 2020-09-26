@@ -58,6 +58,7 @@
    :keymaps 'cdlatex-mode-map
    "TAB" #'cdlatex-tab
    "<tab>" #'cdlatex-tab)
+  (setq cdlatex-use-dollar-to-ensure-math nil)
   (setq cdlatex-command-alist
         '(("cfr" "Insert \\cfrac{}{}"
            "\\cfrac{?}{}" cdlatex-position-cursor nil nil t)
