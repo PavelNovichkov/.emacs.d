@@ -224,8 +224,8 @@ no other windows are present."
   "wh" '(my/split-window-horizontally :which-key "split horizontally")
   "ws" '(rotate-window :which-key "swap")
   "wt" '(rotate-layout :which-key "transpose")
-  "wu" '(winner-undo :which-key "undo (go to previous layout)")
-  "wr" '(winner-redo :which-key "redo (go to next layout)")
+  "wu" '(winner-undo :which-key "undo")
+  "wr" '(winner-redo :which-key "redo")
   "wv" '(my/split-window-vertically :which-key "split vertically"))
 
 ;;; Global non-leader bindings
