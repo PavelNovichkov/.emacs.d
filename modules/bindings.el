@@ -86,6 +86,15 @@ window, and switch to it."
   (interactive)
   (switch-to-buffer nil))
 
+(defun my/kill-buffer-and-window-or-layout ()
+  "Kill the current buffer and delete its window or entire layout if
+no other windows are present."
+  (interactive)
+  (if (> (count-windows) 1)
+      (kill-buffer-and-window)
+    (kill-buffer)
+    (tab-bar-close-tab)))
+
 ;;; Global leader bindings
 
 (leader-def
@@ -109,7 +118,7 @@ window, and switch to it."
   "bc" '(clone-indirect-buffer :which-key "clone")
   "be" '(revert-buffer-with-coding-system :which-key "revert encoding")
   "bk" '(kill-current-buffer :which-key "kill")
-  "bK" '(kill-buffer-and-window :which-key "kill and close window")
+  "bK" '(my/kill-buffer-and-window-or-layout :which-key "kill and close window")
   "bl" '(ibuffer :which-key "list")
   "bn" '(evil-buffer-new :which-key "new")
   "bo" '(:ignore t :which-key "other window")
