@@ -13,6 +13,7 @@
         evil-mode-line-format nil
         evil-symbol-word-search t
         evil-respect-visual-line-mode t
+        evil-undo-system 'undo-fu
         ;; search and replace
         evil-ex-search-vim-style-regexp t
         evil-ex-substitute-global t
@@ -36,13 +37,7 @@
       (when (evil-ex-hl-active-p 'evil-ex-search)
         (evil-ex-nohighlight)
         t))
-  (add-hook 'my/escape-hook #'my/disable-ex-highlights)
-  ;; Disable undo-tree in favor of undo-fu.
-  (global-undo-tree-mode -1)
-  (general-define-key
-   :states 'normal
-   "u" #'undo-fu-only-undo
-   "C-r" #'undo-fu-only-redo))
+  (add-hook 'my/escape-hook #'my/disable-ex-highlights))
 
 (provide 'core-evil)
 ;;; core-evil.el ends here
