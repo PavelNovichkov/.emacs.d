@@ -123,9 +123,9 @@ no other windows are present."
   "bn" '(evil-buffer-new :which-key "new")
   "bo" '(:ignore t :which-key "other window")
   "boc" '(clone-indirect-buffer-other-window :which-key "clone")
-  "bos" '(counsel-switch-buffer-other-window :which-key "switch")
+  "bos" '(ivy-switch-buffer-other-window :which-key "switch")
   "br" '(revert-buffer :which-key "revert")
-  "bs" '(counsel-switch-buffer :which-key "switch")
+  "bs" '(ivy-switch-buffer :which-key "switch")
 
   "d" '(:ignore t :which-key "dictionary")
   "dd" '(lexic-search :which-key "meaning")
