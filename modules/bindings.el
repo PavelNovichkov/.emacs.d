@@ -141,7 +141,8 @@ no other windows are present."
   "foa" '(find-alternate-file-other-window :which-key "find alternate")
   "fof" '(find-file-other-window :which-key "find")
   "fol" '(find-library-other-window :which-key "find library")
-  "fr" '(my/rename-file-and-buffer :which-key "rename")
+  "fR" '(my/rename-file-and-buffer :which-key "rename")
+  "fr" '(counsel-recentf :which-key "recent")
   "fs" '(save-buffer :which-key "save")
   "fw" '(write-file :which-key "write")
   "f/" '(counsel-fzf :which-key "search")
@@ -206,8 +207,6 @@ no other windows are present."
 
   "q" '(:ignore t :which-key "quit")
   "qq" '(evil-save-and-quit :which-key "save and quit")
-
-  "r" '(counsel-recentf :which-key "recent file")
 
   "t" '(:ignore t :which-key "toggle")
   "tc" '(display-fill-column-indicator-mode :which-key "fill column")
