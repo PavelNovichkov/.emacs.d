@@ -95,6 +95,11 @@ no other windows are present."
     (kill-buffer)
     (tab-bar-close-tab)))
 
+(defun my/tab-bar-move-tab-left ()
+  "Move current tab to the left."
+  (interactive)
+  (tab-bar-move-tab -1))
+
 ;;; Global leader bindings
 
 (leader-def
@@ -178,6 +183,8 @@ no other windows are present."
   "lj" '(tab-bar-switch-to-next-tab :which-key "next")
   "lk" '(tab-bar-switch-to-prev-tab :which-key "previous")
   "ll" '(tab-bar-switch-to-recent-tab :which-key "most recent")
+  "lL" '(tab-bar-move-tab :which-key "move right")
+  "lH" '(my/tab-bar-move-tab-left :which-key "move left")
   "ln" '(tab-bar-new-tab :which-key "new")
   "lr" '(tab-bar-rename-tab :which-key "rename")
   "ls" '(tab-bar-switch-to-tab :which-key "switch")
