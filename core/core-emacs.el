@@ -30,6 +30,9 @@
  word-wrap t
  ;; use system trash
  delete-by-moving-to-trash t
+ ;; disable bidirectional editing
+ bidi-inhibit-bpa t
+ bidi-paragraph-direction 'left-to-right
  )
 
 ;; Wrap lines in all text buffers.
