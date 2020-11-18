@@ -244,9 +244,15 @@ no other windows are present."
  :keymaps 'key-translation-map
  "C-h" "DEL")
 
+(defun my/evil-paste-last-yanked ()
+  "Paste last yanked text from register 0."
+  (interactive)
+  (evil-paste-from-register ?0))
+
 (general-define-key
  :states 'insert
- "C-n" #'company-complete)
+ "C-n" #'company-complete
+ "C-v" #'my/evil-paste-last-yanked)
 
 ;;; Evil collection
 
