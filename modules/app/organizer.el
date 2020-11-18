@@ -318,4 +318,6 @@ Otherwise, use the original version of `server-visited-files'."
         org-mru-clock-predicate #'my/org-entry-is-next-p)
   (ivy-add-actions 'org-mru-clock-in
                     '(("p" my/org-mru-clock--pomodoro "start/stop a pomodoro")
-                      ("x" my/org-mru-clock--extend-pomodoro "extend last pomodoro"))))
+                      ("x" my/org-mru-clock--extend-pomodoro "extend last pomodoro")))
+  ;; Use default sorting instead of prescient.
+  (cl-pushnew #'org-mru-clock-in (cdr ivy-prescient-sort-commands)))
