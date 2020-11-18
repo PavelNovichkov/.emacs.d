@@ -10,6 +10,7 @@
                        "emacs/helpful"
                        "emacs/ibuffer"
                        "emacs/outline"
+                       "emacs/recentf"
                        "emacs/smartparens"
                        "emacs/tramp"
                        "emacs/winner"
