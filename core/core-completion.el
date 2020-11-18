@@ -81,19 +81,26 @@
   :demand
   :commands company-complete-common
   :config
-  (setq company-idle-delay nil
-        company-frontends
-        '(company-pseudo-tooltip-frontend
-          company-echo-metadata-frontend)
-        company-require-match 'never
+  ;; (company-tng-mode +1) is set up by evil-collection.
+  (setq company-backends '(company-files company-capf)
+        company-idle-delay 0.25
+        company-selection-wrap-around t
+        company-show-numbers t
         company-tooltip-align-annotations t
-        company-dabbrev-downcase nil
-        company-dabbrev-ignore-case nil
-        company-dabbrev-code-other-buffers t
-        )
-  (add-to-list 'ivy-display-functions-alist
-               '(counsel-company . ivy-display-function-overlay))
-  (global-company-mode 1))
+        company-tooltip-width-grow-only t)
+  (global-company-mode 1)
+  (general-define-key
+   :keymaps 'company-active-map
+   "C-/" #'company-filter-candidates
+   "C-?" #'counsel-company) ;; FIXME find a better binding?
+  (general-define-key
+   :keymaps 'company-search-map
+   "C-n" #'company-select-next-or-abort
+   "C-p" #'company-select-previous-or-abort)
+  (dotimes (i 10)
+    (general-define-key
+     :keymaps '(company-active-map company-search-map)
+     (format "C-%d" i) #'company-complete-number)))
 
 (use-package company-prescient
   :hook (company-mode . company-prescient-mode))

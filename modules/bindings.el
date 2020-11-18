@@ -246,7 +246,7 @@ no other windows are present."
 
 (general-define-key
  :states 'insert
- "C-n" #'counsel-company)
+ "C-n" #'company-complete)
 
 ;;; Evil collection
 
