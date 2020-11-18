@@ -37,9 +37,22 @@
          ;; File names ending with `#` or `~`.
          "\\|\\(?:\\`.+?[#~]\\'\\)")))
 
-;; Prioritize most used commands in counsel-M-x.
-(use-package amx
-  :after counsel)
+;; Prioritize most recent choices.
+(use-package prescient
+  :config
+  (prescient-persist-mode))
+
+(use-package ivy-prescient
+  ;; Should be loaded after counsel according to the docs.
+  :demand :after counsel
+  :config
+  (setq ivy-prescient-sort-commands
+        '(:not swiper swiper-isearch
+               ivy-switch-buffer
+               counsel-imenu counsel-outline
+               counsel-recentf
+               ivy-bibtex))
+  (ivy-prescient-mode))
 
 (use-package swiper)
 
@@ -81,6 +94,9 @@
   (add-to-list 'ivy-display-functions-alist
                '(counsel-company . ivy-display-function-overlay))
   (global-company-mode 1))
+
+(use-package company-prescient
+  :hook (company-mode . company-prescient-mode))
 
 ;;; Yasnippet
 
