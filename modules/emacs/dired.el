@@ -16,16 +16,16 @@
   :config
   (setq dired-auto-revert-buffer t
         dired-create-destination-dirs 'ask
+        dired-dwim-target t
         dired-hide-details-hide-symlink-targets nil
+        ;; Human-readable sizes; directories first.
+        dired-listing-switches "-alh --group-directories-first"
         dired-recursive-copies 'always
         dired-recursive-deletes 'top)
   ;; Hide details.
   (add-hook 'dired-mode-hook #'dired-hide-details-mode)
   ;; Allow 'a' command in dired-mode.
   (put 'dired-find-alternate-file 'disabled nil)
-  (setq dired-dwim-target t)
-  ;; Human-readable sizes; directories first.
-  (setq dired-listing-switches "-alh --group-directories-first")
   ;; Ediff marked files, taken from
   ;; https://oremacs.com/2017/03/18/dired-ediff/.
   (defun my/dired-ediff-files ()
