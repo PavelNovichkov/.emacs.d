@@ -86,3 +86,19 @@
 
 (use-package evil-tex
   :hook (LaTeX-mode . evil-tex-mode))
+
+(use-package reftex ; built-in
+  :hook (TeX-mode . reftex-mode))
+
+(use-package company-reftex
+  :init
+  (defun my/setup-company-in-tex ()
+    "Setup company backends for LaTeX."
+    (make-local-variable 'company-backends)
+    (dolist (backend '(company-reftex-labels company-reftex-citations))
+      (add-to-list 'company-backends backend))
+    ;; Match filenames in {} with company-files.
+    (make-local-variable 'company-files--regexps)
+    (add-to-list 'company-files--regexps
+                 "{\\(\\(?:\\.\\{1,2\\}/\\|~/\\|/\\)[^}\n]*\\)"))
+  :hook (TeX-mode . my/setup-company-in-tex))
