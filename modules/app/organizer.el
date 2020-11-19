@@ -228,9 +228,9 @@ Otherwise, use the original version of `server-visited-files'."
   (setq org-fancy-priorities-list '("HIGH" "MID " "LOW "))
   ;; A hack to make priority face in agenda the same as in org files
   ;; themselves.
-  (setq org-priority-faces '((?A . (:inherit font-lock-keyword-face))
-                             (?B . (:inherit font-lock-keyword-face))
-                             (?C . (:inherit font-lock-keyword-face))))
+  (setq org-priority-faces '((?A . (error org-priority))
+                             (?B . (warning org-priority))
+                             (?C . (success org-priority))))
   ;; Remove priority after completing the task.
   (defun my/remove-priority-when-task-done ()
     "Removes priority from a task if its state is DONE or CANCELED."
