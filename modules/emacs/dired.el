@@ -13,19 +13,6 @@
     (add-hook 'post-command-hook #'my/dired-update-default-directory nil t))
   (add-hook 'dired-mode-hook #'my/add-hooks-in-dired-mode)
   (add-hook 'dired-mode-hook #'hl-line-mode)
-  :config
-  (setq dired-auto-revert-buffer t
-        dired-create-destination-dirs 'ask
-        dired-dwim-target t
-        dired-hide-details-hide-symlink-targets nil
-        ;; Human-readable sizes; directories first.
-        dired-listing-switches "-alh --group-directories-first"
-        dired-recursive-copies 'always
-        dired-recursive-deletes 'top)
-  ;; Hide details.
-  (add-hook 'dired-mode-hook #'dired-hide-details-mode)
-  ;; Allow 'a' command in dired-mode.
-  (put 'dired-find-alternate-file 'disabled nil)
   ;; Ediff marked files, taken from
   ;; https://oremacs.com/2017/03/18/dired-ediff/.
   (defun my/dired-ediff-files ()
@@ -41,10 +28,29 @@
                           (dired-dwim-target-directory)))))
             (ediff-files file1 file2))
         (error "No more than 2 files should be marked"))))
-  (general-define-key
-   :states 'normal
-   :keymaps 'dired-mode-map
-   "=" #'my/dired-ediff-files))
+  ;; Override evil-collection binding.
+  (defun my/dired-override-bindings (mode &rest _rest)
+    "Rebind '=' set by both dired and evil-collection."
+    (when (equal mode 'dired)
+      (general-define-key
+       :states 'normal
+       :keymaps 'dired-mode-map
+       "=" #'my/dired-ediff-files)
+      (remove-hook 'evil-collection-setup-hook #'my/dired-override-bindings)))
+  (add-hook 'evil-collection-setup-hook #'my/dired-override-bindings)
+  :config
+  (setq dired-auto-revert-buffer t
+        dired-create-destination-dirs 'ask
+        dired-dwim-target t
+        dired-hide-details-hide-symlink-targets nil
+        ;; Human-readable sizes; directories first.
+        dired-listing-switches "-alh --group-directories-first"
+        dired-recursive-copies 'always
+        dired-recursive-deletes 'top)
+  ;; Hide details.
+  (add-hook 'dired-mode-hook #'dired-hide-details-mode)
+  ;; Allow 'a' command in dired-mode.
+  (put 'dired-find-alternate-file 'disabled nil))
 
 (use-package dired-filter
   :demand :after dired
