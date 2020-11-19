@@ -13,6 +13,10 @@
   (setcar (cdr (assoc 'output-pdf TeX-view-program-selection)) "PDF Tools")
   (add-hook 'TeX-after-compilation-finished-functions #'TeX-revert-document-buffer)
   (setq-default TeX-engine 'luatex)
+  (setq TeX-parse-self t
+        TeX-auto-save t
+        TeX-auto-local ".auctex-auto"
+        TeX-style-local ".auctex-style")
   ;; Bindings.
   (local-leader-def
     :keymaps 'TeX-mode-map
