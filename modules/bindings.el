@@ -237,6 +237,8 @@ no other windows are present."
 ;;; Global non-leader bindings
 
 (general-define-key
+ :states '(motion emacs normal)
+ :keymaps 'override
  "M-o" #'other-window)
 
 ;; Rebind C-h to backspace globally.
