@@ -26,6 +26,7 @@
                        "app/organizer"
                        "app/system-packages"
                        "app/rss"
+                       "app/terminal"
                        "tools/bibliography"
                        "tools/dictionary"
                        "tools/link-hint"
