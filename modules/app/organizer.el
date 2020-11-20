@@ -278,6 +278,13 @@ Otherwise, use the original version of `server-visited-files'."
            :immediate-finish)))
   (org-roam-mode))
 
+;;; Integration with Anki for spaced repetition
+
+(use-package anki-editor
+  :init
+  (defconst my/anki-file "~/org/anki.org"))
+  ;; TODO Add capture templates
+
 ;;; Password manager
 
 (use-package org-password-manager
