@@ -18,8 +18,10 @@
 (use-package doom-modeline
   :hook (after-init . doom-modeline-init)
   :config
-  ; Don't include project name in the file name as it is very slow.
-  (setq doom-modeline-buffer-file-name-style 'file-name))
+  (setq
+   ;; Don't include project name in the file name as it is very slow.
+   doom-modeline-buffer-file-name-style 'file-name
+   doom-modeline-workspace-name nil))
 
 ;;; Posframe
 
