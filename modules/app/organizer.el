@@ -321,3 +321,15 @@ Otherwise, use the original version of `server-visited-files'."
                       ("x" my/org-mru-clock--extend-pomodoro "extend last pomodoro")))
   ;; Use default sorting instead of prescient.
   (cl-pushnew #'org-mru-clock-in (cdr ivy-prescient-sort-commands)))
+
+;;; Table alignment
+
+(use-package valign
+  :straight (:host github :repo "casouri/valign")
+  :commands valign-mode
+  :init
+  (local-leader-def
+    :keymaps 'org-mode-map
+    "tv" '(valign-mode :which-key "vertical align"))
+  :config
+  (setq valign-fancy-bar t))
