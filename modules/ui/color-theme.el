@@ -1,7 +1,9 @@
 ;;; ui/color-theme.el -*- lexical-binding: t; -*-
 
-(use-package modus-operandi-theme
+(use-package modus-themes
   :demand
   :config
-  (setq modus-operandi-theme-completions 'opinionated)
+  (setq modus-themes-completions 'opinionated
+        modus-themes-diffs 'bg-only
+        modus-themes-region 'bg-only-no-extend)
   (load-theme 'modus-operandi t))
