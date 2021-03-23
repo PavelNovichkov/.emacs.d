@@ -100,6 +100,8 @@
   (add-hook 'mu4e-compose-mode-hook #'turn-off-auto-fill)
   ;; Turn on word wrap when viewing a message.
   (add-hook 'mu4e-view-mode-hook #'turn-on-visual-line-mode)
+  ;; Show full addresses.
+  (setq mu4e-view-show-addresses t)
   ;; Images.
   (setq mu4e-view-show-images t)
   (when (fboundp 'imagemagick-register-types)
