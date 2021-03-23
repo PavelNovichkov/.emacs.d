@@ -114,6 +114,18 @@
   (setq mu4e-headers-date-format "%d/%m/%Y")
   ;; Exclude related messages.
   (setq mu4e-headers-include-related nil)
+  ;; Toggle sort direction (useful for inbox).
+  (defun my/mu4e-headers-toggle-sort-direction ()
+    "Toggle headers sort direction."
+    (interactive)
+    (setq mu4e-headers-sort-direction
+          (if (eq mu4e-headers-sort-direction 'ascending)
+              'descending 'ascending))
+    (mu4e-headers-rerun-search))
+  (general-define-key
+   :states 'normal
+   :keymaps 'mu4e-headers-mode-map
+   "O" #'my/mu4e-headers-toggle-sort-direction)
   ;; Show duplicates.
   (setq mu4e-headers-skip-duplicates nil)
   ;; Fancy chars.

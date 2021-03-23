@@ -4,7 +4,8 @@
   :commands elfeed
   :config
   (setq-default elfeed-search-filter "@1-month-ago +unread ")
-  (setq elfeed-search-date-format '("%d/%m/%Y" 10 :left)))
+  (setq elfeed-search-date-format '("%d/%m/%Y" 10 :left)
+        elfeed-sort-order 'ascending))
 
 (use-package elfeed-org
   :demand :after elfeed
