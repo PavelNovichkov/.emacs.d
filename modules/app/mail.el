@@ -130,23 +130,12 @@
   (setq mu4e-headers-skip-duplicates nil)
   ;; Fancy chars.
   (setq mu4e-use-fancy-chars t)
-  ;; Stolen from Doom Emacs.
-  (setq mu4e-headers-has-child-prefix '("+" . " ")
-        mu4e-headers-empty-parent-prefix '("-" . " ")
-        mu4e-headers-first-child-prefix '("\\" . " ")
-        mu4e-headers-duplicate-prefix '("=" . " ")
-        mu4e-headers-default-prefix '("|" . " ")
-        mu4e-headers-draft-mark '("D" . " ")
-        mu4e-headers-flagged-mark '("F" . " ")
-        mu4e-headers-new-mark '("N" . " ")
-        mu4e-headers-passed-mark '("P" . " ")
-        mu4e-headers-replied-mark '("R" . " ")
-        mu4e-headers-seen-mark '("S" . " ")
-        mu4e-headers-trashed-mark '("T" . " ")
-        mu4e-headers-attach-mark '("a" . " ")
-        mu4e-headers-encrypted-mark '("x" . " ")
-        mu4e-headers-signed-mark '("s" . " ")
-        mu4e-headers-unread-mark '("u" . " ")))
+  (setq mu4e-headers-fields
+        '((:human-date . 12)
+          (:mailing-list . 16)
+          (:from . 30)
+          (:subject)))
+  )
 
 (use-package org-mu4e
   :straight nil ;; FIXME add dependency on external package.
