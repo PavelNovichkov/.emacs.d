@@ -21,6 +21,8 @@
   (setq
    ;; Don't include project name in the file name as it is very slow.
    doom-modeline-buffer-file-name-style 'file-name
+   ;; Make sure icon is displayed
+   doom-modeline-icon t
    doom-modeline-workspace-name nil))
 
 ;;; Posframe
