@@ -16,7 +16,10 @@
   (setq TeX-parse-self t
         TeX-auto-save t
         TeX-auto-local ".auctex-auto"
-        TeX-style-local ".auctex-style")
+        TeX-style-local ".auctex-style"
+        TeX-error-overview-open-after-TeX-run t)
+  (setq font-latex-fontify-script nil
+        font-latex-fontify-sectioning 'color)
   ;; Bindings.
   (local-leader-def
     :keymaps 'TeX-mode-map
