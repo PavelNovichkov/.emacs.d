@@ -123,7 +123,8 @@
     "ti" '(org-toggle-inline-images :which-key "images")
     "tl" '(org-toggle-link-display :which-key "links")
     "tt" '(org-latex-preview :which-key "latex")
-    "tT" '(org-toggle-time-stamp-overlays :which-key "timestamps"))
+    "tT" '(org-toggle-time-stamp-overlays :which-key "timestamps")
+    "'" '(org-edit-special :which-key "edit"))
   (general-define-key
    :states 'motion :keymaps 'org-agenda-mode-map
    "cq" '(counsel-org-tag-agenda :which-key "tags")))
@@ -185,7 +186,15 @@ Otherwise, use the original version of `server-visited-files'."
   :straight nil ;; part of evil-org
   :demand :after org-agenda
   :config
-  (evil-org-agenda-set-keys))
+  (evil-org-agenda-set-keys)
+  (general-unbind :states 'motion :keymaps 'org-agenda-mode-map "SPC")
+  (defun my/org-agenda-toggle-archives ()
+    "Toggle inclusion of archives in Org agenda."
+    (interactive)
+    (org-agenda-archives-mode t))
+  (local-leader-def
+    :keymaps 'org-agenda-mode-map
+    "a" '(my/org-agenda-toggle-archives :which-key "toggle archives")))
 
 ;;; Attachments
 
