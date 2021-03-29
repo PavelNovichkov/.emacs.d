@@ -103,8 +103,8 @@
   ;; LaTeX.
   (setq org-preview-latex-default-process 'dvisvgm
         org-preview-latex-image-directory ".ltximg/")
-  (setq org-latex-packages-alist '(("" "mathrsfs") ("" "dsfont") ("" "mathtools")))
-  (plist-put org-format-latex-options :scale 1.4)
+  (setq org-latex-packages-alist '(("" "mathrsfs") ("" "dsfont") ("" "mathtools") ("" "slashed")))
+  (plist-put org-format-latex-options :scale 1.6)
   (setq org-highlight-latex-and-related '(latex))
   ;; Bindings.
   (local-leader-def
