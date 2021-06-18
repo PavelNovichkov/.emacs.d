@@ -6,7 +6,7 @@
 (defconst leader-key-non-normal "M-m"
   "The leader prefix key for global commands in emacs and insert states.")
 
-(defconst local-leader-key "SPC m"
+(defconst local-leader-key "DEL"
   "The local leader prefix key for major mode specific commands.")
 
 (defconst local-leader-key-non-normal "M-,"
