@@ -1,6 +1,8 @@
 ;;; core-packages.el --- Packaging system setup -*- lexical-binding: t; -*-
 
 ;;; straight
+(setq straight-check-for-modifications nil)
+
 (defvar bootstrap-version)
 (let ((bootstrap-file
        (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
@@ -13,8 +15,6 @@
       (goto-char (point-max))
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
-
-(setq straight-check-for-modifications nil)
 
 (defun my/update-packages ()
   "Update packages and lockfile."
