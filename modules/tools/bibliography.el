@@ -49,7 +49,9 @@
 :END:
 "
         ;; do not prompt for pre- and post-notes for LaTeX citations
-        bibtex-completion-cite-prompt-for-optional-arguments nil)
+        bibtex-completion-cite-prompt-for-optional-arguments nil
+        ;; allow djvu files
+        bibtex-completion-pdf-extension '(".pdf" ".djvu"))
   ;; Add action for opening PDFs externally.
   (defun my/bibtex-completion-open-pdf-external (keys &optional fallback-action)
     (let ((bibtex-completion-pdf-open-function
