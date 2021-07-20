@@ -35,6 +35,16 @@
  bidi-paragraph-direction 'left-to-right
  )
 
+;; Auto-save.
+(setq auto-save-default t
+      auto-save-include-big-deletions t
+      ;; Store auto-save files in the var directory.
+      auto-save-file-name-transforms
+      `(("\\`/[^/]*:\\([^/]*/\\)*\\([^/]*\\)\\'"
+         ;; Prefix tramp autosave to prevent conflicts.
+         ,(no-littering-expand-var-file-name "auto-save/tramp-\\2") t)
+        (".*" ,(no-littering-expand-var-file-name "auto-save/") t)))
+
 ;; Wrap lines in all text buffers.
 (add-hook 'text-mode-hook #'visual-line-mode)
 
