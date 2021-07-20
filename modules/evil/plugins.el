@@ -31,6 +31,17 @@
       t))
   (add-hook 'my/escape-hook #'my/escape-evil-exchange))
 
+(use-package evil-numbers
+  :init
+  (general-define-key
+   :states '(normal visual)
+   "g=" #'evil-numbers/inc-at-pt
+   "g-" #'evil-numbers/dec-at-pt)
+  (general-define-key
+   :states 'visual
+   "g+" #'evil-numbers/inc-at-pt-incremental
+   "g_" #'evil-numbers/dec-at-pt-incremental))
+
 (use-package evil-owl
   :demand :after evil
   :config
