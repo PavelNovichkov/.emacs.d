@@ -5,5 +5,7 @@
   :config
   (setq modus-themes-completions 'opinionated
         modus-themes-diffs 'bg-only
-        modus-themes-region 'bg-only-no-extend)
+        modus-themes-lang-checkers '(text-also straight-underline)
+        modus-themes-region '(bg-only no-extend)
+        modus-themes-subtle-line-numbers t)
   (load-theme 'modus-operandi t))
