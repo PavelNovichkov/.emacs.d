@@ -252,8 +252,9 @@ Otherwise, use the original version of `server-visited-files'."
 ;;; Slip-box aka Zettelkasten
 
 (use-package org-roam
-  :commands (org-roam-insert org-roam-find-file org-roam)
+  :commands (org-roam-node-find org-roam-node-insert org-roam-capture)
   :init
+  (setq org-roam-v2-ack t)
   ;; Org-roam extends org-protocol, so lazy-load it.
   (with-eval-after-load 'org-protocol
     (require 'org-roam-protocol))
@@ -264,28 +265,26 @@ Otherwise, use the original version of `server-visited-files'."
   (provide 'org-ref)
   :config
   (setq org-roam-directory (expand-file-name "slip-box" org-directory)
-        org-roam-completion-system 'ivy
+        ;; treat only files as notes
+        org-roam-db-node-include-function #'org-before-first-heading-p
         org-roam-capture-templates
-        '(("d" "default" plain #'org-roam-capture--get-point
-           "%?"
-           :file-name "%<%Y%m%d%H%M%S>"
-           :head "#+TITLE: ${title}\n#+CREATED:  %U\n\n- tags :: \n"
-           :unnarrowed t
-           :immediate-finish)
-          ("t" "talk" plain #'org-roam-capture--get-point
-           "%?"
-           :file-name "talks/%<%Y%m%d%H%M%S>"
-           :head "#+TITLE: ${title}\n#+CREATED:  %U\n\n- tags :: \n- speaker :: \n"
-           :unnarrowed t
-           :immediate-finish))
+        '(("d" "default" plain "%?"
+           :if-new (file+head
+                    "%<%Y%m%d%H%M%S>"
+                    ":PROPERTIES:\n:CREATED:  %U\n:END:\n#+TITLE: ${title}\n\n- tags :: \n")
+           :unnarrowed t)
+          ("t" "talk" plain "%?"
+           :if-new (file+head
+                    "talks/%<%Y%m%d%H%M%S>"
+                    ":PROPERTIES:\n:CREATED:  %U\n:END:\n#+TITLE: ${title}\n\n- tags :: \n- speaker :: \n")
+           :unnarrowed t))
         org-roam-capture-ref-templates
-        '(("w" "web" plain #'org-roam-capture--get-point
-           "%?"
-           :file-name "web/%<%Y%m%d%H%M%S>"
-           :head "#+TITLE: ${title}\n#+ROAM_KEY: ${ref}\n#+CREATED:  %U\n\n- source :: ${ref}\n- tags :: \n"
-           :unnarrowed t
-           :immediate-finish)))
-  (org-roam-mode))
+        '(("w" "web" plain "%?"
+           :if-new (file+head
+                    "web/%<%Y%m%d%H%M%S>"
+                    ":PROPERTIES:\n:CREATED:  %U\n:END:\n#+TITLE: ${title}\n\n- tags :: \n")
+           :unnarrowed t)))
+  (org-roam-setup))
 
 ;;; Integration with Anki for spaced repetition
 
