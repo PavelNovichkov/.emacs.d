@@ -316,7 +316,8 @@ Otherwise, use the original version of `server-visited-files'."
   :config
   (setq alert-user-configuration
         '((((:category . "org-pomodoro")) libnotify nil)))
-  (setq org-pomodoro-audio-player "paplay"))
+  (setq org-pomodoro-audio-player "paplay"
+        org-pomodoro-long-break-frequency 10))
 
 (use-package org-mru-clock
   :config
