@@ -110,20 +110,24 @@
   (local-leader-def
     :keymaps 'org-mode-map
     "a" '(org-attach :which-key "attachments")
-    "d" '(org-deadline :which-key "deadline")
+    "d" '(:ignore t :which-key "date")
+    "da" '(org-time-stamp :which-key "active")
+    "dd" '(org-deadline :which-key "deadline")
+    "di" '(org-time-stamp-inactive :which-key "inactive")
+    "ds" '(org-schedule :which-key "schedule")
     "D" '(org-archive-subtree-default :which-key "archive subtree")
     "e" '(org-set-effort :which-key "effort")
     "f" '(counsel-org-file :which-key "browse file attachments")
     "l" '(org-insert-link :which-key "insert link")
     "q" '(counsel-org-tag :which-key "tags")
     "r" '(org-refile :which-key "refile")
-    "s" '(org-schedule :which-key "schedule")
+    "s" '(org-todo :which-key "todo state")
     "t" '(:ignore t :which-key "toggle")
+    "td" '(org-toggle-time-stamp-overlays :which-key "dates")
     "te" '(org-toggle-pretty-entities :which-key "entities")
     "ti" '(org-toggle-inline-images :which-key "images")
     "tl" '(org-toggle-link-display :which-key "links")
     "tt" '(org-latex-preview :which-key "latex")
-    "tT" '(org-toggle-time-stamp-overlays :which-key "timestamps")
     "'" '(org-edit-special :which-key "edit"))
   (general-define-key
    :states 'motion :keymaps 'org-agenda-mode-map
@@ -187,14 +191,17 @@ Otherwise, use the original version of `server-visited-files'."
   :demand :after org-agenda
   :config
   (evil-org-agenda-set-keys)
-  (general-unbind :states 'motion :keymaps 'org-agenda-mode-map "SPC")
+  (general-unbind :states 'motion :keymaps 'org-agenda-mode-map "SPC" "<delete>" "<backspace>")
+  (general-unbind :keymaps 'org-agenda-mode-map "SPC" "<delete>" "<backspace>")
   (defun my/org-agenda-toggle-archives ()
     "Toggle inclusion of archives in Org agenda."
     (interactive)
     (org-agenda-archives-mode t))
   (local-leader-def
     :keymaps 'org-agenda-mode-map
-    "a" '(my/org-agenda-toggle-archives :which-key "toggle archives")))
+    "t" '(:ignore t :which-key "toggle")
+    "ta" '(my/org-agenda-toggle-archives :which-key "archives")
+    "te" '(org-agenda-entry-text-mode :which-key "entry text")))
 
 ;;; Attachments
 
