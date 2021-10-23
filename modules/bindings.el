@@ -21,6 +21,8 @@ is already narrowed."
                            (region-end)))
         ((derived-mode-p 'org-mode)
          (cond ((ignore-errors (org-edit-src-code) t))
+               ((ignore-errors (org-edit-latex-environment) t))
+               ((ignore-errors (org-edit-latex-fragment) t))
                ((ignore-errors (org-narrow-to-block) t))
                (t (org-narrow-to-subtree))))
         ((derived-mode-p 'latex-mode)
