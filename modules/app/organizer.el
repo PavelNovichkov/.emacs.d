@@ -356,3 +356,11 @@ Otherwise, use the original version of `server-visited-files'."
     "tv" '(valign-mode :which-key "vertical align"))
   :config
   (setq valign-fancy-bar t))
+
+;;; Beautifying
+
+(use-package org-superstar
+  :hook (org-mode . org-superstar-mode)
+  :config
+  (setq org-superstar-prettify-item-bullets t
+        org-superstar-item-bullet-alist '((?+ . ?➤) (?- . ?•))))
