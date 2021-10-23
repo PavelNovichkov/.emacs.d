@@ -21,6 +21,7 @@
                        "ui/evil-goggles"
                        "ui/hl-todo"
                        "ui/ivy-rich"
+                       "ui/olivetti"
                        "app/irc"
                        "app/ledger"
                        "app/mail"

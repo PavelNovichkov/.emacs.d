@@ -221,6 +221,7 @@ no other windows are present."
   "tl" '(toggle-tab-bar-mode-from-frame :which-key "layouts")
   "tn" '(display-line-numbers-mode :which-key "line numbers")
   "tm" '(toggle-frame-maximized :which-key "maximize")
+  "to" '(olivetti-mode :which-key "olivetti")
   "tt" '(toggle-truncate-lines :which-key "truncate lines")
   "tT" '(counsel-load-theme :which-key "theme")
 
