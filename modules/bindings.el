@@ -215,17 +215,21 @@ no other windows are present."
   "p&" '(projectile-run-async-shell-command-in-root :which-key "run async shell command")
 
   "q" '(:ignore t :which-key "quit")
-  "qq" '(evil-save-and-quit :which-key "save and quit")
+  "qf" '(save-buffers-kill-terminal :which-key "close frame")
+  "qq" '(save-buffers-kill-emacs :which-key "quit Emacs")
 
   "t" '(:ignore t :which-key "toggle")
   "tc" '(display-fill-column-indicator-mode :which-key "fill column")
   "tf" '(toggle-frame-fullscreen :which-key "fullscreen")
+  "th" '(hl-line-mode :which-key "highlight line")
   "tl" '(toggle-tab-bar-mode-from-frame :which-key "layouts")
-  "tn" '(display-line-numbers-mode :which-key "line numbers")
   "tm" '(toggle-frame-maximized :which-key "maximize")
+  "tn" '(display-line-numbers-mode :which-key "line numbers")
   "to" '(olivetti-mode :which-key "olivetti")
   "tt" '(toggle-truncate-lines :which-key "truncate lines")
   "tT" '(counsel-load-theme :which-key "theme")
+  "tv" '(variable-pitch-mode :which-key "variable pitch")
+  "tw" '(whitespace-mode :which-key "whitespace")
 
   "w" '(:ignore t :which-key "window")
   "wd" '(delete-window :which-key "delete")
