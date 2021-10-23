@@ -253,6 +253,13 @@ no other windows are present."
  :keymaps 'key-translation-map
  "C-h" "DEL")
 
+;; OS-wide shortcuts.
+(general-define-key
+ :keymaps 'override
+ "C-s" #'save-buffer
+ (kbd "C-<next>") #'tab-bar-switch-to-next-tab
+ (kbd "C-<prior>") #'tab-bar-switch-to-prev-tab)
+
 (defun my/evil-paste-last-yanked ()
   "Paste last yanked text from register 0."
   (interactive)
