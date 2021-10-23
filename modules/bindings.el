@@ -261,9 +261,9 @@ no other windows are present."
  (kbd "C-<prior>") #'tab-bar-switch-to-prev-tab)
 
 (defun my/evil-paste-last-yanked ()
-  "Paste last yanked text from register 0."
+  "Paste last yanked text from register \"."
   (interactive)
-  (evil-paste-from-register ?0))
+  (evil-paste-from-register ?\"))
 
 (general-define-key
  :states 'insert
