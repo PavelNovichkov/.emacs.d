@@ -241,7 +241,7 @@ Otherwise, use the original version of `server-visited-files'."
 (use-package org-fancy-priorities
   :hook (org-mode . org-fancy-priorities-mode)
   :config
-  (setq org-fancy-priorities-list '("HIGH" "MID " "LOW "))
+  (setq org-fancy-priorities-list '("🄰" "🄱" "🄲"))
   ;; A hack to make priority face in agenda the same as in org files
   ;; themselves.
   (setq org-priority-faces '((?A . (error org-priority))
