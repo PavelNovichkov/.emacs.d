@@ -15,6 +15,7 @@
                        "emacs/tramp"
                        "emacs/winner"
                        "lang/latex"
+                       "lang/cc"
                        "layouts"
                        "projects"
                        "ui/evil-goggles"
