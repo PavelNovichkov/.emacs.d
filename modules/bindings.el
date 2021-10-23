@@ -270,6 +270,11 @@ no other windows are present."
  "C-n" #'company-complete
  "C-v" #'my/evil-paste-last-yanked)
 
+(general-define-key
+ :states '(motion normal)
+ :keymaps 'override
+ "C-j" #'evil-avy-goto-word-1)
+
 ;;; Evil collection
 
 (use-package evil-collection
