@@ -26,6 +26,9 @@
   ;; Send mail with smtpmail.
   (setq message-send-mail-function 'smtpmail-send-it)
   (setq message-kill-buffer-on-exit t)
+  ;; Include date when citing messages.
+  (setq message-citation-line-function #'message-insert-formatted-citation-line
+        message-citation-line-format "%f writes on %Y-%m-%d:\n")
   ;; Don't reply to myself.
   (setq mu4e-compose-dont-reply-to-self t)
   ;; Don't insert signature by default.
