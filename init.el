@@ -3,6 +3,7 @@
 (require 'core (concat user-emacs-directory "core/core"))
 
 (dolist (module-name '("secrets"
+                       "ui/frame"
                        "ui/color-theme"
                        "evil/plugins"
                        "emacs/dired"
