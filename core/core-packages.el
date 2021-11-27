@@ -27,6 +27,15 @@
   (straight-rebuild-all)
   (straight-freeze-versions))
 
+(defun my/revert-packages ()
+  "Revert packages to previous version."
+  (interactive)
+  (let ((lockfile (straight--versions-file "default.el"))
+        (backup-lockfile (straight--versions-file "backup.el")))
+    (copy-file backup-lockfile lockfile t))
+  (straight-thaw-versions)
+  (straight-rebuild-all))
+
 ;;; use-package
 (straight-use-package 'use-package)
 
