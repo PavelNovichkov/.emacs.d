@@ -1,6 +1,6 @@
 ;;; init.el --- Emacs startup file -*- lexical-binding: t; -*-
 
-(require 'core (concat user-emacs-directory "core/core"))
+(load (concat user-emacs-directory "core/core") nil t)
 
 (dolist (module-name '("secrets"
                        "ui/frame"

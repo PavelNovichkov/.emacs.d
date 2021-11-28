@@ -18,12 +18,10 @@
 
 ;;; Load core modules.
 
-(require 'core-packages (concat user-emacs-directory "core/core-packages.el"))
-(require 'core-keybindings (concat user-emacs-directory "core/core-keybindings.el"))
-(require 'core-emacs (concat user-emacs-directory "core/core-emacs.el"))
-(require 'core-evil (concat user-emacs-directory "core/core-evil.el"))
-(require 'core-completion (concat user-emacs-directory "core/core-completion.el"))
-(require 'core-ui (concat user-emacs-directory "core/core-ui.el"))
-
-(provide 'core)
-;;; core.el ends here
+(dolist (module-name '("core-packages"
+                       "core-keybindings"
+                       "core-emacs"
+                       "core-evil"
+                       "core-completion"
+                       "core-ui"))
+  (load (concat user-emacs-directory "core/" module-name) nil t))

@@ -108,6 +108,3 @@
 ;;; Yasnippet
 
 (use-package yasnippet)
-
-(provide 'core-completion)
-;;; core-completion.el ends here

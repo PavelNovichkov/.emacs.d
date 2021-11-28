@@ -53,6 +53,3 @@
   :demand
   :config
   (setq custom-file (no-littering-expand-etc-file-name "custom.el")))
-
-(provide 'core-packages)
-;;; core-packages.el ends here

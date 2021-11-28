@@ -62,6 +62,3 @@
 (use-package undo-fu
   :config
   (general-define-key [remap undo] #'undo-fu-only-undo))
-
-(provide 'core-emacs)
-;;; core-emacs.el ends here

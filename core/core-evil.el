@@ -38,6 +38,3 @@
         (evil-ex-nohighlight)
         t))
   (add-hook 'my/escape-hook #'my/disable-ex-highlights))
-
-(provide 'core-evil)
-;;; core-evil.el ends here

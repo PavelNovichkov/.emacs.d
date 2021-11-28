@@ -58,6 +58,3 @@
         ((keyboard-quit))))
 
 (general-define-key [remap keyboard-quit] #'my/escape)
-
-(provide 'core-keybindings)
-;;; core-keybindings.el ends here
