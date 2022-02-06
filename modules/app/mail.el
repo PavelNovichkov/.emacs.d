@@ -49,6 +49,8 @@
               :action (lambda (docid msg target)
                         (mu4e~proc-move docid (mu4e~mark-check-target target) "-N"))))
   (setq mu4e-contexts (--map (apply 'make-mu4e-context it) my/mail-contexts))
+  (setq mu4e-context-policy 'pick-first
+        mu4e-compose-context-policy 'always-ask)
   ;; No auto-fill when composing a message.
   (add-hook 'mu4e-compose-mode-hook #'turn-off-auto-fill)
   ;; Turn on word wrap when viewing a message.
