@@ -48,57 +48,7 @@
               ;; No +T before -N so the message is not marked as IMAP-deleted:
               :action (lambda (docid msg target)
                         (mu4e~proc-move docid (mu4e~mark-check-target target) "-N"))))
-  (setq mu4e-contexts
-        `( ,(make-mu4e-context
-             :name "personal"
-             :match-func
-             (lambda (msg)
-               (when msg (string-prefix-p "/yandex" (mu4e-message-field msg :maildir))))
-             :vars
-             `((mu4e-sent-folder . "/yandex/Sent")
-               (mu4e-drafts-folder . "/yandex/Drafts")
-               (mu4e-trash-folder . "/yandex/Trash")
-               (mu4e-refile-folder . "/yandex/Archive")
-               (user-full-name . ,yandex-user-full-name)
-               (user-mail-address . ,yandex-user-mail-address)
-               (smtpmail-default-smtp-server . "smtp.yandex.com")
-               (smtpmail-local-domain . "yandex.com")
-               (smtpmail-smtp-server . "smtp.yandex.com")
-               (smtpmail-stream-type . starttls)
-               (smtpmail-auth-credentials . (expand-file-name "~/.authinfo.gpg"))
-               (smtpmail-smtp-service . 25)
-               (mu4e-sent-messages-behavior . sent)
-               (mu4e-maildir-shortcuts . (("/yandex/Inbox" . ?i)
-                                          ("/yandex/Sent" . ?s)
-                                          ("/yandex/Drafts" . ?d)
-                                          ("/yandex/Trash" . ?t)
-                                          ("/yandex/Archive" . ?a)))))
-           ,(make-mu4e-context
-             :name "work"
-             :match-func
-             (lambda (msg)
-               (when msg (string-prefix-p "/sissa" (mu4e-message-field msg :maildir))))
-             :vars
-             `((mu4e-sent-folder . "/sissa/Sent")
-               (mu4e-drafts-folder . "/sissa/Drafts")
-               (mu4e-trash-folder . "/sissa/Trash")
-               (mu4e-refile-folder . "/sissa/Archives/2021")
-               (user-full-name . ,sissa-user-full-name)
-               (user-mail-address . ,sissa-user-mail-address)
-               (smtpmail-default-smtp-server . "smtp.sissa.it")
-               (smtpmail-local-domain . "sissa.it")
-               (smtpmail-smtp-server . "smtp.sissa.it")
-               (smtpmail-stream-type . starttls)
-               (smtpmail-auth-credentials . (expand-file-name "~/.authinfo.gpg"))
-               (smtpmail-smtp-service . 587)
-               (mu4e-sent-messages-behavior . sent)
-               (mu4e-maildir-shortcuts . (("/sissa/Inbox" . ?i)
-                                          ("/sissa/Sent" . ?s)
-                                          ("/sissa/Drafts" . ?d)
-                                          ("/sissa/Trash" . ?t)
-                                          ("/sissa/Archives/2021" . ?a)
-                                          ("/sissa/Junk" . ?j)))))))
-  (setq mu4e-context-policy 'pick-first)
+  (setq mu4e-contexts (--map (apply 'make-mu4e-context it) my/mail-contexts))
   ;; No auto-fill when composing a message.
   (add-hook 'mu4e-compose-mode-hook #'turn-off-auto-fill)
   ;; Turn on word wrap when viewing a message.
