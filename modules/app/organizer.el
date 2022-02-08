@@ -277,18 +277,18 @@ Otherwise, use the original version of `server-visited-files'."
         org-roam-capture-templates
         '(("d" "default" plain "%?"
            :if-new (file+head
-                    "%<%Y%m%d%H%M%S>"
+                    "%<%Y%m%d%H%M%S>.org"
                     ":PROPERTIES:\n:CREATED:  %U\n:END:\n#+TITLE: ${title}\n\n- tags :: \n")
            :unnarrowed t)
           ("t" "talk" plain "%?"
            :if-new (file+head
-                    "talks/%<%Y%m%d%H%M%S>"
+                    "talks/%<%Y%m%d%H%M%S>.org"
                     ":PROPERTIES:\n:CREATED:  %U\n:END:\n#+TITLE: ${title}\n\n- tags :: \n- speaker :: \n")
            :unnarrowed t))
         org-roam-capture-ref-templates
         '(("w" "web" plain "%?"
            :if-new (file+head
-                    "web/%<%Y%m%d%H%M%S>"
+                    "web/%<%Y%m%d%H%M%S>.org"
                     ":PROPERTIES:\n:CREATED:  %U\n:END:\n#+TITLE: ${title}\n\n- tags :: \n")
            :unnarrowed t)))
   (org-roam-setup))
