@@ -57,11 +57,10 @@
 
 (use-package server ; built-in
   :straight nil
-  :if (display-graphic-p)
-  :defer 1
+  :demand
   :config
-  (unless (server-running-p)
-    (server-start)))
+  ;; Open files in a new tab.
+  (setq server-window #'switch-to-buffer-other-tab))
 
 (use-package undo-fu
   :config
