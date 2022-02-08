@@ -70,7 +70,11 @@
         '(("cfr" "Insert \\cfrac{}{}"
            "\\cfrac{?}{}" cdlatex-position-cursor nil nil t)
           ("dfr" "Insert \\dfrac{}{}"
-           "\\dfrac{?}{}" cdlatex-position-cursor nil nil t)))
+           "\\dfrac{?}{}" cdlatex-position-cursor nil nil t)
+          ("xl" "Insert \\xleftarrow{}"
+           "\\xleftarrow{?}" cdlatex-position-cursor nil nil t)
+          ("xr" "Insert \\xrightarrow{}"
+           "\\xrightarrow{?}" cdlatex-position-cursor nil nil t)))
   (setq cdlatex-math-modify-alist
         '(( ?s "\\mathscr" nil t nil nil )
           ( ?t "\\text" nil t nil nil )
