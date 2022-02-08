@@ -39,8 +39,10 @@
         bibtex-completion-notes-path my/bibliography-notes 
         ;; notes template
         bibtex-completion-notes-template-multiple-files
-        "#+TITLE: ${author-or-editor} - ${title}
-#+ROAM_KEY: cite:${=key=}
+        ":PROPERTIES:
+:ROAM_REFS: cite:${=key=}
+:END:
+#+TITLE: ${author-or-editor} - ${title}
 #+CREATED:  %U
 
 * Notes
@@ -52,6 +54,13 @@
         bibtex-completion-cite-prompt-for-optional-arguments nil
         ;; allow djvu files
         bibtex-completion-pdf-extension '(".pdf" ".djvu"))
+  ;; FIXME: rewrite with org-roam-capture-
+  (defun my/org-roam-add-id ()
+    "Add ID to an org roam node."
+    (interactive)
+    (org-id-get-create)
+    (org-roam-update-org-id-locations)
+    (org-roam-db-sync))
   ;; Add action for opening PDFs externally.
   (defun my/bibtex-completion-open-pdf-external (keys &optional fallback-action)
     (let ((bibtex-completion-pdf-open-function
