@@ -176,15 +176,11 @@ Otherwise, use the original version of `server-visited-files'."
 
 (use-package evil-org
   :hook (org-mode . evil-org-mode)
+  :init
+  (setq evil-org-key-theme '(insert textobjects additional calendar))
   :config
-  (setq-default evil-org-key-theme '(insert textobjects additional calendar))
-  ;; TODO: rewrite.
-  (add-hook 'evil-org-mode-hook
-            (lambda ()
-              (evil-org-set-key-theme)
-              (evil-define-key 'normal evil-org-mode-map
-                (kbd "<M-return>") (evil-org-define-eol-command
-                                    org-meta-return)))))
+  (evil-org-set-key-theme)
+  (evil-normalize-keymaps))
 
 (use-package evil-org-agenda
   :straight nil ;; part of evil-org
