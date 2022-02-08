@@ -134,10 +134,7 @@ no other windows are present."
   "br" '(revert-buffer :which-key "revert")
   "bs" '(ivy-switch-buffer :which-key "switch")
 
-  "d" '(:ignore t :which-key "dictionary")
-  "dd" '(lexic-search :which-key "meaning")
-  "ds" '(powerthesaurus-lookup-word :which-key "synonyms")
-  "dt" '(google-translate-smooth-translate :which-key "translate")
+  "d" '(dictionary-search :which-key "dictionary")
 
   "f" '(:ignore t :which-key "file")
   "fa" '(find-alternate-file :which-key "find alternate")
