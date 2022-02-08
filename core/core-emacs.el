@@ -35,6 +35,8 @@
  ;; disable bidirectional editing
  bidi-inhibit-bpa t
  bidi-paragraph-direction 'left-to-right
+ ;; no backups
+ make-backup-files nil
  )
 
 ;; Auto-save.
