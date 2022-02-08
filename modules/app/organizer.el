@@ -6,7 +6,7 @@
 (use-package org
   :straight (:host github
              :repo "emacs-straight/org-mode"
-             :branch "maint" ;; use latest stable version
+             :branch "bugfix" ;; use latest stable version
              :local-repo "org"
              :files ("*.el" "lisp/*.el" "contrib/lisp/*.el"))
   :bind (:map org-mode-map
