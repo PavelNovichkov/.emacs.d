@@ -256,6 +256,7 @@ no other windows are present."
 ;; OS-wide shortcuts.
 (general-define-key
  :keymaps 'override
+ "C-a" #'mark-whole-buffer
  "C-s" #'save-buffer
  (kbd "C-<next>") #'tab-bar-switch-to-next-tab
  (kbd "C-<prior>") #'tab-bar-switch-to-prev-tab)
