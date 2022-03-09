@@ -74,9 +74,31 @@
           ("xl" "Insert \\xleftarrow{}"
            "\\xleftarrow{?}" cdlatex-position-cursor nil nil t)
           ("xr" "Insert \\xrightarrow{}"
-           "\\xrightarrow{?}" cdlatex-position-cursor nil nil t)))
+           "\\xrightarrow{?}" cdlatex-position-cursor nil nil t)
+          ("la" "Insert left angle spinor"
+           "\\langle ? \\rvert" cdlatex-position-cursor nil nil t)
+          ("La" "Insert dynamically-sized left angle spinor"
+           "\\left\\langle ? \\right\\rvert" cdlatex-position-cursor nil nil t)
+          ("ls" "Insert left square spinor"
+           "[ ? \\rvert" cdlatex-position-cursor nil nil t)
+          ("Ls" "Insert dynamically-sized left square spinor"
+           "\\left[ ? \\right\\rvert" cdlatex-position-cursor nil nil t)
+          ("ra" "Insert right angle spinor"
+           "\\lvert ? \\rangle" cdlatex-position-cursor nil nil t)
+          ("Ra" "Insert dynamically-sized right angle spinor"
+           "\\left\\lvert ? \\right\\rangle" cdlatex-position-cursor nil nil t)
+          ("rs" "Insert right square spinor"
+           "\\lvert ? ]" cdlatex-position-cursor nil nil t)
+          ("Rs" "Insert dynamically-sized right square spinor"
+           "\\left\\lvert ? \\right]" cdlatex-position-cursor nil nil t)
+          ("lra" "Insert angle spinor bracket"
+           "\\langle ? \\rangle" cdlatex-position-cursor nil nil t)
+          ("lrs" "Insert square spinor bracket"
+           "[ ? ]" cdlatex-position-cursor nil nil t)))
   (setq cdlatex-math-modify-alist
-        '(( ?s "\\mathscr" nil t nil nil )
+        '(( ?b "\\bm" nil t nil nil )
+          ( ?B "\\mathbf" nil t nil nil )
+          ( ?s "\\mathscr" nil t nil nil )
           ( ?t "\\text" nil t nil nil )
           ( ?= "\\mathbb" nil t nil nil )
           ( ?/ "\\slashed" nil t nil nil )))
