@@ -64,6 +64,15 @@
   ;; Open files in a new tab.
   (setq server-window #'switch-to-buffer-other-tab))
 
+;; Save minibuffer history across sessions.
+(use-package savehist ; built-in
+  :straight nil
+  :demand
+  :config
+  (setq history-length 10
+        savehist-autosave-interval nil)
+  (savehist-mode))
+
 (use-package undo-fu
   :config
   (general-define-key [remap undo] #'undo-fu-only-undo))
