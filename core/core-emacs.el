@@ -18,6 +18,8 @@
  ;; no bells
  ring-bell-function #'ignore
  visible-bell nil
+ ;; no dialog boxes
+ use-dialog-box nil
  ;; scrolling
  hscroll-step 1
  scroll-conservatively 101
