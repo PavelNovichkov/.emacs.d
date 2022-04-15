@@ -24,6 +24,7 @@
                        "ui/hl-todo"
                        "ui/ivy-rich"
                        "ui/olivetti"
+                       "ui/pulsar"
                        "app/irc"
                        "app/ledger"
                        "app/mail"
