@@ -35,9 +35,9 @@
                        "tools/bibliography"
                        "tools/dictionary"
                        "tools/link-hint"
-                       "tools/magit"
                        "tools/pdf"
                        "tools/spellcheck"
                        "tools/tldr"
+                       "tools/vcs"
                        "bindings"))
   (load (concat user-emacs-directory "modules/" module-name) nil t))
