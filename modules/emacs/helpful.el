@@ -7,5 +7,6 @@
              helpful-symbol
              helpful-variable)
   :config
-  (setq counsel-describe-function-function #'helpful-callable
-        counsel-describe-variable-function #'helpful-variable))
+  ;; (setq counsel-describe-function-function #'helpful-callable
+  ;;       counsel-describe-variable-function #'helpful-variable)
+  )

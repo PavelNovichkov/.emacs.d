@@ -8,6 +8,7 @@
   (expand-file-name "~/org/slip-box/literature"))
 
 (use-package ivy-bibtex
+  :disabled
   :after ivy
   :commands (ivy-bibtex my/org-cite-open)
   :init

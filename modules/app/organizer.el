@@ -117,9 +117,9 @@
     "ds" '(org-schedule :which-key "schedule")
     "D" '(org-archive-subtree-default :which-key "archive subtree")
     "e" '(org-set-effort :which-key "effort")
-    "f" '(counsel-org-file :which-key "browse file attachments")
+    ;; "f" '(counsel-org-file :which-key "browse file attachments")
     "l" '(org-insert-link :which-key "insert link")
-    "q" '(counsel-org-tag :which-key "tags")
+    ;; "q" '(counsel-org-tag :which-key "tags")
     "r" '(org-refile :which-key "refile")
     "s" '(org-todo :which-key "todo state")
     "t" '(:ignore t :which-key "toggle")
@@ -129,9 +129,10 @@
     "tl" '(org-toggle-link-display :which-key "links")
     "tt" '(org-latex-preview :which-key "latex")
     "'" '(org-edit-special :which-key "edit"))
-  (general-define-key
-   :states 'motion :keymaps 'org-agenda-mode-map
-   "cq" '(counsel-org-tag-agenda :which-key "tags")))
+  ;; (general-define-key
+  ;;  :states 'motion :keymaps 'org-agenda-mode-map
+  ;;  "cq" '(counsel-org-tag-agenda :which-key "tags"))
+  )
 
 (use-package org-capture
   :straight nil ;; part of org
@@ -331,16 +332,16 @@ Otherwise, use the original version of `server-visited-files'."
   (defun my/org-mru-clock--extend-pomodoro (task)
     "Extend the last pomodoro ignoring the given TASK."
     (org-pomodoro-extend-last-clock))
-  (setq org-mru-clock-completing-read #'ivy-completing-read
-        org-mru-clock-keep-formatting t
+  (setq org-mru-clock-keep-formatting t
         org-mru-clock-how-many 5
         org-mru-clock-files #'my/org-clock-files
         org-mru-clock-predicate #'my/org-entry-is-next-p)
-  (ivy-add-actions 'org-mru-clock-in
-                    '(("p" my/org-mru-clock--pomodoro "start/stop a pomodoro")
-                      ("x" my/org-mru-clock--extend-pomodoro "extend last pomodoro")))
+  ;; (ivy-add-actions 'org-mru-clock-in
+  ;;                   '(("p" my/org-mru-clock--pomodoro "start/stop a pomodoro")
+  ;;                     ("x" my/org-mru-clock--extend-pomodoro "extend last pomodoro")))
   ;; Use default sorting instead of prescient.
-  (cl-pushnew #'org-mru-clock-in (cdr ivy-prescient-sort-commands)))
+  ;; (cl-pushnew #'org-mru-clock-in (cdr ivy-prescient-sort-commands))
+  )
 
 ;;; Table alignment
 

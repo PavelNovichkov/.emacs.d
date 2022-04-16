@@ -3,6 +3,7 @@
 ;;; Ivy
 
 (use-package ivy
+  :disabled
   :demand
   :bind (:map ivy-minibuffer-map
               ("C-j" . ivy-immediate-done)
@@ -24,11 +25,13 @@
   (ivy-mode 1))
 
 (use-package ivy-hydra
+  :disabled
   :demand :after ivy
   :config
   (setq ivy-read-action-function #'ivy-hydra-read-action))
 
 (use-package counsel
+  :disabled
   :config
   (setq counsel-find-file-ignore-regexp
         (concat
@@ -43,6 +46,7 @@
   (prescient-persist-mode))
 
 (use-package ivy-prescient
+  :disabled
   ;; Should be loaded after counsel according to the docs.
   :demand :after counsel
   :config
@@ -54,7 +58,8 @@
                ivy-bibtex))
   (ivy-prescient-mode))
 
-(use-package swiper)
+(use-package swiper
+  :disabled)
 
 (use-package ivy-posframe
   :demand :if window-system

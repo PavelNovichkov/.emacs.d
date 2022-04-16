@@ -107,14 +107,14 @@ no other windows are present."
 (leader-def
   "n" '(my/narrow-or-widen-dwim :which-key "narrow")
   "u" '(my/universal-argument :which-key "universal argument")
-  "x" '(counsel-M-x :which-key "M-x")
+  ;; "x" '(counsel-M-x :which-key "M-x")
   "." '(repeat :which-key "repeat")
-  "/" '(swiper :which-key "swiper")
-  "?" '(swiper-isearch :which-key "swiper")
-  "SPC" '(ivy-resume :which-key "repeat ivy query")
+  ;; "/" '(swiper :which-key "swiper")
+  ;; "?" '(swiper-isearch :which-key "swiper")
+  ;; "SPC" '(ivy-resume :which-key "repeat ivy query")
 
   "a" '(:ignore t :which-key "application")
-  "ab" '(ivy-bibtex :which-key "bibliography")
+  ;; "ab" '(ivy-bibtex :which-key "bibliography")
   "ag" '(magit-status :which-key "git")
   "am" '(mu4e :which-key "mail")
   "ap" '(my/system-packages/body :which-key "system packages")
@@ -130,33 +130,33 @@ no other windows are present."
   "bn" '(evil-buffer-new :which-key "new")
   "bo" '(:ignore t :which-key "other window")
   "boc" '(clone-indirect-buffer-other-window :which-key "clone")
-  "bos" '(ivy-switch-buffer-other-window :which-key "switch")
+  ;; "bos" '(ivy-switch-buffer-other-window :which-key "switch")
   "br" '(revert-buffer :which-key "revert")
-  "bs" '(ivy-switch-buffer :which-key "switch")
+  ;; "bs" '(ivy-switch-buffer :which-key "switch")
 
   "d" '(dictionary-search :which-key "dictionary")
 
   "f" '(:ignore t :which-key "file")
   "fa" '(find-alternate-file :which-key "find alternate")
   "fD" '(my/delete-file-and-buffer :which-key "delete")
-  "ff" '(counsel-find-file :which-key "find")
-  "fl" '(counsel-find-library :which-key "find library")
+  ;; "ff" '(counsel-find-file :which-key "find")
+  ;; "fl" '(counsel-find-library :which-key "find library")
   "fo" '(:ignore t :which-key "other window")
   "foa" '(find-alternate-file-other-window :which-key "find alternate")
   "fof" '(find-file-other-window :which-key "find")
   "fol" '(find-library-other-window :which-key "find library")
   "fR" '(my/rename-file-and-buffer :which-key "rename")
-  "fr" '(counsel-recentf :which-key "recent")
+  ;; "fr" '(counsel-recentf :which-key "recent")
   "fs" '(save-buffer :which-key "save")
   "fw" '(write-file :which-key "write")
-  "f/" '(counsel-fzf :which-key "search")
+  ;; "f/" '(counsel-fzf :which-key "search")
 
   "g" '(:ignore t :which-key "go")
-  "gb" '(counsel-bookmark :which-key "bookmark")
+  ;; "gb" '(counsel-bookmark :which-key "bookmark")
   "gg" '(evil-avy-goto-char-timer :which-key "string")
-  "gi" '(counsel-imenu :which-key "imenu")
+  ;; "gi" '(counsel-imenu :which-key "imenu")
   "gl" '(link-hint-open-link :which-key "link")
-  "go" '(counsel-outline :which-key "outline")
+  ;; "go" '(counsel-outline :which-key "outline")
   "gw" '(evil-avy-goto-word-1 :which-key "word")
 
   "h" '(:keymap help-map :which-key "help")
@@ -171,10 +171,10 @@ no other windows are present."
   ;; This option does not show which-key descriptions correctly:
   ;; "ic" '(:keymap iso-transl-ctl-x-8-map :package iso-transl :which-key "compose")
   "ic" `(,(general-simulate-key "C-x 8") :which-key "compose")
-  "ik" '(counsel-yank-pop :which-key "kill ring")
-  "io" '(counsel-org-entity :which-key "org entity")
-  "ir" '(counsel-evil-registers :which-key "registers")
-  "iu" '(counsel-unicode-char :which-key "unicode")
+  ;; "ik" '(counsel-yank-pop :which-key "kill ring")
+  ;; "io" '(counsel-org-entity :which-key "org entity")
+  ;; "ir" '(counsel-evil-registers :which-key "registers")
+  ;; "iu" '(counsel-unicode-char :which-key "unicode")
 
   "l" '(:ignore t :which-key "layout")
   "ld" '(tab-bar-close-tab :which-key "delete")
@@ -193,7 +193,7 @@ no other windows are present."
   "oa" '(org-agenda :which-key "agenda")
   "oc" '(org-capture :which-key "capture")
   "og" '(org-password-manager-generate-password :which-key "generate password")
-  "oh" '(counsel-org-agenda-headlines :which-key "go to headline")
+  ;; "oh" '(counsel-org-agenda-headlines :which-key "go to headline")
   "ol" '(org-store-link :which-key "store link")
   "op" '(org-password-manager-get-password :which-key "get password")
   "ot" '(org-mru-clock-in :which-key "timer")
@@ -202,12 +202,12 @@ no other windows are present."
   "p" '(:ignore t :which-key "project")
   "pb" '(projectile-ibuffer :which-key "list buffers")
   "pc" '(projectile-compile-project :which-key "compile")
-  "pd" '(counsel-projectile-find-dir :which-key "find directory")
-  "pf" '(counsel-projectile-find-file :which-key "find file")
+  ;; "pd" '(counsel-projectile-find-dir :which-key "find directory")
+  ;; "pf" '(counsel-projectile-find-file :which-key "find file")
   "pI" '(projectile-invalidate-cache :which-key "invalidate cache")
   "pk" '(projectile-kill-buffers :which-key "kill")
-  "ps" '(counsel-projectile-switch-project :which-key "switch")
-  "p/" '(counsel-projectile-ag :which-key "search")
+  ;; "ps" '(counsel-projectile-switch-project :which-key "switch")
+  ;; "p/" '(counsel-projectile-ag :which-key "search")
   "p!" '(projectile-run-shell-command-in-root :which-key "run shell command")
   "p&" '(projectile-run-async-shell-command-in-root :which-key "run async shell command")
 
@@ -224,7 +224,7 @@ no other windows are present."
   "tn" '(display-line-numbers-mode :which-key "line numbers")
   "to" '(olivetti-mode :which-key "olivetti")
   "tt" '(toggle-truncate-lines :which-key "truncate lines")
-  "tT" '(counsel-load-theme :which-key "theme")
+  ;; "tT" '(counsel-load-theme :which-key "theme")
   "tv" '(variable-pitch-mode :which-key "variable pitch")
   "tw" '(whitespace-mode :which-key "whitespace")
 
@@ -286,15 +286,15 @@ no other windows are present."
   (evil-collection-init))
 
 ;; Setup ivy for evil states in minibuffer.
-(general-define-key
- :states 'insert
- :keymaps 'ivy-minibuffer-map
- "DEL" #'ivy-backward-delete-char
- "C-r" #'evil-paste-from-register
- "C-o" #'hydra-ivy/body)
+;; (general-define-key
+;;  :states 'insert
+;;  :keymaps 'ivy-minibuffer-map
+;;  "DEL" #'ivy-backward-delete-char
+;;  "C-r" #'evil-paste-from-register
+;;  "C-o" #'hydra-ivy/body)
 
-(general-define-key
- :states 'normal
- :keymaps 'ivy-minibuffer-map
- "/" #'ivy-reverse-i-search
- "?" #'ivy-reverse-i-search)
+;; (general-define-key
+;;  :states 'normal
+;;  :keymaps 'ivy-minibuffer-map
+;;  "/" #'ivy-reverse-i-search
+;;  "?" #'ivy-reverse-i-search)
