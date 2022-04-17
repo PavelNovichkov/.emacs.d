@@ -17,6 +17,15 @@
   :demand :after vertico
   :hook (minibuffer-setup . vertico-repeat-save))
 
+;;; Orderless (completion matching style)
+
+(use-package orderless
+  :demand
+  :custom
+  (completion-styles '(orderless basic))
+  (completion-category-overrides '((file (styles basic partial-completion))))
+  (orderless-matching-styles '(orderless-literal orderless-regexp orderless-initialism)))
+
 ;;; Ivy
 
 (use-package ivy
