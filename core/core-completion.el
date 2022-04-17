@@ -33,6 +33,23 @@
   :custom
   (marginalia-mode t))
 
+;;; Embark (completion actions and more)
+
+(use-package embark
+  :init
+  (general-define-key
+   :states '(insert motion normal emacs)
+   :keymaps 'override
+   "C-." #'embark-act
+   "M-." #'embark-dwim)
+  (general-define-key
+   :states '(insert normal emacs)
+   :keymaps 'vertico-map
+   "C-b" #'embark-become
+   "C-e" #'embark-export)
+  :custom
+  (embark-help-key "?"))
+
 ;;; Ivy
 
 (use-package ivy
