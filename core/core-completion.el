@@ -1,5 +1,22 @@
 ;;; core-completion.el --- Completion settings -*- lexical-binding: t; -*-
 
+;;; Vertico (completion UI)
+
+(use-package vertico
+  :straight (:host github
+             :repo "emacs-straight/vertico"
+             :files ("*.el" "extensions/*.el"))
+  :demand
+  :custom
+  (enable-recursive-minibuffers t)
+  (vertico-cycle t)
+  (vertico-mode t))
+
+(use-package vertico-repeat
+  :straight nil ;; part of vertico
+  :demand :after vertico
+  :hook (minibuffer-setup . vertico-repeat-save))
+
 ;;; Ivy
 
 (use-package ivy
