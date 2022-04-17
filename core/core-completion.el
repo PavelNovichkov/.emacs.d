@@ -26,6 +26,13 @@
   (completion-category-overrides '((file (styles basic partial-completion))))
   (orderless-matching-styles '(orderless-literal orderless-regexp orderless-initialism)))
 
+;;; Marginalia (completion annotations)
+
+(use-package marginalia
+  :demand
+  :custom
+  (marginalia-mode t))
+
 ;;; Ivy
 
 (use-package ivy
