@@ -34,8 +34,4 @@
   :init
   (general-define-key :states 'normal "z=" #'flyspell-correct-previous))
 
-(use-package flyspell-correct-ivy
-  :disabled
-  :demand :after flyspell-correct)
-
 ;; TODO: add spellcheck hydra.

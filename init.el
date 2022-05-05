@@ -22,7 +22,6 @@
                        "projects"
                        "ui/evil-goggles"
                        "ui/hl-todo"
-                       "ui/ivy-rich"
                        "ui/olivetti"
                        "ui/pulsar"
                        "app/irc"

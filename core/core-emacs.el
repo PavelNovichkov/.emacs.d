@@ -76,3 +76,7 @@
 (use-package undo-fu
   :config
   (general-define-key [remap undo] #'undo-fu-only-undo))
+
+(use-package wgrep
+  :config
+  (setq wgrep-auto-save-buffer t))

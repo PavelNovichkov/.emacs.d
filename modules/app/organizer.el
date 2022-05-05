@@ -117,9 +117,7 @@
     "ds" '(org-schedule :which-key "schedule")
     "D" '(org-archive-subtree-default :which-key "archive subtree")
     "e" '(org-set-effort :which-key "effort")
-    ;; "f" '(counsel-org-file :which-key "browse file attachments")
     "l" '(org-insert-link :which-key "insert link")
-    ;; "q" '(counsel-org-tag :which-key "tags")
     "r" '(org-refile :which-key "refile")
     "s" '(org-todo :which-key "todo state")
     "t" '(:ignore t :which-key "toggle")
@@ -128,11 +126,7 @@
     "ti" '(org-toggle-inline-images :which-key "images")
     "tl" '(org-toggle-link-display :which-key "links")
     "tt" '(org-latex-preview :which-key "latex")
-    "'" '(org-edit-special :which-key "edit"))
-  ;; (general-define-key
-  ;;  :states 'motion :keymaps 'org-agenda-mode-map
-  ;;  "cq" '(counsel-org-tag-agenda :which-key "tags"))
-  )
+    "'" '(org-edit-special :which-key "edit")))
 
 (use-package org-capture
   :straight nil ;; part of org

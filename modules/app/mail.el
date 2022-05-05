@@ -35,8 +35,6 @@
   (setq mu4e-compose-signature-auto-include nil)
   ;; Hide messages.
   (setq mu4e-hide-index-messages t)
-  ;; Complete with ivy.
-  ;; (setq mu4e-completing-read-function #'ivy-completing-read)
   ;; mbsync specific.
   (setq mu4e-change-filenames-when-moving t)
   ;; Move to trash without 'trashed' flag (otherwise server deletes
