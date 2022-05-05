@@ -48,7 +48,9 @@
    "C-b" #'embark-become
    "C-e" #'embark-export)
   :config
-  (setq embark-help-key "?"))
+  ;; Press "?" after a prefix to show keybindings in the minibuffer.
+  (setq embark-help-key "?"
+        prefix-help-command #'embark-prefix-help-command))
 
 ;;; Consult (completion-based commands)
 
