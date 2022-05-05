@@ -57,7 +57,8 @@
 (use-package consult
   :demand
   :config
-  (advice-add #'completing-read-multiple :override #'consult-completing-read-multiple))
+  (advice-add #'completing-read-multiple :override #'consult-completing-read-multiple)
+  (setq consult-narrow-key "<"))
 
 (use-package embark-consult
   :demand :after embark)
