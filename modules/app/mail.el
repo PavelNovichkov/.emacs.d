@@ -98,7 +98,7 @@
   ;; Store link to message if in header view, not to header query.
   (setq org-mu4e-link-query-in-headers-mode nil))
 
-;;; Attach files from dired
+;;; Attach files from dired and embark
 
 (use-package gnus-dired
   :straight nil ; built-in
@@ -107,6 +107,13 @@
   (local-leader-def
    :keymaps 'dired-mode-map
    "a" '(gnus-dired-attach :which-key "attach"))
+  (defun my/embark-attach-file (file)
+    "Attach FILE to an email message."
+    (interactive "fAttach: ")
+    (gnus-dired-attach (list file)))
+  (general-define-key
+   :keymaps 'embark-file-map
+   "a" #'my/embark-attach-file)
   :config
   (require 'mu4e)
   ;; See https://www.djcbsoftware.nl/code/mu/mu4e/Dired.html.
