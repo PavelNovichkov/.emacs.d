@@ -47,8 +47,8 @@
    :keymaps 'vertico-map
    "C-b" #'embark-become
    "C-e" #'embark-export)
-  :custom
-  (embark-help-key "?"))
+  :config
+  (setq embark-help-key "?"))
 
 ;;; Ivy
 
