@@ -1,11 +1,11 @@
 ;;; tools/bibliography.el -*- lexical-binding: t; -*-
 
 (defconst my/bibliography-bibtex
-  (expand-file-name "~/org/slip-box/literature/master.bib"))
+  (file-truename "~/org/slip-box/literature/master.bib"))
 (defconst my/bibliography-doc-directory
-  (expand-file-name "~/org/slip-box/literature/docs"))
+  (file-truename "~/org/slip-box/literature/docs"))
 (defconst my/bibliography-notes
-  (expand-file-name "~/org/slip-box/literature"))
+  (file-truename "~/org/slip-box/literature"))
 
 (use-package ivy-bibtex
   :disabled
