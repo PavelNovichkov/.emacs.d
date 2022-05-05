@@ -77,6 +77,12 @@
   :config
   (general-define-key [remap undo] #'undo-fu-only-undo))
 
+(use-package sudo-edit
+  :init
+  (general-define-key
+   :keymaps 'embark-file-map
+   "s" #'sudo-edit-find-file))
+
 (use-package wgrep
   :config
   (setq wgrep-auto-save-buffer t))
