@@ -113,7 +113,7 @@ no other windows are present."
   "SPC" '(vertico-repeat :which-key "repeat completion")
 
   "a" '(:ignore t :which-key "application")
-  ;; "ab" '(ivy-bibtex :which-key "bibliography")
+  "ab" '(citar-open :which-key "bibliography")
   "ag" '(magit-status :which-key "git")
   "am" '(mu4e :which-key "mail")
   "ap" '(my/system-packages/body :which-key "system packages")

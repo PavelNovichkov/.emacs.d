@@ -94,3 +94,11 @@
 (with-eval-after-load 'org
   (add-to-list 'org-link-abbrev-alist
                '("arxiv" . "https://arxiv.org/abs/")))
+
+(use-package citar
+  :config
+  (setq citar-bibliography `(,my/bibliography-bibtex)
+        citar-file-additional-files-separator "_"
+        citar-file-note-extensions '("org")
+        citar-library-paths `(,my/bibliography-doc-directory)
+        citar-notes-paths `(,my/bibliography-notes)))
