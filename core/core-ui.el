@@ -37,3 +37,6 @@
 (use-package all-the-icons
   :config
   (setq all-the-icons-scale-factor 1.0))
+
+(use-package all-the-icons-completion
+  :hook (marginalia-mode . all-the-icons-completion-marginalia-setup))
