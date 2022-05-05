@@ -50,6 +50,16 @@
   :config
   (setq embark-help-key "?"))
 
+;;; Consult (completion-based commands)
+
+(use-package consult
+  :demand
+  :config
+  (advice-add #'completing-read-multiple :override #'consult-completing-read-multiple))
+
+(use-package embark-consult
+  :demand :after embark)
+
 ;;; Ivy
 
 (use-package ivy
