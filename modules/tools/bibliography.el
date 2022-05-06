@@ -8,10 +8,10 @@
   (file-truename "~/org/slip-box/literature"))
 (defconst my/org-roam-note-header
   ":PROPERTIES:
+:CREATED:  %U
 :ROAM_REFS: [cite:@${citekey}]
 :END:
-#+TITLE: ${title}
-#+CREATED:  %U\n")
+#+TITLE: ${title}\n")
 
 (use-package org-noter
   :after org
