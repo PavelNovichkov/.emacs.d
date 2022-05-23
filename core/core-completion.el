@@ -65,7 +65,10 @@
 
 ;;; Avy
 
-(use-package avy)
+(use-package avy
+  :config
+  ;; Use Colemak-friendly set of keys.
+  (setq avy-keys '(?t ?s ?r ?a ?n ?e ?i ?o)))
 
 ;;; Company
 
