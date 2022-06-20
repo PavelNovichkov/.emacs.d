@@ -271,6 +271,11 @@ Otherwise, use the original version of `server-visited-files'."
                     "%<%Y%m%d%H%M%S>.org"
                     ":PROPERTIES:\n:CREATED:  %U\n:END:\n#+TITLE: ${title}\n\n- tags :: \n")
            :unnarrowed t)
+          ("m" "meeting" plain "%?"
+           :if-new (file+head
+                    "meetings/%<%Y%m%d%H%M%S>.org"
+                    ":PROPERTIES:\n:CREATED:  %U\n:END:\n#+TITLE: ${title}\n\n- tags :: \n- participants :: \n")
+           :unnarrowed t)
           ("t" "talk" plain "%?"
            :if-new (file+head
                     "talks/%<%Y%m%d%H%M%S>.org"
