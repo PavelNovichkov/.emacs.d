@@ -97,17 +97,13 @@ no other windows are present."
     (kill-buffer)
     (tab-bar-close-tab)))
 
-(defun my/tab-bar-move-tab-left ()
-  "Move current tab to the left."
-  (interactive)
-  (tab-bar-move-tab -1))
-
 ;;; Global leader bindings
 
 (leader-def
   "n" '(my/narrow-or-widen-dwim :which-key "narrow")
   "u" '(my/universal-argument :which-key "universal argument")
   "x" '(execute-extended-command :which-key "M-x")
+  "X" '(execute-extended-command-for-buffer :which-key "M-X")
   "." '(repeat :which-key "repeat")
   "/" '(consult-line :which-key "search line")
   "SPC" '(vertico-repeat :which-key "repeat completion")
@@ -130,7 +126,7 @@ no other windows are present."
   "bo" '(:ignore t :which-key "other window")
   "boc" '(clone-indirect-buffer-other-window :which-key "clone")
   "bos" '(consult-buffer-other-window :which-key "switch")
-  "br" '(revert-buffer :which-key "revert")
+  "br" '(revert-buffer-quick :which-key "revert")
   "bs" '(consult-buffer :which-key "switch")
 
   "d" '(dictionary-search :which-key "dictionary")
@@ -181,7 +177,7 @@ no other windows are present."
   "lk" '(tab-bar-switch-to-prev-tab :which-key "previous")
   "ll" '(tab-bar-switch-to-recent-tab :which-key "most recent")
   "lL" '(tab-bar-move-tab :which-key "move right")
-  "lH" '(my/tab-bar-move-tab-left :which-key "move left")
+  "lH" '(tab-bar-move-tab-backward :which-key "move left")
   "ln" '(tab-bar-new-tab :which-key "new")
   "lr" '(tab-bar-rename-tab :which-key "rename")
   "ls" '(tab-bar-switch-to-tab :which-key "switch")

@@ -37,8 +37,11 @@
  ;; disable bidirectional editing
  bidi-inhibit-bpa t
  bidi-paragraph-direction 'left-to-right
- ;; no backups
+ ;; no backups and lockfiles
  make-backup-files nil
+ create-lockfiles nil
+ ;; highlight current error/occur/grep item etc.
+ next-error-message-highlight t
  )
 
 ;; Auto-save.
@@ -55,7 +58,7 @@
 (add-hook 'text-mode-hook #'visual-line-mode)
 
 ;; Replace yes/no with y/n.
-(fset #'yes-or-no-p #'y-or-n-p)
+(setq use-short-answers t)
 
 (use-package server ; built-in
   :straight nil

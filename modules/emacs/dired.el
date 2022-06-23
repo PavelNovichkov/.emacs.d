@@ -41,16 +41,16 @@
   :config
   (setq dired-auto-revert-buffer t
         dired-create-destination-dirs 'ask
+        dired-do-revert-buffer t
         dired-dwim-target t
         dired-hide-details-hide-symlink-targets nil
+        dired-kill-when-opening-new-dired-buffer t
         ;; Human-readable sizes; directories first.
         dired-listing-switches "-alh --group-directories-first"
         dired-recursive-copies 'always
         dired-recursive-deletes 'top)
   ;; Hide details.
-  (add-hook 'dired-mode-hook #'dired-hide-details-mode)
-  ;; Allow 'a' command in dired-mode.
-  (put 'dired-find-alternate-file 'disabled nil))
+  (add-hook 'dired-mode-hook #'dired-hide-details-mode))
 
 (use-package dired-filter
   :demand :after dired

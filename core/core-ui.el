@@ -13,6 +13,10 @@
   :demand
   :after (evil anzu))
 
+;;; Cursor
+
+(blink-cursor-mode -1)
+
 ;;; Modeline
 
 (use-package doom-modeline
