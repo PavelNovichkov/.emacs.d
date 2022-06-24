@@ -8,6 +8,7 @@
                        "evil/plugins"
                        "emacs/dired"
                        "emacs/ediff"
+                       "emacs/eldoc"
                        "emacs/gpg"
                        "emacs/helpful"
                        "emacs/ibuffer"
