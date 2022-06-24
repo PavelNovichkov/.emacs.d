@@ -36,6 +36,7 @@
                        "tools/bibliography"
                        "tools/dictionary"
                        "tools/link-hint"
+                       "tools/lsp"
                        "tools/pdf"
                        "tools/spellcheck"
                        "tools/tldr"
