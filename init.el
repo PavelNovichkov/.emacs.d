@@ -19,6 +19,7 @@
                        "emacs/winner"
                        "lang/latex"
                        "lang/cc"
+                       "lang/wolfram"
                        "layouts"
                        "projects"
                        "ui/evil-goggles"
