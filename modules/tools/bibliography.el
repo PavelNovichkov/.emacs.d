@@ -63,7 +63,7 @@
                          :info (list :citekey key)
                          :node (org-roam-node-create :title title)
                          :props '(:finalize find-file))))
-  (setq citar-format-note-function #'my/citar-org-format-note)
+  (setq citar-create-note-function #'my/citar-org-format-note)
   (general-define-key
    :keymaps 'citar-map
    "a" #'citar-add-file-to-library))
