@@ -216,7 +216,7 @@ no other windows are present."
   "tm" '(toggle-frame-maximized :which-key "maximize")
   "tn" '(display-line-numbers-mode :which-key "line numbers")
   "to" '(olivetti-mode :which-key "olivetti")
-  "tt" '(toggle-truncate-lines :which-key "truncate lines")
+  "tt" '(visual-line-mode :which-key "truncate lines")
   "tT" '(consult-theme :which-key "theme")
   "tv" '(variable-pitch-mode :which-key "variable pitch")
   "tw" '(whitespace-mode :which-key "whitespace")
