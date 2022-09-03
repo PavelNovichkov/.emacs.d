@@ -110,6 +110,9 @@
   (local-leader-def
     :keymaps 'org-mode-map
     "a" '(org-attach :which-key "attachments")
+    "c" '(:ignore t :which-key "clock")
+    "ci" '(org-clock-in :which-key "in")
+    "co" '(org-clock-out :which-key "out")
     "d" '(:ignore t :which-key "date")
     "da" '(org-time-stamp :which-key "active")
     "dd" '(org-deadline :which-key "deadline")
@@ -117,6 +120,7 @@
     "ds" '(org-schedule :which-key "schedule")
     "D" '(org-archive-subtree-default :which-key "archive subtree")
     "e" '(org-set-effort :which-key "effort")
+    "i" '(org-set-tags-command :which-key "tags")
     "l" '(org-insert-link :which-key "insert link")
     "r" '(org-refile :which-key "refile")
     "s" '(org-todo :which-key "todo state")
