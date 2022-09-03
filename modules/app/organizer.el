@@ -101,11 +101,17 @@
   ;; Images.
   (setq org-image-actual-width `(,(/ (display-pixel-width) 4)))
   ;; LaTeX.
-  (setq org-preview-latex-default-process 'dvisvgm
+  (setq org-preview-latex-default-process 'dvipng
         org-preview-latex-image-directory ".ltximg/")
-  (setq org-latex-packages-alist '(("" "mathrsfs") ("" "dsfont") ("" "mathtools") ("" "slashed")))
+  (setq org-latex-packages-alist
+        '(("" "mathrsfs")
+          ("" "dsfont")
+          ("" "mathtools")
+          ("" "slashed")
+          ("scaled=0.98" "XCharter")
+          ("charter,scaled=1.05,smallerops,upint,vvarbb" "newtxmath")))
   (plist-put org-format-latex-options :scale 1.6)
-  (setq org-highlight-latex-and-related '(latex))
+  (setq org-highlight-latex-and-related '(native))
   ;; Bindings.
   (local-leader-def
     :keymaps 'org-mode-map
