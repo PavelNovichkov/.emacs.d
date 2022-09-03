@@ -17,6 +17,7 @@
                        "emacs/smartparens"
                        "emacs/tramp"
                        "emacs/winner"
+                       "lang/elisp"
                        "lang/latex"
                        "lang/cc"
                        "lang/wolfram"
