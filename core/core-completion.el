@@ -69,33 +69,6 @@
   ;; Use Colemak-friendly set of keys.
   (setq avy-keys '(?t ?s ?r ?a ?n ?e ?i ?o)))
 
-;;; Company
-
-(use-package company
-  :disabled
-  :demand
-  :commands company-complete-common
-  :config
-  ;; (company-tng-mode +1) is set up by evil-collection.
-  (setq company-backends '(company-files company-capf)
-        company-idle-delay 0.25
-        company-selection-wrap-around t
-        company-show-numbers t
-        company-tooltip-align-annotations t
-        company-tooltip-width-grow-only t)
-  (global-company-mode 1)
-  (general-define-key
-   :keymaps 'company-active-map
-   "C-/" #'company-filter-candidates)
-  (general-define-key
-   :keymaps 'company-search-map
-   "C-n" #'company-select-next-or-abort
-   "C-p" #'company-select-previous-or-abort)
-  (dotimes (i 10)
-    (general-define-key
-     :keymaps '(company-active-map company-search-map)
-     (format "C-%d" i) #'company-complete-number)))
-
 ;;; Corfu
 
 (use-package corfu
