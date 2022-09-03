@@ -3,7 +3,7 @@
 (use-package wolfram-mode
   :mode "\\.\\(wl\\|wls\\|m\\)\\'"
   :config
-  (setq wolfram-indent 4)
+  (setq wolfram-indent 2)
   (with-eval-after-load 'eglot
     (let ((mode '(wolfram-mode :language-id "Wolfram Language"))
           (contact '("WolframKernel"
