@@ -258,7 +258,7 @@ no other windows are present."
 
 (general-define-key
  :states 'insert
- "C-n" #'company-complete
+ "C-n" #'completion-at-point
  "C-v" #'my/evil-paste-last-yanked)
 
 (general-define-key

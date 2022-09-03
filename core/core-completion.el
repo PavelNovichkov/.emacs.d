@@ -73,6 +73,7 @@
 ;;; Company
 
 (use-package company
+  :disabled
   :demand
   :commands company-complete-common
   :config
@@ -95,6 +96,58 @@
     (general-define-key
      :keymaps '(company-active-map company-search-map)
      (format "C-%d" i) #'company-complete-number)))
+
+;;; Corfu
+
+(use-package corfu
+  :straight (:host github
+             :repo "minad/corfu"
+             :files ("*.el" "extensions/*.el"))
+  :demand
+  :config
+  (setq corfu-auto t
+        corfu-cycle t)
+  (global-corfu-mode)
+  (defun my/corfu-enable-in-minibuffer ()
+    "Enable Corfu in the minibuffer if `completion-at-point' is bound."
+    (when (where-is-internal #'completion-at-point (list (current-local-map)))
+      (corfu-mode 1)))
+  (add-hook 'minibuffer-setup-hook #'my/corfu-enable-in-minibuffer)
+  (defun my/corfu-move-to-minibuffer ()
+    "Export Corfu completions to the minibuffer for more advanced processing."
+    (interactive)
+    (let ((completion-extra-properties corfu--extra)
+          completion-cycle-threshold completion-cycling)
+      (apply #'consult-completion-in-region completion-in-region--data)))
+  (general-define-key
+   :keymaps 'corfu-map
+   :states 'insert
+   "C-SPC" #'corfu-insert-separator
+   "C-e" #'my/corfu-move-to-minibuffer))
+
+(use-package corfu-quick
+  :straight nil ;; part of corfu
+  :demand :after corfu
+  :config
+  (general-define-key
+   :keymaps 'corfu-map
+   :states 'insert
+   "C-j" #'corfu-quick-insert))
+
+(use-package cape
+  :demand :after corfu
+  :config
+  ; TODO How to set these by default?
+  (add-to-list 'completion-at-point-functions #'cape-dabbrev)
+  (add-to-list 'completion-at-point-functions #'cape-file))
+
+(use-package kind-icon
+  :demand :after corfu
+  :config
+  (setq kind-icon-default-face 'corfu-default)
+  (setq kind-icon-default-style
+        '(:padding 0 :stroke 0 :margin 0 :radius 0 :height 0.8 :scale 1.0))
+  (add-to-list 'corfu-margin-formatters #'kind-icon-margin-formatter))
 
 ;;; Yasnippet
 
