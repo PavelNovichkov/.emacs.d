@@ -150,4 +150,15 @@
 
 ;;; Yasnippet
 
-(use-package yasnippet)
+(use-package yasnippet
+  :commands yas-expand
+  :init
+  (setq yas-alias-to-yas/prefix-p nil)
+  :config
+  (general-unbind 'yas-minor-mode-map
+    "<tab>" "TAB")
+  (general-define-key
+   :states 'insert
+   :keymaps 'yas-minor-mode-map
+   "C-e" #'yas-expand)
+  (yas-global-mode))
