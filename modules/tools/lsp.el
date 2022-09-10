@@ -1,4 +1,4 @@
-;;; lang/lsp.el -*- lexical-binding: t; -*-
+;;; tools/lsp.el -*- lexical-binding: t; -*-
 
 (use-package eglot
   :commands (eglot eglot-ensure)
