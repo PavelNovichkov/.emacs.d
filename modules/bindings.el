@@ -129,6 +129,13 @@ no other windows are present."
   "br" '(revert-buffer-quick :which-key "revert")
   "bs" '(consult-buffer :which-key "switch")
 
+  "c" '(:ignore t :which-key "credentials")
+  "ce" '(password-store-edit :which-key "edit")
+  "cf" '(password-store-copy-field :which-key "field")
+  "cg" '(password-store-url :which-key "go to")
+  "cl" '(my/password-store-copy-login :which-key "login")
+  "cp" '(password-store-copy :which-key "password")
+
   "d" '(dictionary-search :which-key "dictionary")
 
   "f" '(:ignore t :which-key "file")
