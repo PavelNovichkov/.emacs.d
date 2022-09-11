@@ -1,5 +1,10 @@
 ;;; app/organizer.el -*- lexical-binding: t; -*-
 
+(defconst my/org-directory (file-truename "~/data/org")
+  "Org directory.")
+(defconst my/slip-box-directory (expand-file-name "slip-box" my/org-directory)
+  "Slip box directory.")
+
 (setq calendar-week-start-day 1)
 
 ;; TODO: refactor.
@@ -16,9 +21,9 @@
              org-store-link)
   :config
   ;; Paths.
-  (setq org-directory (file-truename "~/org")
+  (setq org-directory my/org-directory
         org-agenda-files
-        (mapcar (lambda (name) (expand-file-name name org-directory))
+        (mapcar (lambda (name) (expand-file-name name my/org-directory))
                 '("gtd.org" "calendar.org" "tickler.org")))
   ;; Variables.
   (add-to-list 'org-modules 'org-habit t)
@@ -210,7 +215,7 @@ Otherwise, use the original version of `server-visited-files'."
   :straight nil ;; part of org
   :demand :after org
   :config
-  (setq org-attach-id-dir "~/org/db")
+  (setq org-attach-id-dir (expand-file-name "db" my/org-directory))
   (setq org-attach-auto-tag "attach"))
 
 (use-package org-download
@@ -267,7 +272,7 @@ Otherwise, use the original version of `server-visited-files'."
   (with-eval-after-load 'org-protocol
     (require 'org-roam-protocol))
   :config
-  (setq org-roam-directory (expand-file-name "slip-box" org-directory)
+  (setq org-roam-directory my/slip-box-directory
         ;; treat only files as notes
         org-roam-db-node-include-function #'org-before-first-heading-p
         org-roam-capture-templates
@@ -298,7 +303,7 @@ Otherwise, use the original version of `server-visited-files'."
 
 (use-package anki-editor
   :init
-  (defconst my/anki-file "~/org/anki.org"))
+  (defconst my/anki-file (expand-file-name "anki.org" my/org-directory)))
   ;; TODO Add capture templates
 
 ;;; Password manager
@@ -308,7 +313,8 @@ Otherwise, use the original version of `server-visited-files'."
              org-password-manager-get-password
              org-password-manager-get-username)
   :config
-  (setq org-password-manager-scope '("~/org/reference/secrets.gpg")))
+  (setq org-password-manager-scope
+        (list (expand-file-name "reference/secrets.gpg" my/org-directory))))
 
 ;;; Pomodoro
 
@@ -323,7 +329,7 @@ Otherwise, use the original version of `server-visited-files'."
 (use-package org-mru-clock
   :config
   (defun my/org-clock-files ()
-    (list "~/org/gtd.org" "~/org/tickler.org"))
+    (expand-file-name "gtd.org" my/org-directory))
   (defun my/org-entry-is-next-p ()
     (string= (org-get-todo-state) "NEXT"))
   (defun my/org-mru-clock--pomodoro (task)

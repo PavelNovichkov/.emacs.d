@@ -1,11 +1,14 @@
 ;;; tools/bibliography.el -*- lexical-binding: t; -*-
 
-(defconst my/bibliography-bibtex
-  (file-truename "~/org/slip-box/literature/master.bib"))
-(defconst my/bibliography-doc-directory
-  (file-truename "~/org/slip-box/literature/docs"))
 (defconst my/bibliography-notes
-  (file-truename "~/org/slip-box/literature"))
+  (expand-file-name "literature" my/slip-box-directory)
+  "Bibliography notes directory.")
+(defconst my/bibliography-bibtex
+  (expand-file-name "master.bib" my/bibliography-notes)
+  "Bibliography BibTeX records file.")
+(defconst my/bibliography-doc-directory
+  (expand-file-name "docs" my/bibliography-notes)
+  "Bibliography documents directory.")
 (defconst my/org-roam-note-header
   ":PROPERTIES:
 :CREATED:  %U
