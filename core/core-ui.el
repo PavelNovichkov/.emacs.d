@@ -20,7 +20,7 @@
 ;;; Modeline
 
 (use-package doom-modeline
-  :hook (after-init . doom-modeline-init)
+  :hook (after-init . doom-modeline-mode)
   :config
   (setq
    ;; Don't include project name in the file name as it is very slow.
