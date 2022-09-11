@@ -43,16 +43,7 @@
         org-agenda-window-setup 'current-window
         org-agenda-tags-column -150
         org-agenda-skip-scheduled-if-deadline-is-shown 'not-today
-        org-columns-default-format "%50ITEM(Task) %10CLOCKSUM %17TIMESTAMP_IA"
-        org-todo-keywords
-        '((sequence "TODO(t)" "NEXT(n)" "WAITING(w@/!)" "|" "DONE(d)" "CANCELED(c@)"))
-        org-tag-alist
-        '((:startgroup . nil)
-          ("@home" . ?h) ("@office" . ?o) ("@city" . ?c) ("@everywhere" . ?e) ("@supermarket" . ?u)
-          (:endgroup . nil)
-          ("@computer" . ?k) ("@email" . ?m) ("@study" . ?s) ("@read" . ?r) ("@phone" . ?p)
-          ("physics") ("emacs") ("music") ("house") ("health") ("linux")
-          ("academia") ("video") ("finance") ("STP")))
+        org-columns-default-format "%50ITEM(Task) %10CLOCKSUM %17TIMESTAMP_IA")
   ;; Agenda.
   (setq org-agenda-buffer-name "Org Agenda") ; Remove asterisks to be included in iflipb list.
   (setq org-agenda-custom-commands
