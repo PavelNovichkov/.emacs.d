@@ -6,7 +6,7 @@
 (scroll-bar-mode 0)
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
-(defconst my/fonts '("Fira Code Retina-12" . "Source Serif Pro-15"))
+(defconst my/fonts '("Fira Code Retina-12" . "Source Serif 4-15"))
 
 (defun my/setup-fonts ()
   "Setup fonts after GUI frame is created."
