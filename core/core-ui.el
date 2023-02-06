@@ -19,15 +19,8 @@
 
 ;;; Modeline
 
-(use-package doom-modeline
-  :hook (after-init . doom-modeline-mode)
-  :config
-  (setq
-   ;; Don't include project name in the file name as it is very slow.
-   doom-modeline-buffer-file-name-style 'file-name
-   ;; Make sure icon is displayed
-   doom-modeline-icon t
-   doom-modeline-workspace-name nil))
+(use-package nano-modeline
+  :hook (after-init . nano-modeline-mode))
 
 ;;; Posframe
 
