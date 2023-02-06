@@ -60,7 +60,8 @@
 (use-package consult
   :demand
   :config
-  (setq consult-narrow-key "<"))
+  (setq consult-narrow-key "<"
+        consult-preview-key nil))
 
 (use-package embark-consult
   :straight nil ;; part or embark
