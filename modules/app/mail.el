@@ -45,7 +45,7 @@
               :dyn-target (lambda (target msg) (mu4e-get-trash-folder msg))
               ;; No +T before -N so the message is not marked as IMAP-deleted:
               :action (lambda (docid msg target)
-                        (mu4e~proc-move docid (mu4e~mark-check-target target) "-N"))))
+                        (mu4e--server-move docid (mu4e--mark-check-target target) "-N"))))
   (setq mu4e-contexts (--map (apply 'make-mu4e-context it) my/mail-contexts))
   (setq mu4e-context-policy 'pick-first
         mu4e-compose-context-policy 'always-ask)
