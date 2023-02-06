@@ -36,6 +36,9 @@
 ;;; Embark (completion actions and more)
 
 (use-package embark
+  :straight (:host github
+             :repo "oantolin/embark"
+             :files ("*.el"))
   :init
   (general-define-key
    :states '(insert motion normal emacs)
@@ -60,7 +63,9 @@
   (setq consult-narrow-key "<"))
 
 (use-package embark-consult
-  :demand :after embark)
+  :straight nil ;; part or embark
+  :demand :after embark
+  :hook (embark-collect-mode . consult-preview-at-point-mode))
 
 ;;; Avy
 
