@@ -108,6 +108,16 @@
           ("charter,scaled=1.05,smallerops,upint,vvarbb" "newtxmath")))
   (plist-put org-format-latex-options :scale 1.6)
   (setq org-highlight-latex-and-related '(native))
+  (defun my/org-copy-as-latex ()
+    "Export region to LaTeX, and copy it to the clipboard."
+    (interactive)
+    (save-window-excursion
+      (let* ((buf (org-export-to-buffer 'latex "*Formatted Copy*" nil nil nil t))
+             (latex (with-current-buffer buf (buffer-string))))
+        (with-current-buffer buf
+          (copy-region-as-kill (point-min) (point-max)))
+        (kill-buffer buf)))
+    (setq deactivate-mark t))
   ;; Bindings.
   (local-leader-def
     :keymaps 'org-mode-map
@@ -132,6 +142,7 @@
     "ti" '(org-toggle-inline-images :which-key "images")
     "tl" '(org-toggle-link-display :which-key "links")
     "tt" '(org-latex-preview :which-key "latex")
+    "y" '(my/org-copy-as-latex :which-key "copy as latex")
     "'" '(org-edit-special :which-key "edit")))
 
 (use-package org-capture
