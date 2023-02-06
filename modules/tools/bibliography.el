@@ -1,7 +1,9 @@
 ;;; tools/bibliography.el -*- lexical-binding: t; -*-
 
+(defconst my/bibliography-notes-subdir "literature"
+  "Bibliography notes subdirectory in slip-box.")
 (defconst my/bibliography-notes
-  (expand-file-name "literature" my/slip-box-directory)
+  (expand-file-name my/bibliography-notes-subdir my/slip-box-directory)
   "Bibliography notes directory.")
 (defconst my/bibliography-bibtex
   (expand-file-name "master.bib" my/bibliography-notes)
@@ -9,12 +11,6 @@
 (defconst my/bibliography-doc-directory
   (expand-file-name "docs" my/bibliography-notes)
   "Bibliography documents directory.")
-(defconst my/org-roam-note-header
-  ":PROPERTIES:
-:CREATED:  %U
-:ROAM_REFS: [cite:@${citekey}]
-:END:
-#+TITLE: ${title}\n")
 
 (use-package org-noter
   :after org
@@ -38,35 +34,33 @@
   (setq org-cite-insert-processor 'citar
         org-cite-follow-processor 'citar
         org-cite-activate-processor 'citar
-        org-cite-global-bibliography `(,my/bibliography-bibtex))
+        org-cite-global-bibliography (list my/bibliography-bibtex)
   :config
-  (setq citar-bibliography `(,my/bibliography-bibtex)
+  (setq citar-bibliography (list my/bibliography-bibtex)
         citar-file-additional-files-separator "_"
         citar-file-note-extensions '("org")
-        citar-library-paths `(,my/bibliography-doc-directory)
-        citar-notes-paths `(,my/bibliography-notes))
+        citar-library-paths (list my/bibliography-doc-directory)
+        citar-notes-paths (list my/bibliography-notes))
   ;; Icons.
   (setq citar-symbols
         `((file ,(all-the-icons-faicon "file-o" :face 'all-the-icons-green :v-adjust -0.1) . " ")
           (note ,(all-the-icons-material "speaker_notes" :face 'all-the-icons-blue :v-adjust -0.3) . " ")
           (link ,(all-the-icons-octicon "link" :face 'all-the-icons-orange :v-adjust 0.01) . " ")))
   (setq citar-symbol-separator " ")
-  ;; Refresh the bibliography.
-  (citar-filenotify-setup '(LaTeX-mode-hook org-mode-hook))
-  (setq citar-filenotify-callback 'refresh-cache)
-  ;; Create notes.
-  (defun my/citar-org-format-note (key entry filepath)
-    "Format a note FILEPATH from KEY and ENTRY."
-    (let ((title (citar--format-entry-no-widths entry "${author} - ${title}")))
-      (org-roam-capture- :templates
-                         `(("r" "reference" plain "%?" :if-new
-                            (file+head ,filepath ,my/org-roam-note-header)
-                            :immediate-finish t
-                            :unnarrowed t))
-                         :info (list :citekey key)
-                         :node (org-roam-node-create :title title)
-                         :props '(:finalize find-file))))
-  (setq citar-create-note-function #'my/citar-org-format-note)
   (general-define-key
    :keymaps 'citar-map
    "a" #'citar-add-file-to-library))
+
+(use-package citar-embark
+  :straight nil ;; part of embark
+  :demand :after citar
+  :config
+  (citar-embark-mode))
+
+(use-package citar-org-roam
+  :demand :after citar
+  :custom
+  (citar-org-roam-subdir my/bibliography-notes-subdir)
+  (citar-org-roam-note-title-template "${author} - ${title}")
+  :config
+  (citar-org-roam-mode))

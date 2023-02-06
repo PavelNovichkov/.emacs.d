@@ -270,24 +270,25 @@ Otherwise, use the original version of `server-visited-files'."
         '(("d" "default" plain "%?"
            :if-new (file+head
                     "%<%Y%m%d%H%M%S>.org"
-                    ":PROPERTIES:\n:CREATED:  %U\n:END:\n#+TITLE: ${title}\n\n- tags :: \n")
+                    "#+title: ${title}\n\n- tags :: \n")
            :unnarrowed t)
           ("m" "meeting" plain "%?"
            :if-new (file+head
                     "meetings/%<%Y%m%d%H%M%S>.org"
-                    ":PROPERTIES:\n:CREATED:  %U\n:END:\n#+TITLE: ${title}\n\n- tags :: \n- participants :: \n")
+                    "#+title: ${title}\n\n- tags :: \n- participants :: \n")
            :unnarrowed t)
           ("t" "talk" plain "%?"
            :if-new (file+head
                     "talks/%<%Y%m%d%H%M%S>.org"
-                    ":PROPERTIES:\n:CREATED:  %U\n:END:\n#+TITLE: ${title}\n\n- tags :: \n- speaker :: \n")
+                    "#+title: ${title}\n\n- tags :: \n- speaker :: \n")
            :unnarrowed t))
         org-roam-capture-ref-templates
         '(("w" "web" plain "%?"
            :if-new (file+head
                     "web/%<%Y%m%d%H%M%S>.org"
-                    ":PROPERTIES:\n:CREATED:  %U\n:END:\n#+TITLE: ${title}\n\n- tags :: \n")
+                    "#+title: ${title}\n\n- tags :: \n")
            :unnarrowed t)))
+  (add-hook 'org-roam-capture-new-node-hook #'my/org-set-created-property)
   (org-roam-setup))
 
 ;;; Integration with Anki for spaced repetition
