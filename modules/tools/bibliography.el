@@ -35,6 +35,8 @@
         org-cite-follow-processor 'citar
         org-cite-activate-processor 'citar
         org-cite-global-bibliography (list my/bibliography-bibtex)
+        ; Export as \cite command rather than \autocite.
+        org-cite-export-processors '((latex biblatex nil "nil/bare")))
   :config
   (setq citar-bibliography (list my/bibliography-bibtex)
         citar-file-additional-files-separator "_"
