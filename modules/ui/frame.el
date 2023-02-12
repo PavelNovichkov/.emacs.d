@@ -4,7 +4,12 @@
 (menu-bar-mode 0)
 (tool-bar-mode 0)
 (scroll-bar-mode 0)
-(add-to-list 'default-frame-alist '(fullscreen . maximized))
+
+(modify-all-frames-parameters
+ '((fullscreen . maximized)
+   (internal-border-width . 15)
+   (right-divider-width . 15)
+   (bottom-divider-width . 15)))
 
 (defconst my/fonts '("Fira Code Retina-12" . "Source Serif 4-15"))
 
