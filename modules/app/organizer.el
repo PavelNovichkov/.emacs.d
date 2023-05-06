@@ -6,6 +6,7 @@
   "Slip box directory.")
 
 (setq calendar-week-start-day 1)
+(set-time-zone-rule "CET")
 
 ;; TODO: refactor.
 (use-package org
