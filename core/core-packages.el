@@ -36,6 +36,9 @@
   (straight-thaw-versions)
   (straight-rebuild-all))
 
+;; Install org early before builtin version gets loaded
+(straight-use-package 'org :branch "bugfix") ;; use latest stable version
+
 ;;; use-package
 (straight-use-package 'use-package)
 
