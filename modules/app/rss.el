@@ -12,4 +12,5 @@
   :config
   (require 'org)
   (elfeed-org)
-  (setq rmh-elfeed-org-files '("~/org/reference/emacs.org")))
+  (setq rmh-elfeed-org-files
+        (list (expand-file-name "reference/emacs.org" my/org-directory))))
