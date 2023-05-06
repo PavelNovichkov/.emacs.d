@@ -27,6 +27,7 @@
                        "ui/hl-todo"
                        "ui/olivetti"
                        "ui/pulsar"
+                       "app/beeminder"
                        "app/irc"
                        "app/ledger"
                        "app/mail"
