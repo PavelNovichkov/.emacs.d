@@ -24,6 +24,8 @@
     :keymaps 'TeX-mode-map
     "a" '(TeX-command-run-all :which-key "run all")
     "c" '(TeX-command-master :which-key "run command")
+    "p" '(TeX-pin-region :which-key "pin region")
+    "r" '(TeX-command-region :which-key "run command for region")
     "v" '(TeX-view :which-key "view"))
   ;; Do not use LaTeX-indent-tabular as it breaks complex tabular-type environments.
   (setq LaTeX-indent-environment-list
