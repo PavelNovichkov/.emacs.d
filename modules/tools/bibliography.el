@@ -39,17 +39,38 @@
         ; Export as \cite command rather than \autocite.
         org-cite-export-processors '((latex biblatex nil "nil/bare")))
   :config
+
   (setq citar-bibliography (list my/bibliography-bibtex)
         citar-file-additional-files-separator "_"
         citar-file-note-extensions '("org")
         citar-library-paths (list my/bibliography-doc-directory)
         citar-notes-paths (list my/bibliography-notes))
-  ;; Icons.
-  (setq citar-symbols
-        `((file ,(all-the-icons-faicon "file-o" :face 'all-the-icons-green :v-adjust -0.1) . " ")
-          (note ,(all-the-icons-material "speaker_notes" :face 'all-the-icons-blue :v-adjust -0.3) . " ")
-          (link ,(all-the-icons-octicon "link" :face 'all-the-icons-orange :v-adjust 0.01) . " ")))
-  (setq citar-symbol-separator " ")
+
+  ;; Icons (see https://github.com/emacs-citar/citar/wiki/Indicators).
+  (defvar citar-indicator-files-icons
+    (citar-indicator-create
+     :symbol (all-the-icons-faicon
+              "file-o"
+              :face 'all-the-icons-green
+              :v-adjust -0.1)
+     :function #'citar-has-files
+     :padding "  " ; need this because the default padding is too low for these icons
+     :tag "has:files"))
+
+  (defvar citar-indicator-notes-icons
+    (citar-indicator-create
+     :symbol (all-the-icons-material
+              "speaker_notes"
+              :face 'all-the-icons-blue
+              :v-adjust -0.3)
+     :function #'citar-has-notes
+     :padding "  "
+     :tag "has:notes"))
+
+  (setq citar-indicators
+        (list citar-indicator-files-icons
+              citar-indicator-notes-icons))
+  
   (general-define-key
    :keymaps 'citar-map
    "a" #'citar-add-file-to-library))
