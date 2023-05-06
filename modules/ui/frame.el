@@ -11,6 +11,9 @@
    (right-divider-width . 15)
    (bottom-divider-width . 15)))
 
+(setq-default window-resize-pixelwise t
+              frame-resize-pixelwise t)
+
 (defconst my/fonts '("Fira Code Retina-12" . "Source Serif 4-15"))
 
 (defun my/setup-fonts ()
