@@ -67,10 +67,5 @@
   :config
   (setq dired-subtree-use-backgrounds nil))
 
-(use-package diredfl
-  :demand :after dired
-  :config
-  (diredfl-global-mode))
-
 (use-package all-the-icons-dired
   :hook (dired-mode . all-the-icons-dired-mode))
