@@ -30,6 +30,7 @@
                '("arxiv" . "https://arxiv.org/abs/")))
 
 (use-package citar
+  :straight (:files (:defaults))
   :init
   (setq org-cite-insert-processor 'citar
         org-cite-follow-processor 'citar
@@ -54,7 +55,7 @@
    "a" #'citar-add-file-to-library))
 
 (use-package citar-embark
-  :straight nil ;; part of embark
+  :straight nil ;; part of citar
   :demand :after citar
   :config
   (citar-embark-mode))
