@@ -22,7 +22,6 @@
                        "lang/cc"
                        "lang/wolfram"
                        "layouts"
-                       "projects"
                        "ui/evil-goggles"
                        "ui/hl-todo"
                        "ui/olivetti"

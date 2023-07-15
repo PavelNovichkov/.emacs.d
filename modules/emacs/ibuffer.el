@@ -6,11 +6,6 @@
   :config
   (setq ibuffer-show-empty-filter-groups nil))
 
-(use-package ibuffer-projectile
-  :hook (ibuffer . ibuffer-projectile-set-filter-groups)
-  :config
-  (setq ibuffer-projectile-prefix ""))
-
 (use-package all-the-icons-ibuffer
   :after ibuffer
   :hook (ibuffer-mode . all-the-icons-ibuffer-mode)
