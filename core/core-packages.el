@@ -36,8 +36,13 @@
   (straight-thaw-versions)
   (straight-rebuild-all))
 
-;; Install org early before builtin version gets loaded
-(straight-use-package 'org :branch "bugfix") ;; use latest stable version
+;; Install org early before the built-in version gets loaded. Use the
+;; latest stable version by adding :branch "bugfix" to the standard
+;; recipe.
+(let* ((old-plist (cdr (straight-recipes-retrieve 'org)))
+       (new-plist (plist-put old-plist :branch "bugfix"))
+       (recipe (cons 'org new-plist)))
+  (straight-use-package recipe))
 
 ;;; use-package
 (straight-use-package 'use-package)

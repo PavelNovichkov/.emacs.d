@@ -11,6 +11,7 @@
 ;; TODO: refactor.
 (use-package org
   ;; pre-loaded in core-packages
+  :straight nil
   :bind (:map org-mode-map
               ("C-c [" . nil)
               ("C-c ]" . nil))
