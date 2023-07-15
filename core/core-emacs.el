@@ -18,6 +18,8 @@
  ;; no bells
  ring-bell-function #'ignore
  visible-bell nil
+ ;; no warnings from native compilation
+ native-comp-async-report-warnings-errors 'silent
  ;; no dialog boxes
  use-dialog-box nil
  ;; scrolling
