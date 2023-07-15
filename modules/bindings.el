@@ -193,10 +193,11 @@ no other windows are present."
   "o" '(:ignore t :which-key "org")
   "oa" '(org-agenda :which-key "agenda")
   "oc" '(org-capture :which-key "capture")
+  "oi" '(org-mru-clock-in :which-key "clock in")
   "og" '(org-password-manager-generate-password :which-key "generate password")
   "ol" '(org-store-link :which-key "store link")
+  "oo" '(org-clock-out :which-key "clock out")
   "op" '(org-password-manager-get-password :which-key "get password")
-  "ot" '(org-mru-clock-in :which-key "timer")
   "ou" '(org-password-manager-get-username :which-key "get username")
 
   "p" '(:ignore t :which-key "project")
