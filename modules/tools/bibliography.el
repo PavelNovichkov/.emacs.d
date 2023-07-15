@@ -85,6 +85,6 @@
   :demand :after citar
   :custom
   (citar-org-roam-subdir my/bibliography-notes-subdir)
-  (citar-org-roam-note-title-template "${author} - ${title}")
+  (citar-org-roam-note-title-template "${author:%sn} - ${title}")
   :config
   (citar-org-roam-mode))
