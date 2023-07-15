@@ -2,7 +2,15 @@
 
 (use-package pdf-tools
   :mode ("\\.pdf\\'" . pdf-view-mode)
-  :hook (pdf-view-mode . pdf-sync-minor-mode)
+  :init
+  ;; Get rid of the one-pixel border surrounding the PDF. See
+  ;; https://www.reddit.com/r/emacs/comments/dgywoo/issue_with_pdfview_midnight_mode/.
+  (defun my/pdf-tools-disable-evil-cursor ()
+    (set (make-local-variable 'evil-normal-state-cursor)
+         (list nil)))
+  :hook
+  (pdf-view-mode . pdf-sync-minor-mode)
+  (pdf-view-mode . my/pdf-tools-disable-evil-cursor)
   :config
   (pdf-tools-install)
   (setq pdf-cache-image-limit 1
