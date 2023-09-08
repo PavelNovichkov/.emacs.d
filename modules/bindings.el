@@ -171,9 +171,6 @@ no other windows are present."
   "hv" '(helpful-variable :which-key "variable")
 
   "i" '(:ignore t :which-key "insert")
-  ;; This option does not show which-key descriptions correctly:
-  ;; "ic" '(:keymap iso-transl-ctl-x-8-map :package iso-transl :which-key "compose")
-  "ic" `(,(general-simulate-key "C-x 8") :which-key "compose")
   "ik" '(consult-yank-pop :which-key "kill ring")
   "iu" '(insert-char :which-key "unicode")
 
