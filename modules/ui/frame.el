@@ -14,6 +14,8 @@
 (setq-default window-resize-pixelwise t
               frame-resize-pixelwise t)
 
+(pixel-scroll-precision-mode)
+
 (defconst my/fonts '("Fira Code Retina-12" . "Source Serif 4-15"))
 
 (defun my/setup-fonts ()
