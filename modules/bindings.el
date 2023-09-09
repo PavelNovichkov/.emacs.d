@@ -195,6 +195,7 @@ no other windows are present."
   "q" '(:ignore t :which-key "quit")
   "qf" '(save-buffers-kill-terminal :which-key "close frame")
   "qq" '(save-buffers-kill-emacs :which-key "quit Emacs")
+  "qr" '(restart-emacs :which-key "restart Emacs")
 
   "t" '(:ignore t :which-key "toggle")
   "tc" '(display-fill-column-indicator-mode :which-key "fill column")
