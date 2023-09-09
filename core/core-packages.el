@@ -45,8 +45,6 @@
   (straight-use-package recipe))
 
 ;;; use-package
-(straight-use-package 'use-package)
-
 (setq straight-use-package-by-default t)
 
 (setq use-package-always-defer t)
