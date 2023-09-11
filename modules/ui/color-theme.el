@@ -3,6 +3,10 @@
 (use-package nano-theme
   :demand
   :custom
-  (nano-light-popout "#DC711A")
-  :config
-  (load-theme 'nano-light t))
+  (nano-light-popout "#DC711A"))
+
+(use-package auto-dark
+  :custom
+  (auto-dark-light-theme 'nano-light)
+  (auto-dark-dark-theme 'nano-dark)
+  :hook (server-after-make-frame . auto-dark-mode))
