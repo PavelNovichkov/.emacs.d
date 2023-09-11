@@ -22,11 +22,6 @@
  native-comp-async-report-warnings-errors 'silent
  ;; no dialog boxes
  use-dialog-box nil
- ;; scrolling
- hscroll-step 1
- scroll-conservatively 101
- scroll-margin 0
- scroll-preserve-screen-position t
  ;; editor
  indent-tabs-mode nil
  require-final-newline t
