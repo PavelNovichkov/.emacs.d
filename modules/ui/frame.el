@@ -13,11 +13,17 @@
 
 (setq-default frame-resize-pixelwise t)
 
-(defconst my/fonts '("Fira Code Retina-12" . "Source Serif 4-15"))
 
 (defun my/setup-fonts ()
   "Setup fonts after GUI frame is created."
-  (set-face-attribute 'default nil :font (car my/fonts))
-  (set-face-attribute 'fixed-pitch nil :font (car my/fonts))
-  (set-face-attribute 'variable-pitch nil :font (cdr my/fonts)))
+  (interactive)
+  (set-face-attribute
+   'default nil
+   :family "Input Mono Narrow" :height 120 :weight 'normal)
+  (set-face-attribute
+   'fixed-pitch nil
+   :family "Input Mono Narrow" :height 1.0 :weight 'normal)
+  (set-face-attribute
+   'variable-pitch nil
+   :family "Input Sans Narrow" :height 1.0 :weight 'normal))
 (add-hook 'server-after-make-frame-hook #'my/setup-fonts)
