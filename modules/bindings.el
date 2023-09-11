@@ -214,6 +214,8 @@ no other windows are present."
   "wd" '(delete-window :which-key "delete")
   "wD" '(delete-other-windows :which-key "delete other")
   "wh" '(my/split-window-horizontally :which-key "split horizontally")
+  "wo" '(window-toggle-side-windows :which-key "toggle side windows")
+  "wp" '(my/window-toggle-dedicated :which-key "pin")
   "ws" '(rotate-window :which-key "swap")
   "wt" '(rotate-layout :which-key "transpose")
   "wu" '(winner-undo :which-key "undo")

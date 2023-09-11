@@ -17,3 +17,9 @@
   :straight nil
   :custom
   (pixel-scroll-precision-mode t))
+
+(defun my/window-toggle-dedicated ()
+  "Toggle window dedication in the selected window."
+  (interactive)
+  (set-window-dedicated-p (selected-window)
+     (not (window-dedicated-p (selected-window)))))
