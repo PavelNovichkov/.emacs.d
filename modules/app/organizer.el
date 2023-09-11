@@ -94,18 +94,20 @@
                                  (shell . t)))
   ;; Images.
   (setq org-image-actual-width `(,(/ (display-pixel-width) 4)))
+
   ;; LaTeX.
-  (setq org-preview-latex-default-process 'dvipng
-        org-preview-latex-image-directory ".ltximg/")
-  (setq org-latex-packages-alist
-        '(("" "mathrsfs")
-          ("" "dsfont")
-          ("" "mathtools")
+
+  (setq org-highlight-latex-and-related nil
+        org-latex-packages-alist
+        '(("" "mathtools")
           ("" "slashed")
-          ("scaled=0.98" "XCharter")
-          ("charter,scaled=1.05,smallerops,upint,vvarbb" "newtxmath")))
-  (plist-put org-format-latex-options :scale 1.6)
-  (setq org-highlight-latex-and-related '(native))
+          ("" "arev"))
+        org-preview-latex-default-process 'dvisvgm
+        org-preview-latex-image-directory ".ltximg/")
+
+  (plist-put org-format-latex-options :scale 1.1)
+  (plist-put org-format-latex-options :background "Transparent")
+
   (defun my/org-copy-as-latex ()
     "Export region to LaTeX, and copy it to the clipboard."
     (interactive)
@@ -116,6 +118,7 @@
           (copy-region-as-kill (point-min) (point-max)))
         (kill-buffer buf)))
     (setq deactivate-mark t))
+
   ;; Bindings.
   (local-leader-def
     :keymaps 'org-mode-map
