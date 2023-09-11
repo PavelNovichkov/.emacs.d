@@ -65,6 +65,7 @@
   :demand :after evil
   :config
   (add-to-list 'evil-snipe-disabled-modes 'pdf-view-mode)
+  (add-to-list 'evil-snipe-disabled-modes 'proced-mode)
   (evil-snipe-mode 1)
   (evil-snipe-override-mode 1))
 

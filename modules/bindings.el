@@ -98,6 +98,7 @@ no other windows are present."
   "am" '(mu4e :which-key "mail")
   "ap" '(my/system-packages/body :which-key "system packages")
   "ar" '(elfeed :which-key "RSS")
+  "at" '(proced :which-key "top")
 
   "b" '(:ignore t :which-key "buffer")
   "bb" '(my/switch-to-recent-buffer :which-key "most recent")
