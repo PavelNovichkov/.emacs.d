@@ -13,6 +13,10 @@
 
 (setq-default frame-resize-pixelwise t)
 
+(use-package mixed-pitch
+  :hook
+  (text-mode . mixed-pitch-mode)
+  (mu4e-view-mode . mixed-pitch-mode))
 
 (defun my/setup-fonts ()
   "Setup fonts after GUI frame is created."
