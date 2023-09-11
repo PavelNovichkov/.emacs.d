@@ -143,4 +143,10 @@
       (nreverse buffers)))
   (advice-add #'gnus-dired-mail-buffers :override #'my/gnus-dired-mail-buffers)
 
-  (setq gnus-dired-mail-mode 'mu4e-user-agent))
+  (setq gnus-dired-mail-mode 'mu4e-user-agent)
+
+  (add-to-list
+   'display-buffer-alist
+   '("\\*mu4e-headers\\*"
+     (display-buffer-in-tab)
+     (tab-name . "mail"))))
