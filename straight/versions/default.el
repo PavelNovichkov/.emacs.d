@@ -33,7 +33,6 @@
  ("evil-anzu" . "d1e98ee6976437164627542909a25c6946497899")
  ("evil-collection" . "d9a70ef21942c208094acf1e5c65d7f8f0016aca")
  ("evil-commentary" . "2dab6ac34d1617971768ad219d73af48f7473fec")
- ("evil-escape" . "3c335a5709b1abb08687960038746b36add465f9")
  ("evil-exchange" . "5f0a2d41434c17c6fb02e4f744043775de1c63a2")
  ("evil-goggles" . "8f20a16e74016f37ad76dc4f2230d9b00c6df3c2")
  ("evil-numbers" . "7a1b62afc12da2b582bf84d722e7b10ca8b97065")

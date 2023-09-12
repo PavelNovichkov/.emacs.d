@@ -9,13 +9,6 @@
    "gc" #'evil-commentary
    "gy" #'evil-commentary-yank))
 
-(use-package evil-escape
-  :demand :after evil
-  :config
-  (setq-default evil-escape-key-sequence "fj"
-                evil-escape-unordered-key-sequence t)
-  (evil-escape-mode))
-
 (use-package evil-exchange
   :commands evil-exchange
   :init
