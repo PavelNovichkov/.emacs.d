@@ -56,11 +56,14 @@
 
 (use-package evil-snipe
   :demand :after evil
+  :custom
+  (evil-snipe-char-fold t)
+  (evil-snipe-mode t)
+  (evil-snipe-override-mode t)
+  (evil-snipe-scope 'visible)
   :config
   (add-to-list 'evil-snipe-disabled-modes 'pdf-view-mode)
-  (add-to-list 'evil-snipe-disabled-modes 'proced-mode)
-  (evil-snipe-mode 1)
-  (evil-snipe-override-mode 1))
+  (add-to-list 'evil-snipe-disabled-modes 'proced-mode))
 
 (use-package evil-surround
   :commands (evil-surround-edit
