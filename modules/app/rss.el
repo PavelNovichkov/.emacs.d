@@ -2,15 +2,15 @@
 
 (use-package elfeed
   :commands elfeed
-  :config
-  (setq-default elfeed-search-filter "@1-month-ago +unread ")
-  (setq elfeed-search-date-format '("%d/%m/%Y" 10 :left)
-        elfeed-sort-order 'ascending))
+  :custom
+  (elfeed-search-filter "@1-month-ago +unread ")
+  (elfeed-search-date-format '("%d/%m/%Y" 10 :left))
+  (elfeed-sort-order 'ascending))
 
 (use-package elfeed-org
   :demand :after elfeed
+  :custom
+  (rmh-elfeed-org-files
+   (list (expand-file-name "reference/emacs.org" my/org-directory)))
   :config
-  (require 'org)
-  (elfeed-org)
-  (setq rmh-elfeed-org-files
-        (list (expand-file-name "reference/emacs.org" my/org-directory))))
+  (elfeed-org))
