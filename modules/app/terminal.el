@@ -2,7 +2,7 @@
 
 (use-package vterm
   :ensure-system-package
-  ((vterm-ctrl . libvterm)
+  (("/usr/lib64/libvterm.so" . libvterm)
    (cmake . cmake))
   :commands vterm
   :config
