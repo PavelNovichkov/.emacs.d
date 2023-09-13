@@ -53,6 +53,12 @@
 ;; Wrap lines in all text buffers.
 (add-hook 'text-mode-hook #'visual-line-mode)
 
+(use-package adaptive-wrap
+  :custom
+  (adaptive-wrap-extra-indent 2)
+  :hook
+  (prog-mode . adaptive-wrap-prefix-mode))
+
 ;; Replace yes/no with y/n.
 (setq use-short-answers t)
 
