@@ -51,8 +51,8 @@
 
 (setq use-package-compute-statistics t)
 
-(use-package use-package-ensure-system-package
-  :ensure t)
+(use-package use-package-ensure-system-package ; built-in
+  :straight nil)
 
 ;;; Use consistent configuration paths.
 (use-package no-littering
