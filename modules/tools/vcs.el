@@ -4,7 +4,24 @@
   :ensure-system-package git
   :commands magit-status
   :custom
-  (magit-section-visibility-indicator nil))
+  (magit-display-buffer-function #'display-buffer)
+  (magit-section-visibility-indicator nil)
+  :config
+  (add-to-list
+   'display-buffer-alist
+   '("magit.*"
+     (display-buffer-in-side-window)
+     (side . right)
+     (slot . 0)
+     (window-width . 80)))
+  (add-to-list
+   'display-buffer-alist
+   '("COMMIT_EDITMSG"
+     (display-buffer-in-side-window)
+     (side . right)
+     (slot . 1)
+     (window-width . 80)
+     (window-height . 10))))
 
 (use-package diff-hl
   :hook (((prog-mode conf-mode) . diff-hl-mode)
