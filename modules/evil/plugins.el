@@ -38,20 +38,14 @@
 (use-package evil-owl
   :demand :after evil
   :config
-  (if (featurep 'posframe)
-      (setq evil-owl-display-method 'posframe
-            evil-owl-extra-posframe-args
-            '(:width 50 :height 20
-                     :internal-border-width 2
-                     :internal-border-color "black")
-            evil-owl-max-string-length 50)
-    (setq evil-owl-display-method 'window
-          evil-owl-max-string-length 500)
-    (add-to-list 'display-buffer-alist
-                 '("*evil-owl*"
-                   (display-buffer-in-side-window)
-                   (side . bottom)
-                   (window-height . 0.5))))
+  (setq evil-owl-display-method 'posframe
+        evil-owl-extra-posframe-args
+        (list
+         :width 50
+         :height 20
+         :internal-border-width 1
+         :internal-border-color "black")
+        evil-owl-max-string-length 50)
   (evil-owl-mode))
 
 (use-package evil-snipe

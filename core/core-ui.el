@@ -12,9 +12,7 @@
 ;;; Posframe
 
 (use-package posframe
-  :demand :if window-system
-  :config
-  (setq posframe-mouse-banish nil))
+  :demand)
 
 ;;; All the icons
 
