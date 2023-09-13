@@ -65,18 +65,18 @@
 (use-package server ; built-in
   :straight nil
   :demand
-  :config
+  :custom
   ;; Open files in a new tab.
-  (setq server-window #'switch-to-buffer-other-tab))
+  (server-window #'switch-to-buffer-other-tab))
 
 ;; Save minibuffer history across sessions.
 (use-package savehist ; built-in
   :straight nil
   :demand
-  :config
-  (setq history-length 10
-        savehist-autosave-interval nil)
-  (savehist-mode))
+  :custom
+  (history-length 10)
+  (savehist-autosave-interval nil)
+  (savehist-mode t))
 
 (use-package undo-fu
   :config
@@ -89,5 +89,5 @@
    "s" #'sudo-edit-find-file))
 
 (use-package wgrep
-  :config
-  (setq wgrep-auto-save-buffer t))
+  :custom
+  (wgrep-auto-save-buffer t))

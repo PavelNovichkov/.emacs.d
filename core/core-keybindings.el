@@ -32,11 +32,11 @@
 
 (use-package which-key
   :demand
-  :config
-  (setq which-key-sort-order #'which-key-description-order
-        ;; needed when frame has internal border
-        which-key-allow-imprecise-window-fit nil)
-  (which-key-mode))
+  :custom
+  (which-key-sort-order #'which-key-description-order)
+  ;; needed when frame has internal border
+  (which-key-allow-imprecise-window-fit nil)
+  (which-key-mode t))
 
 (use-package hydra
   :commands defhydra)

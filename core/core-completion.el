@@ -23,8 +23,10 @@
   :demand
   :custom
   (completion-styles '(orderless basic))
-  (completion-category-overrides '((file (styles basic partial-completion))))
-  (orderless-matching-styles '(orderless-literal orderless-regexp orderless-initialism)))
+  (completion-category-overrides
+   '((file (styles basic partial-completion))))
+  (orderless-matching-styles
+   '(orderless-literal orderless-regexp orderless-initialism)))
 
 ;;; Marginalia (completion annotations)
 
@@ -50,18 +52,18 @@
    :keymaps 'vertico-map
    "C-b" #'embark-become
    "C-e" #'embark-export)
-  :config
+  :custom
   ;; Press "?" after a prefix to show keybindings in the minibuffer.
-  (setq embark-help-key "?"
-        prefix-help-command #'embark-prefix-help-command))
+  (embark-help-key "?")
+  (prefix-help-command #'embark-prefix-help-command))
 
 ;;; Consult (completion-based commands)
 
 (use-package consult
   :demand
-  :config
-  (setq consult-narrow-key "<"
-        consult-preview-key nil))
+  :custom
+  (consult-narrow-key "<")
+  (consult-preview-key nil))
 
 (use-package embark-consult
   :straight nil ;; part or embark
@@ -71,9 +73,9 @@
 ;;; Avy
 
 (use-package avy
-  :config
+  :custom
   ;; Use Colemak-friendly set of keys.
-  (setq avy-keys '(?t ?s ?r ?a ?n ?e ?i ?o)))
+  (avy-keys '(?t ?s ?r ?a ?n ?e ?i ?o)))
 
 ;;; Corfu
 
@@ -82,10 +84,11 @@
              :repo "minad/corfu"
              :files ("*.el" "extensions/*.el"))
   :demand
+  :custom
+  (corfu-auto t)
+  (corfu-cycle t)
+  (global-corfu-mode t)
   :config
-  (setq corfu-auto t
-        corfu-cycle t)
-  (global-corfu-mode)
   (defun my/corfu-enable-in-minibuffer ()
     "Enable Corfu in the minibuffer if `completion-at-point' is bound."
     (when (where-is-internal #'completion-at-point (list (current-local-map)))
@@ -121,23 +124,23 @@
 
 (use-package kind-icon
   :demand :after corfu
+  :custom
+  (kind-icon-default-face 'corfu-default)
+  (kind-icon-default-style
+   '(:padding 0 :stroke 0 :margin 0 :radius 0 :height 0.8 :scale 1.0))
   :config
-  (setq kind-icon-default-face 'corfu-default)
-  (setq kind-icon-default-style
-        '(:padding 0 :stroke 0 :margin 0 :radius 0 :height 0.8 :scale 1.0))
   (add-to-list 'corfu-margin-formatters #'kind-icon-margin-formatter))
 
 ;;; Yasnippet
 
 (use-package yasnippet
   :commands yas-expand
-  :init
-  (setq yas-alias-to-yas/prefix-p nil)
+  :custom
+  (yas-alias-to-yas/prefix-p nil)
   :config
   (general-unbind 'yas-minor-mode-map
     "<tab>" "TAB")
   (general-define-key
    :states 'insert
    :keymaps 'yas-minor-mode-map
-   "C-e" #'yas-expand)
-  (yas-global-mode))
+   "C-e" #'yas-expand))

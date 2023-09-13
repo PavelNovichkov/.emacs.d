@@ -19,10 +19,10 @@
 ;;; All the icons
 
 (use-package all-the-icons
-  :config
-  (setq all-the-icons-scale-factor 1.0))
+  :custom
+  (all-the-icons-scale-factor 1.0))
 
 (use-package all-the-icons-completion
   :demand
-  :config
-  (all-the-icons-completion-mode))
+  :custom
+  (all-the-icons-completion-mode t))
