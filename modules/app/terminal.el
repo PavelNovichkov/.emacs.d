@@ -5,6 +5,6 @@
   (("/usr/lib64/libvterm.so" . libvterm)
    (cmake . cmake))
   :commands vterm
-  :config
-  (setq vterm-buffer-name-string "vterm %s"
-        vterm-shell "/usr/bin/fish"))
+  :custom
+  (vterm-buffer-name-string "vterm %s")
+  (vterm-shell "/usr/bin/fish"))
