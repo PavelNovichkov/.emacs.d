@@ -5,4 +5,11 @@
              helpful-callable
              helpful-key
              helpful-symbol
-             helpful-variable))
+             helpful-variable)
+  :config
+  (add-to-list
+   'display-buffer-alist
+   '("\\*helpful.*"
+     (display-buffer-reuse-mode-window display-buffer-in-side-window)
+     (side . right)
+     (window-width . 80))))
