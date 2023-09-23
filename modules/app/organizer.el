@@ -22,7 +22,7 @@
   (setq org-directory my/org-directory
         org-agenda-files
         (mapcar (lambda (name) (expand-file-name name my/org-directory))
-                '("gtd.org" "calendar.org" "tickler.org")))
+                '("gtd.org" "calendar.org" "inbox.org" "tickler.org")))
   ;; Variables.
   (add-to-list 'org-modules 'org-habit t)
   (setq org-enforce-todo-dependencies t
