@@ -24,3 +24,10 @@
   :demand
   :custom
   (all-the-icons-completion-mode t))
+
+;;; Window management
+
+(defun my/suppress-delete-other-windows (fn &rest args)
+  "Ignore `delete-other-windows' to prevent deleting windows."
+  (cl-letf (((symbol-function 'delete-other-windows) 'ignore))
+    (apply fn args)))
