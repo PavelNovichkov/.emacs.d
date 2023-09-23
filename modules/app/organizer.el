@@ -39,11 +39,10 @@
         org-log-done 'time
         org-tags-column 0
         org-agenda-window-setup 'current-window
-        org-agenda-tags-column -150
+        org-agenda-tags-column 'auto
         org-agenda-skip-scheduled-if-deadline-is-shown 'not-today
         org-columns-default-format "%50ITEM(Task) %10CLOCKSUM %17TIMESTAMP_IA")
   ;; Agenda.
-  (setq org-agenda-buffer-name "Org Agenda") ; Remove asterisks to be included in iflipb list.
   (setq org-agenda-custom-commands
         '(("v" "Main view"
            ((agenda
@@ -145,6 +144,21 @@
     "tt" '(org-latex-preview :which-key "latex")
     "y" '(my/org-copy-as-latex :which-key "copy as latex")
     "'" '(org-edit-special :which-key "edit")))
+
+(use-package org-agenda
+  :straight nil ;; part of org
+  :hook
+  (org-agenda-mode . visual-line-mode)
+  (org-agenda-mode . adaptive-wrap-prefix-mode)
+  (org-agenda-mode . hl-line-mode)
+  :config
+  (add-to-list
+   'display-buffer-alist
+   '("\*Agenda Commands\*"
+     (display-buffer-in-side-window)
+     (side . bottom)
+     (slot . 0)))
+  (advice-add #'org-agenda-get-restriction-and-command :around #'my/suppress-delete-other-windows))
 
 (use-package org-capture
   :straight nil ;; part of org
