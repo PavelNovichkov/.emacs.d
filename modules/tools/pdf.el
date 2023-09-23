@@ -11,6 +11,10 @@
   :hook
   (pdf-view-mode . pdf-sync-minor-mode)
   (pdf-view-mode . my/pdf-tools-disable-evil-cursor)
+  :custom
+  (pdf-view-midnight-colors
+   (cons nano-dark-foreground nano-dark-background))
+  (pdf-view-midnight-invert nil)
   :config
   (pdf-tools-install)
   (setq pdf-cache-image-limit 1
