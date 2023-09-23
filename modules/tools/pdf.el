@@ -12,14 +12,14 @@
   (pdf-view-mode . pdf-sync-minor-mode)
   (pdf-view-mode . my/pdf-tools-disable-evil-cursor)
   :custom
+  (pdf-cache-image-limit 1)
   (pdf-view-midnight-colors
    (cons nano-dark-foreground nano-dark-background))
   (pdf-view-midnight-invert nil)
+  (pdf-view-continuous nil)
+  (pdf-view-resize-factor 1.1)
   :config
-  (pdf-tools-install)
-  (setq pdf-cache-image-limit 1
-        pdf-view-continuous nil
-        pdf-view-resize-factor 1.1))
+  (pdf-tools-install))
 
 ;; Add support for org links.
 (use-package org-pdftools
