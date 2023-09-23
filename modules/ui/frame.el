@@ -1,17 +1,20 @@
 ;;; ui/frame.el -*- lexical-binding: t; -*-
 
-;; Setup frame
-(menu-bar-mode 0)
-(tool-bar-mode 0)
-(scroll-bar-mode 0)
-
-(modify-all-frames-parameters
- '((fullscreen . maximized)
-   (internal-border-width . 15)
-   (right-divider-width . 15)
-   (bottom-divider-width . 15)))
-
-(setq-default frame-resize-pixelwise t)
+(use-package frame ; built-in
+  :straight nil
+  :custom
+  (blink-cursor-mode nil)
+  (frame-resize-pixelwise t)
+  (frame-title-format "Emacs")
+  (menu-bar-mode nil)
+  (scroll-bar-mode nil)
+  (tool-bar-mode nil)
+  :config
+  (modify-all-frames-parameters
+   '((fullscreen . maximized)
+     (internal-border-width . 15)
+     (right-divider-width . 15)
+     (bottom-divider-width . 15))))
 
 (use-package mixed-pitch
   :hook

@@ -13,8 +13,6 @@
  ;; quiet startup
  inhibit-startup-message t
  initial-scratch-message nil
- ;; frame title
- frame-title-format "Emacs"
  ;; no bells
  ring-bell-function #'ignore
  visible-bell nil
