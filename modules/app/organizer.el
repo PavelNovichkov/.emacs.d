@@ -99,9 +99,6 @@
   (setq org-refile-use-outline-path 'file)
   (setq org-outline-path-complete-in-steps nil)
   (setq org-refile-allow-creating-parent-nodes 'confirm)
-  ;; Archive.
-  (setq org-archive-location "archive/%s_archive::")
-  (setq org-archive-file-header-format "#+FILETAGS: ARCHIVE\nArchived entries from file %s\n")
   ;; Clocking.
   (setq org-clock-heading-function
         (lambda ()
@@ -191,6 +188,14 @@
      (side . bottom)
      (slot . 0)))
   (advice-add #'org-agenda-get-restriction-and-command :around #'my/suppress-delete-other-windows))
+
+(use-package org-archive
+  :straight nil ;; part of org
+  :custom
+  (org-archive-file-header-format
+   "#+FILETAGS: ARCHIVE\nArchived entries from file %s\n")
+  (org-archive-location "archive/%s_archive::")
+  (org-archive-subtree-add-inherited-tags t))
 
 (use-package org-capture
   :straight nil ;; part of org
