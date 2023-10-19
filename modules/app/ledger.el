@@ -3,6 +3,7 @@
 (use-package ledger-mode
   :ensure-system-package ledger
   :commands ledger-mode
+  :hook (ledger-mode . ledger-flymake-enable)
   :config
   (setq ledger-reports
         '(("bal"            "%(binary) -f %(ledger-file) bal")
