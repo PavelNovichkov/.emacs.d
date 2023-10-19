@@ -151,3 +151,8 @@
 
   (setq gnus-dired-mail-mode 'mu4e-user-agent))
 
+
+;;; Send HTML emails
+
+
+(use-package org-mime)
