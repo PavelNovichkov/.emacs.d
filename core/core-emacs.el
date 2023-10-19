@@ -1,10 +1,10 @@
 ;;; core-emacs.el --- Emacs settings -*- lexical-binding: t; -*-
 
 ;; Enhance security.
-;; Reference: https://glyph.twistedmatrix.com/2015/11/editor-malware.html.
-(setq tls-checktrust t
-      gnutls-verify-error t
-      tls-program '("gnutls-cli --x509cafile %t -p %p %h"))
+(use-package nsm ; built-in
+  :straight nil
+  :custom
+  (network-security-level 'paranoid))
 
 ;; safe-local-variable-values are saved to custom-file, so we have to load it.
 (load custom-file t t)
