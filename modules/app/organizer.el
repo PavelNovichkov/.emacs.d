@@ -17,6 +17,8 @@
               ("C-c ]" . nil))
   :commands (org-agenda
              org-store-link)
+  :custom
+  (org-use-fast-todo-selection 'expert) ; no popup window
   :config
   ;; Paths.
   (setq org-directory my/org-directory
@@ -59,6 +61,36 @@
            ((org-agenda-prefix-format
              '((tags . "  %-23(truncate-string-to-width (or (cadr (org-get-outline-path)) \"Task\") 23 nil nil \"...\") ")))
             (org-agenda-start-with-log-mode '(closed clock state))))))
+  (add-to-list
+   'display-buffer-alist
+   '("\\*Org Agenda\\*"
+     ;; (display-buffer-in-tab display-buffer-reuse-mode-window)
+     ;; (tab-name . "gtd")
+     ;; (dedicated . side)
+     ;; (side . left)))
+     (display-buffer-in-tab display-buffer-reuse-window display-buffer-in-direction)
+     (tab-name . "gtd")
+     (direction . leftmost)))
+  (defun my/display-buffer-org-agenda-file-p (buffer-name action)
+    "Return non-nil, if BUFFER-NAME is associated with an agenda file."
+    (with-current-buffer buffer-name
+      (and (derived-mode-p 'org-mode) (org-agenda-file-p))))
+  (add-to-list
+   'display-buffer-alist
+   '(my/display-buffer-org-agenda-file-p
+     (display-buffer-in-tab display-buffer-reuse-mode-window display-buffer-in-direction)
+     (tab-name . "gtd")
+     (direction . rightmost)))
+  ;; Org notes.
+  (add-to-list
+   'display-buffer-alist
+   '("\*Org Note\*"
+     (display-buffer-in-side-window)
+     (side . bottom)
+     (slot . 0)))
+  (advice-add
+   #'org-add-log-note
+   :around #'my/suppress-delete-other-windows)
   ;; Refile.
   (setq org-refile-targets
         '(("gtd.org" :maxlevel . 3)
@@ -177,6 +209,21 @@
            "* %?\n:PROPERTIES:\n:CREATED:  %U\n:END:")
           ("W" "Web browser link" entry (file+headline "gtd.org" "Tasks")
            "* NEXT [#C] %?Read %:annotation :@computer:@read:\n:PROPERTIES:\n:CREATED:  %U\n:END:")))
+  (add-to-list
+   'display-buffer-alist
+   '("\*Org Select\*"
+     (display-buffer-in-side-window)
+     (side . bottom)
+     (slot . 0)))
+  (add-to-list
+   'display-buffer-alist
+   '("CAPTURE-.*\.org"
+     (display-buffer-in-side-window)
+     (side . bottom)
+     (slot . 0)))
+  (advice-add
+   #'org-capture-place-template
+   :around #'my/suppress-delete-other-windows)
   (local-leader-def
     :keymaps 'org-capture-mode-map
     "r" '(org-capture-refile :which-key "refile")))
@@ -202,6 +249,19 @@ Otherwise, use the original version of `server-visited-files'."
             (throw 'greedy (apply #'server-visit-files args))))
         (apply orig-fun args))))
   (advice-add #'server-visit-files :around #'my/org-protocol-lazy-load))
+
+(use-package ox
+  :straight nil ;; part of org
+  :config
+  (add-to-list
+   'display-buffer-alist
+   '("\*Org Export Dispatcher\*"
+     (display-buffer-in-side-window)
+     (side . bottom)
+     (slot . 0)))
+  (advice-add
+   #'org-export--dispatch-ui
+   :around #'my/suppress-delete-other-windows))
 
 ;;; Integration with evil
 
