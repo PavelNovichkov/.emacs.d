@@ -60,7 +60,35 @@
              ((org-agenda-overriding-header "Waiting list:"))))
            ((org-agenda-prefix-format
              '((tags . "  %-23(truncate-string-to-width (or (cadr (org-get-outline-path)) \"Task\") 23 nil nil \"...\") ")))
-            (org-agenda-start-with-log-mode '(closed clock state))))))
+            (org-agenda-start-with-log-mode '(closed clock state))))
+          ("g" "Get Things Done (GTD)"
+           ((agenda
+             ""
+             ((org-agenda-skip-function
+               '(org-agenda-skip-entry-if 'deadline))
+              (org-agenda-span 'day)
+              (org-deadline-warning-days 0)))
+            (todo
+             "NEXT"
+             ((org-agenda-skip-function
+               '(org-agenda-skip-entry-if 'deadline))
+              (org-agenda-prefix-format "  %i %-12:c [%e] ")
+              (org-agenda-overriding-header "\nTasks\n")))
+            (agenda
+             nil
+             ((org-agenda-entry-types '(:deadline))
+              (org-agenda-format-date "")
+              (org-deadline-warning-days 7)
+              (org-agenda-skip-function
+               '(org-agenda-skip-entry-if 'notregexp "\\* NEXT"))
+              (org-agenda-overriding-header "\nDeadlines")))
+            (tags-todo
+             "inbox"
+             ((org-agenda-prefix-format "  %?-12t% s")
+              (org-agenda-overriding-header "\nInbox\n")))
+            (tags
+             "CLOSED>=\"<today>\""
+             ((org-agenda-overriding-header "\nCompleted today\n")))))))
   (add-to-list
    'display-buffer-alist
    '("\\*Org Agenda\\*"
