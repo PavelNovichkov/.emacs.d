@@ -202,18 +202,27 @@
   :commands (org-capture)
   :config
   (setq org-capture-templates
-        '(("i" "Inbox" entry (file "inbox.org")
+        `(("i" "Inbox" entry (file "inbox.org")
            "* %?\n:PROPERTIES:\n:CREATED:  %U\n:END:")
+          ("m" "Inbox [email]" entry (file "inbox.org")
+           ,(concat
+             "* TODO Process %a from %:fromname %? :@email:\n"
+             ":PROPERTIES:\n:CREATED:  %U\n:END:"))
           ("t" "Tickler" entry (file "tickler.org")
-           "* TODO %?\nSCHEDULED: %^t\n:PROPERTIES:\n:CREATED:  %U\n:END:")
+           ,(concat
+             "* TODO %?\nSCHEDULED: %^t\n"
+             ":PROPERTIES:\n:CREATED:  %U\n:END:"))
           ("c" "Calendar" entry (file "calendar.org")
            "* %?\n%^t")
           ("l" "Link" entry (file "inbox.org")
            "* %a%?\n:PROPERTIES:\n:CREATED:  %U\n:END:")
           ("d" "Diary" entry (file+olp+datetree "reference/diary.org")
            "* %?\n:PROPERTIES:\n:CREATED:  %U\n:END:")
-          ("W" "Web browser link" entry (file+headline "gtd.org" "Tasks")
-           "* NEXT [#C] %?Read %:annotation :@computer:@read:\n:PROPERTIES:\n:CREATED:  %U\n:END:")))
+          ("W" "Web browser link" entry
+           (file+headline "gtd.org" "Tasks")
+           ,(concat
+             "* NEXT [#C] %?Read %:annotation :@computer:@read:\n"
+             ":PROPERTIES:\n:CREATED:  %U\n:END:"))))
   (add-to-list
    'display-buffer-alist
    '("\*Org Select\*"
