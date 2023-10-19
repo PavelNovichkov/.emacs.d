@@ -43,6 +43,12 @@
         ;; Do not use mu4e built-in completion system.
         mu4e-read-option-use-builtin nil
         mu4e-completing-read-function 'completing-read)
+
+  (add-to-list
+   'display-buffer-alist
+   '("\\*mu4e-headers\\*"
+     (display-buffer-in-tab)
+     (tab-name . "mail")))
   
   ;;; Headers view
 
@@ -143,10 +149,5 @@
       (nreverse buffers)))
   (advice-add #'gnus-dired-mail-buffers :override #'my/gnus-dired-mail-buffers)
 
-  (setq gnus-dired-mail-mode 'mu4e-user-agent)
+  (setq gnus-dired-mail-mode 'mu4e-user-agent))
 
-  (add-to-list
-   'display-buffer-alist
-   '("\\*mu4e-headers\\*"
-     (display-buffer-in-tab)
-     (tab-name . "mail"))))
