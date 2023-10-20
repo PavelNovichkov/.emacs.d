@@ -243,7 +243,7 @@
              "* TODO %?\nSCHEDULED: %^t\n"
              ":PROPERTIES:\n:CREATED:  %U\n:END:"))
           ("c" "Calendar" entry (file "calendar.org")
-           "* %?\n%^t")
+           "* %?\n%^t%^{TIMEZONE}p")
           ("l" "Link" entry (file "inbox.org")
            "* %a%?\n:PROPERTIES:\n:CREATED:  %U\n:END:")
           ("d" "Diary" entry (file+olp+datetree "reference/diary.org")
