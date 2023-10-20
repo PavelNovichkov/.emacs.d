@@ -423,6 +423,16 @@ Otherwise, use the original version of `server-visited-files'."
                     "#+title: ${title}\n\n- tags :: \n")
            :unnarrowed t)))
   (add-hook 'org-roam-capture-new-node-hook #'my/org-set-created-property)
+  ;; Sometimes org-export fails to resolve org-id links. The following
+  ;; function fixes the issue (see
+  ;; https://dev.to/devteam/resolving-an-unable-to-resolve-link-error-for-org-mode-in-emacs-2n1f
+  ;; for details):
+  (defun my/org-roam-rebuild-cache ()
+    "Rebuild the `org-mode' and `org-roam' cache."
+    (interactive)
+    (org-id-update-id-locations)
+    (org-roam-db-sync)
+    (org-roam-update-org-id-locations))
   (org-roam-setup))
 
 ;;; Integration with Anki for spaced repetition
