@@ -129,7 +129,7 @@
   :custom
   (kind-icon-default-face 'corfu-default)
   (kind-icon-default-style
-   '(:padding 0 :stroke 0 :margin 0 :radius 0 :height 0.8 :scale 1.0))
+   '(:padding 0 :stroke 0 :margin 0 :radius 0 :height 0.4 :scale 1.0))
   :config
   (add-to-list 'corfu-margin-formatters #'kind-icon-margin-formatter))
 
