@@ -26,11 +26,11 @@
   (interactive)
   (set-face-attribute
    'default nil
-   :family "Input Mono Narrow" :height 120 :weight 'normal)
+   :family "Input Mono" :height 110 :weight 'normal)
   (set-face-attribute
    'fixed-pitch nil
-   :family "Input Mono Narrow" :height 1.0 :weight 'normal)
+   :family "Input Mono" :height 1.0 :weight 'normal)
   (set-face-attribute
    'variable-pitch nil
-   :family "Input Sans Narrow" :height 1.0 :weight 'normal))
+   :family "Input Sans" :height 1.0 :weight 'normal))
 (add-hook 'server-after-make-frame-hook #'my/setup-fonts)
