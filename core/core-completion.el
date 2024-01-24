@@ -88,6 +88,7 @@
   (corfu-auto t)
   (corfu-cycle t)
   (global-corfu-mode t)
+  (evil-collection-corfu-key-themes nil)
   :config
   (defun my/corfu-enable-in-minibuffer ()
     "Enable Corfu in the minibuffer if `completion-at-point' is bound."
@@ -103,6 +104,7 @@
   (general-define-key
    :keymaps 'corfu-map
    :states 'insert
+   "<escape>" #'corfu-quit
    "C-SPC" #'corfu-insert-separator
    "C-e" #'my/corfu-move-to-minibuffer))
 
