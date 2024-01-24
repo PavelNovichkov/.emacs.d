@@ -258,15 +258,3 @@ no other windows are present."
  :states '(motion normal)
  :keymaps 'override
  "C-j" #'evil-avy-goto-word-1)
-
-;;; Evil collection
-
-(use-package evil-collection
-  :demand :after evil
-  :init
-  (setq evil-collection-setup-minibuffer t
-        evil-collection-want-unimpaired-p nil)
-  :config
-  (setq evil-collection-key-blacklist
-        (list leader-key local-leader-key))
-  (evil-collection-init))
