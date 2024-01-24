@@ -13,7 +13,6 @@
   (evil-want-integration t)
   (evil-mode-line-format nil)
   (evil-symbol-word-search t)
-  (evil-respect-visual-line-mode t)
   (evil-undo-system 'undo-redo)
   ;; search and replace
   (evil-ex-search-vim-style-regexp t)
