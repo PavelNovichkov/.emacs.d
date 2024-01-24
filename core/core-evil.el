@@ -1,6 +1,7 @@
 ;;; core-evil.el --- Evil setup -*- lexical-binding: t; -*-
 
-;;; Evil.
+;;; Evil
+
 (use-package evil
   :demand
   :custom
