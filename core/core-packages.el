@@ -19,10 +19,6 @@
 (defun my/update-packages ()
   "Update packages and lockfile."
   (interactive)
-  (let ((lockfile (straight--versions-file "default.el"))
-        (backup-lockfile (straight--versions-file "backup.el")))
-    (when (file-exists-p lockfile)
-      (copy-file lockfile backup-lockfile t)))
   (straight-pull-all)
   (straight-rebuild-all)
   (straight-freeze-versions))
