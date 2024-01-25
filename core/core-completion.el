@@ -22,6 +22,9 @@
 (use-package orderless
   :demand
   :custom
+  (completion-ignore-case t)
+  (read-file-name-completion-ignore-case t)
+  (read-buffer-completion-ignore-case t)
   (completion-styles '(orderless basic))
   (completion-category-overrides
    '((file (styles basic partial-completion))))
