@@ -4,11 +4,16 @@
 
 (use-package evil
   :demand
+  :init
+  ;; See https://github.com/emacs-evil/evil/issues/1836.
+  (setq
+   evil-want-Y-yank-to-eol t
+   evil-search-module 'evil-search
+   evil-visual-state-cursor 'hollow)
   :custom
   (evil-want-C-d-scroll t)
   (evil-want-C-u-scroll t)
   (evil-want-C-i-jump t)
-  (evil-want-Y-yank-to-eol t)
   (evil-want-keybinding nil)
   (evil-want-integration t)
   (evil-mode-line-format nil)
@@ -17,11 +22,9 @@
   ;; search and replace
   (evil-ex-search-vim-style-regexp t)
   (evil-ex-substitute-global t)
-  (evil-search-module 'evil-search)
   ;; selections
   (evil-ex-visual-char-range t)
   (evil-v$-excludes-newline t)
-  (evil-visual-state-cursor 'hollow)
   ;; this does not work:
   ;; (evil-mode t)
   :config
