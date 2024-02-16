@@ -2,6 +2,7 @@
 
 (use-package evil-goggles
   :demand :after evil
+
   :config
   (setq evil-goggles-pulse t
         evil-goggles-enable-change nil

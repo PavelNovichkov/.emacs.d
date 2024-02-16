@@ -2,6 +2,7 @@
 
 (use-package window ; built-in
   :straight nil
+
   :custom
   (hscroll-step 1)
   (scroll-conservatively 101)
@@ -15,6 +16,7 @@
 
 (use-package pixel-scroll ; built-in
   :straight nil
+
   :custom
   (pixel-scroll-precision-mode t))
 
