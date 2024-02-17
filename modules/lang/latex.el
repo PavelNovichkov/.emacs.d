@@ -2,10 +2,6 @@
 
 (use-package tex
   :straight auctex
-  :init
-  (with-eval-after-load 'tex-mode
-    (add-to-list 'tex--prettify-symbols-alist
-                 '("\\pm" . ?±)))
   :hook ((TeX-mode . outline-minor-mode)
          (TeX-mode . prettify-symbols-mode)
          (TeX-mode . TeX-source-correlate-mode))
