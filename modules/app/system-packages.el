@@ -2,6 +2,9 @@
 
 (use-package system-packages
   :commands my/system-packages/body
+  :custom
+  (system-packages-package-manager 'dnf)
+  (system-packages-use-sudo t)
   :init
   (defhydra my/system-packages (:color blue :columns 2)
     "Manage system packages"
