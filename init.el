@@ -18,6 +18,7 @@
                        "emacs/tramp"
                        "lang/elisp"
                        "lang/latex"
+                       "lang/markdown"
                        "lang/cc"
                        "lang/wolfram"
                        "layouts"
