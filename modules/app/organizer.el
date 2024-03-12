@@ -19,6 +19,10 @@
              org-store-link)
   :custom
   (org-use-fast-todo-selection 'expert) ; no popup window
+  :init
+  ;; Remove this setting after
+  ;; https://github.com/emacs-evil/evil/issues/1630 gets fixed.
+  (setq org-fold-core-style 'overlays)
   :config
   ;; Paths.
   (setq org-directory my/org-directory
