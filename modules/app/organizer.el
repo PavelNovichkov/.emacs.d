@@ -199,6 +199,7 @@
     "ti" '(org-toggle-inline-images :which-key "images")
     "tl" '(org-toggle-link-display :which-key "links")
     "tt" '(org-latex-preview :which-key "latex")
+    "u" '(org-fold-reveal :which-key "reveal")
     "y" '(my/org-copy-as-latex :which-key "copy as latex")
     "'" '(org-edit-special :which-key "edit")))
 
