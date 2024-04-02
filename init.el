@@ -36,7 +36,6 @@
                        "app/system-packages"
                        "app/rss"
                        "app/terminal"
-                       "tools/activity-watch"
                        "tools/bibliography"
                        "tools/dictionary"
                        "tools/link-hint"
