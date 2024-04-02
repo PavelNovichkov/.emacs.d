@@ -2,14 +2,15 @@
 
 (use-package tab-bar ; built-in
   :straight nil
+
   :custom
   (tab-bar-auto-width nil)
   (tab-bar-close-button-show nil)
-  (tab-bar-format '(tab-bar-format-tabs tab-bar-format-align-right tab-bar-format-global))
+  (tab-bar-format
+   '(tab-bar-format-tabs tab-bar-format-align-right tab-bar-format-global))
   (tab-bar-mode t)
-  :init
-  (setq tab-bar-new-tab-choice "*scratch*"
-        tab-bar-new-tab-to 'rightmost))
+  (tab-bar-new-tab-choice "*scratch*")
+  (tab-bar-new-tab-to 'rightmost))
 
 (use-package rotate
   :commands (rotate-window rotate-layout))
