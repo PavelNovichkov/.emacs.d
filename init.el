@@ -22,6 +22,7 @@
                        "lang/markdown"
                        "lang/cc"
                        "lang/wolfram"
+                       "lang/yaml"
                        "layouts"
                        "projects"
                        "ui/evil-goggles"
