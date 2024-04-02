@@ -168,6 +168,15 @@
   (plist-put org-format-latex-options :scale 1.0)
   (plist-put org-format-latex-options :background "Transparent")
 
+  (defun my/org-latex-filter-nbsp (text backend info)
+    "Ensure non-breaking spaces are properly handled in LaTeX export."
+    (when (org-export-derived-backend-p backend 'latex)
+      (replace-regexp-in-string " " "~" text)))
+
+  (with-eval-after-load 'ox
+    (add-to-list 'org-export-filter-plain-text-functions
+                 #'my/org-latex-filter-nbsp))
+
   (defun my/org-copy-as-latex ()
     "Export region to LaTeX, and copy it to the clipboard."
     (interactive)
