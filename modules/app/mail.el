@@ -97,6 +97,10 @@
    mu4e-compose-dont-reply-to-self t
    mu4e-compose-signature-auto-include nil)
 
+  ;; Respond to iCalendar invitations.
+  (require 'mu4e-icalendar)
+  (mu4e-icalendar-setup)
+
   ;;; Emacs integrations
 
   (setq
