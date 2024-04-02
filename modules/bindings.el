@@ -145,7 +145,6 @@ no other windows are present."
   "gl" '(link-hint-open-link :which-key "link")
   "gm" '(evil-collection-consult-mark :which-key "mark")
   "go" '(consult-outline :which-key "outline")
-  "gw" '(evil-avy-goto-word-1 :which-key "word")
 
   "h" '(:keymap help-map :which-key "help")
   "hh" '(helpful-at-point :which-key "help at point")
@@ -189,6 +188,7 @@ no other windows are present."
   "pf" '(project-find-file :which-key "find file")
   "pk" '(project-kill-buffers :which-key "kill")
   "ps" '(project-switch-project :which-key "switch")
+  "p." '(project-dired :which-key "root directory")
   "p/" '(consult-ripgrep :which-key "search")
   "p!" '(project-shell-command :which-key "run shell command")
   "p&" '(project-async-shell-command :which-key "run async shell command")
@@ -197,6 +197,8 @@ no other windows are present."
   "qf" '(save-buffers-kill-terminal :which-key "close frame")
   "qq" '(save-buffers-kill-emacs :which-key "quit Emacs")
   "qr" '(restart-emacs :which-key "restart Emacs")
+
+  "s" '(evil-avy-goto-char-2 :which-key "snipe")
 
   "t" '(:ignore t :which-key "toggle")
   "tc" '(display-fill-column-indicator-mode :which-key "fill column")
