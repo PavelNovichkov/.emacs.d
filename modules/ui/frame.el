@@ -48,6 +48,7 @@
   (set-face-attribute
    'fixed-pitch nil :family "Input Mono Narrow" :height 1.0 :weight 'normal)
   (set-face-attribute
-   'variable-pitch nil :family "Input Sans Narrow" :height 1.0 :weight 'normal))
+   'variable-pitch nil :family "Input Sans Narrow" :height 1.0 :weight 'normal)
+  (set-face-attribute 'variable-pitch-text nil :height 1.0))
 
 (add-hook 'server-after-make-frame-hook #'my/setup-fonts)
