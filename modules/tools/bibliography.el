@@ -12,18 +12,6 @@
   (expand-file-name "docs" my/bibliography-notes)
   "Bibliography documents directory.")
 
-(use-package org-noter
-  :after org
-  :commands org-noter
-  :config
-  ;; Don't add notes count to the modeline.
-  (advice-add #'org-noter--mode-line-text :override #'ignore)
-  (setq org-noter-always-create-frame nil
-        org-noter-default-notes-file-names nil
-        org-noter-doc-split-fraction '(0.7 . 0.5)
-        org-noter-hide-other t
-        org-noter-insert-note-no-questions t))
-
 ;; arxiv links.
 (with-eval-after-load 'org
   (add-to-list 'org-link-abbrev-alist
