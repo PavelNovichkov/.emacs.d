@@ -10,6 +10,4 @@
   :custom
   (auto-dark-light-theme 'nano-light)
   (auto-dark-dark-theme 'nano-dark)
-
-  :hook
-  (server-after-make-frame . auto-dark-mode))
+  (auto-dark-mode t))

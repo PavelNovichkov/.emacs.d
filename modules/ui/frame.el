@@ -9,14 +9,7 @@
   (frame-title-format "Emacs")
   (menu-bar-mode nil)
   (scroll-bar-mode nil)
-  (tool-bar-mode nil)
-
-  :config
-  (modify-all-frames-parameters
-   '((fullscreen . maximized)
-     (internal-border-width . 15)
-     (right-divider-width . 15)
-     (bottom-divider-width . 15))))
+  (tool-bar-mode nil))
 
 (use-package display-time ; built-in
   :straight nil
@@ -51,4 +44,4 @@
    'variable-pitch nil :family "Input Sans Narrow" :height 1.0 :weight 'normal)
   (set-face-attribute 'variable-pitch-text nil :height 1.0))
 
-(add-hook 'server-after-make-frame-hook #'my/setup-fonts)
+(my/setup-fonts)

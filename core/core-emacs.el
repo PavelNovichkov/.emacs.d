@@ -64,6 +64,7 @@
   :straight nil
   :demand
   :custom
+  (server-mode t)
   ;; Open files in a new tab.
   (server-window #'switch-to-buffer-other-tab))
 
