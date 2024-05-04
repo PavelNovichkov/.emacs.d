@@ -17,6 +17,7 @@
                        "emacs/recentf"
                        "emacs/smartparens"
                        "emacs/tramp"
+                       "emacs/whitespace"
                        "lang/elisp"
                        "lang/latex"
                        "lang/markdown"
