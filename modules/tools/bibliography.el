@@ -6,8 +6,10 @@
   (expand-file-name my/bibliography-notes-subdir my/slip-box-directory)
   "Bibliography notes directory.")
 (defconst my/bibliography-bibtex
-  (expand-file-name "master.bib" my/bibliography-notes)
-  "Bibliography BibTeX records file.")
+  (list
+   (expand-file-name "master.bib" my/bibliography-notes)
+   (file-truename "~/data/library/catalog.bib"))
+  "Bibliography BibTeX records files.")
 (defconst my/bibliography-doc-directory
   (expand-file-name "docs" my/bibliography-notes)
   "Bibliography documents directory.")
@@ -23,12 +25,12 @@
   (setq org-cite-insert-processor 'citar
         org-cite-follow-processor 'citar
         org-cite-activate-processor 'citar
-        org-cite-global-bibliography (list my/bibliography-bibtex)
+        org-cite-global-bibliography my/bibliography-bibtex
         ; Export as \cite command rather than \autocite.
         org-cite-export-processors '((latex biblatex nil "nil/bare")))
   :config
 
-  (setq citar-bibliography (list my/bibliography-bibtex)
+  (setq citar-bibliography my/bibliography-bibtex
         citar-file-additional-files-separator "_"
         citar-file-note-extensions '("org")
         citar-library-paths (list my/bibliography-doc-directory)
