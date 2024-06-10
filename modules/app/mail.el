@@ -92,14 +92,14 @@
    ;; Include date when citing.
    message-citation-line-function #'message-insert-formatted-citation-line
    message-citation-line-format "%f writes on %Y-%m-%d:\n"
+   ;; Don't reply to myself.
+   message-dont-reply-to-names #'mu4e-personal-or-alternative-address-p
+   message-signature nil
    ;; Allow clients to reflow paragraphs.
-   mu4e-compose-format-flowed t
-   mu4e-compose-dont-reply-to-self t
-   mu4e-compose-signature-auto-include nil)
+   mu4e-compose-format-flowed t)
 
   ;; Respond to iCalendar invitations.
   (require 'mu4e-icalendar)
-  (mu4e-icalendar-setup)
 
   ;;; Emacs integrations
 
