@@ -191,30 +191,30 @@
   ;; Bindings.
   (local-leader-def
     :keymaps 'org-mode-map
-    "a" '(org-attach :which-key "attachments")
-    "c" '(:ignore t :which-key "clock")
-    "ci" '(org-clock-in :which-key "in")
-    "co" '(org-clock-out :which-key "out")
-    "d" '(:ignore t :which-key "date")
-    "da" '(org-time-stamp :which-key "active")
-    "dd" '(org-deadline :which-key "deadline")
-    "di" '(org-time-stamp-inactive :which-key "inactive")
-    "ds" '(org-schedule :which-key "schedule")
-    "D" '(org-archive-subtree-default :which-key "archive subtree")
-    "e" '(org-set-effort :which-key "effort")
-    "i" '(org-set-tags-command :which-key "tags")
-    "l" '(org-insert-link :which-key "insert link")
-    "r" '(org-refile :which-key "refile")
-    "s" '(org-todo :which-key "todo state")
-    "t" '(:ignore t :which-key "toggle")
-    "td" '(org-toggle-time-stamp-overlays :which-key "dates")
-    "te" '(org-toggle-pretty-entities :which-key "entities")
-    "ti" '(org-toggle-inline-images :which-key "images")
-    "tl" '(org-toggle-link-display :which-key "links")
-    "tt" '(org-latex-preview :which-key "latex")
-    "u" '(org-fold-reveal :which-key "reveal")
-    "y" '(my/org-copy-as-latex :which-key "copy as latex")
-    "'" '(org-edit-special :which-key "edit")))
+    "a" '("attachments" . org-attach)
+    "c" '("clock" . (keymap))
+    "ci" '("in" . org-clock-in)
+    "co" '("out" . org-clock-out)
+    "d" '("date" . (keymap))
+    "da" '("active" . org-time-stamp)
+    "dd" '("deadline" . org-deadline)
+    "di" '("inactive" . org-time-stamp-inactive)
+    "ds" '("schedule" . org-schedule)
+    "D" '("archive subtree" . org-archive-subtree-default)
+    "e" '("effort" . org-set-effort)
+    "i" '("tags" . org-set-tags-command)
+    "l" '("insert link" . org-insert-link)
+    "r" '("refile" . org-refile)
+    "s" '("todo state" . org-todo)
+    "t" '("toggle" . (keymap))
+    "td" '("dates" . org-toggle-time-stamp-overlays)
+    "te" '("entities" . org-toggle-pretty-entities)
+    "ti" '("images" . org-toggle-inline-images)
+    "tl" '("links" . org-toggle-link-display)
+    "tt" '("latex" . org-latex-preview)
+    "u" '("reveal" . org-fold-reveal)
+    "y" '("copy as latex" . my/org-copy-as-latex)
+    "'" '("edit" . org-edit-special)))
 
 (use-package org-agenda
   :straight nil ;; part of org
@@ -284,7 +284,7 @@
    :around #'my/suppress-delete-other-windows)
   (local-leader-def
     :keymaps 'org-capture-mode-map
-    "r" '(org-capture-refile :which-key "refile")))
+    "r" '("refile" . org-capture-refile)))
 
 ;; org-protocol allows to capture content from a web browser using bookmarklets:
 ;; - store link: "javascript:location.href='org-protocol://store-link?url='+encodeURIComponent(location.href);"
@@ -344,9 +344,9 @@ Otherwise, use the original version of `server-visited-files'."
     (org-agenda-archives-mode t))
   (local-leader-def
     :keymaps 'org-agenda-mode-map
-    "t" '(:ignore t :which-key "toggle")
-    "ta" '(my/org-agenda-toggle-archives :which-key "archives")
-    "te" '(org-agenda-entry-text-mode :which-key "entry text")))
+    "t" '("toggle" . (keymap))
+    "ta" '("archives" . my/org-agenda-toggle-archives)
+    "te" '("entry text" . org-agenda-entry-text-mode)))
 
 ;;; Attachments
 
@@ -526,7 +526,7 @@ Otherwise, use the original version of `server-visited-files'."
   :init
   (local-leader-def
     :keymaps 'org-mode-map
-    "tv" '(valign-mode :which-key "vertical align"))
+    "tv" '("vertical align" . valign-mode))
   :config
   (setq valign-fancy-bar t))
 

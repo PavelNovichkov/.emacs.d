@@ -18,11 +18,11 @@
   ;; Bindings.
   (local-leader-def
     :keymaps 'TeX-mode-map
-    "a" '(TeX-command-run-all :which-key "run all")
-    "c" '(TeX-command-master :which-key "run command")
-    "p" '(TeX-pin-region :which-key "pin region")
-    "r" '(TeX-command-region :which-key "run command for region")
-    "v" '(TeX-view :which-key "view"))
+    "a" '("run all" . TeX-command-run-all)
+    "c" '("run command" . TeX-command-master)
+    "p" '("pin region" . TeX-pin-region)
+    "r" '("run command for region" . TeX-command-region)
+    "v" '("view" . TeX-view))
   ;; Do not use LaTeX-indent-tabular as it breaks complex tabular-type environments.
   (setq LaTeX-indent-environment-list
         '(("verbatim" current-indentation)

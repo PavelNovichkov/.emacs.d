@@ -125,7 +125,7 @@
 
   (local-leader-def
    :keymaps 'dired-mode-map
-   "a" '(gnus-dired-attach :which-key "attach"))
+   "a" '("attach" . gnus-dired-attach))
 
   (defun my/embark-attach-file (file)
     "Attach FILE to an email message."

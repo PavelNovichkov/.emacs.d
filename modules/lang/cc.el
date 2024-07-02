@@ -6,5 +6,5 @@
   ;; Bindings.
   (local-leader-def
     :keymaps 'c-mode-map
-    "t" '(:ignore t :which-key "toggle")
-    "tc" '(c-toggle-comment-style :which-key "comment style")))
+    "t" '("toggle" . (keymap))
+    "tc" '("comment style" . c-toggle-comment-style)))

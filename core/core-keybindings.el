@@ -21,14 +21,14 @@
     :prefix leader-key
     :non-normal-prefix leader-key-non-normal)
   (leader-def
-    "" '(nil :which-key "leader prefix"))
+    "" '("leader prefix" . nil))
   (general-create-definer local-leader-def
     :states '(normal insert motion visual emacs)
     :keymaps 'override
     :prefix local-leader-key
     :non-normal-prefix local-leader-key-non-normal)
   (local-leader-def
-    "" '(nil :which-key "local-leader prefix")))
+    "" '("local-leader prefix" . nil)))
 
 (use-package which-key
   :demand

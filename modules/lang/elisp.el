@@ -6,5 +6,5 @@
   ;; Bindings.
   (local-leader-def
     :keymaps 'emacs-lisp-mode-map
-    "e" '(eval-last-sexp :which-key "evaluate expression")
-    "x" '(eval-defun :which-key "evaluate function")))
+    "e" '("evaluate expression" . eval-last-sexp)
+    "x" '("evaluate function" . eval-defun)))

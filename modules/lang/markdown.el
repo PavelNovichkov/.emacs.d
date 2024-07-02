@@ -11,8 +11,8 @@
   :config
   (local-leader-def
     :keymaps 'markdown-mode-map
-    "l" '(markdown-insert-link :which-key "insert link")
-    "t" '(:ignore t :which-key "toggle")
-    "ti" '(markdown-toggle-inline-images :which-key "images")
-    "tl" '(markdown-toggle-url-hiding :which-key "links")
-    "tm" '(markdown-toggle-markup-hiding :which-key "markup")))
+    "l" '("insert link" . markdown-insert-link)
+    "t" '("toggle" . (keymap))
+    "ti" '("images" . markdown-toggle-inline-images)
+    "tl" '("links" . markdown-toggle-url-hiding)
+    "tm" '("markup" . markdown-toggle-markup-hiding)))
