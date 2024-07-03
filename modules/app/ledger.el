@@ -12,4 +12,6 @@
           ("net worth"      "%(binary) -f %(ledger-file) bal Assets Liabilities")
           ("account"        "%(binary) -f %(ledger-file) reg %(account)"))))
 
-;; TODO: add evil-ledger.
+(use-package evil-ledger
+  :demand :after ledger-mode
+  :hook (ledger-mode . evil-ledger-mode))
