@@ -36,6 +36,10 @@
         citar-library-paths (list my/bibliography-doc-directory)
         citar-notes-paths (list my/bibliography-notes))
 
+  ;; Fixes an issue when <tab> is different from C-i, see
+  ;; https://github.com/emacs-citar/citar/issues/802.
+  (setq citar--multiple-setup '("<tab>" . "RET"))
+
   ;; Icons (see https://github.com/emacs-citar/citar/wiki/Indicators).
   (defvar citar-indicator-files-icons
     (citar-indicator-create

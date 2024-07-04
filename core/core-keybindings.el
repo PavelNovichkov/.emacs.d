@@ -60,3 +60,8 @@
         ((keyboard-quit))))
 
 (general-define-key [remap keyboard-quit] #'my/escape)
+
+;;; Distinguish <tab> from TAB = C-i.
+(general-define-key
+ :keymaps 'input-decode-map
+ "C-i" [C-i])
