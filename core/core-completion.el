@@ -12,6 +12,18 @@
   (vertico-cycle t)
   (vertico-mode t))
 
+(use-package vertico-quick
+  :straight nil ;; part of vertico
+  :demand :after vertico
+  :custom
+  (vertico-quick1 "tnseriaodh")
+  (vertico-quick2 "")
+  :config
+  (general-define-key
+   :keymaps 'vertico-map
+   :states 'insert
+   "C-s" #'vertico-quick-exit))
+
 (use-package vertico-repeat
   :straight nil ;; part of vertico
   :demand :after vertico
@@ -114,11 +126,14 @@
 (use-package corfu-quick
   :straight nil ;; part of corfu
   :demand :after corfu
+  :custom
+  (corfu-quick1 "tnseriaodh")
+  (corfu-quick2 "")
   :config
   (general-define-key
    :keymaps 'corfu-map
    :states 'insert
-   "C-j" #'corfu-quick-insert))
+   "C-s" #'corfu-quick-insert))
 
 (use-package cape
   :demand :after corfu
