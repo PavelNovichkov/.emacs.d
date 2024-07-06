@@ -25,7 +25,6 @@
  require-final-newline t
  save-interprogram-paste-before-kill t
  sentence-end-double-space nil
- word-wrap t
  ;; use system trash
  delete-by-moving-to-trash t
  ;; disable bidirectional editing
@@ -47,15 +46,6 @@
          ;; Prefix tramp autosave to prevent conflicts.
          ,(no-littering-expand-var-file-name "auto-save/tramp-\\2") t)
         (".*" ,(no-littering-expand-var-file-name "auto-save/") t)))
-
-;; Wrap lines in all text buffers.
-(add-hook 'text-mode-hook #'visual-line-mode)
-
-(use-package adaptive-wrap
-  :custom
-  (adaptive-wrap-extra-indent 2)
-  :hook
-  (prog-mode . adaptive-wrap-prefix-mode))
 
 ;; Replace yes/no with y/n.
 (setq use-short-answers t)

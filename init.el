@@ -18,6 +18,7 @@
                        "emacs/smartparens"
                        "emacs/tramp"
                        "emacs/whitespace"
+                       "emacs/word-wrap"
                        "lang/elisp"
                        "lang/latex"
                        "lang/markdown"

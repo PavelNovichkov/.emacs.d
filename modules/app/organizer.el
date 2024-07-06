@@ -219,8 +219,6 @@
 (use-package org-agenda
   :straight nil ;; part of org
   :hook
-  (org-agenda-mode . visual-line-mode)
-  (org-agenda-mode . adaptive-wrap-prefix-mode)
   (org-agenda-mode . hl-line-mode)
   :custom
   (org-agenda-hide-tags-regexp ".")
