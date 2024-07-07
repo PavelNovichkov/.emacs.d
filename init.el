@@ -50,4 +50,7 @@
                        "tools/tldr"
                        "tools/vcs"
                        "bindings"))
-  (load (concat user-emacs-directory "modules/" module-name) nil t))
+  ;; If a module fails to load, show a warning and continue.
+  (condition-case the-error
+      (load (concat user-emacs-directory "modules/" module-name) nil t)
+    (error (warn (error-message-string the-error)))))
