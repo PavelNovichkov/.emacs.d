@@ -28,6 +28,7 @@
                        "layouts"
                        "projects"
                        "ui/evil-goggles"
+                       "ui/hl-line"
                        "ui/hl-todo"
                        "ui/olivetti"
                        "ui/pulsar"

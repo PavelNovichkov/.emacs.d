@@ -218,8 +218,6 @@
 
 (use-package org-agenda
   :straight nil ;; part of org
-  :hook
-  (org-agenda-mode . hl-line-mode)
   :custom
   (org-agenda-hide-tags-regexp ".")
   :config

@@ -12,7 +12,6 @@
     "Add hooks to run in dired mode."
     (add-hook 'post-command-hook #'my/dired-update-default-directory nil t))
   (add-hook 'dired-mode-hook #'my/add-hooks-in-dired-mode)
-  (add-hook 'dired-mode-hook #'hl-line-mode)
   ;; Ediff marked files, taken from
   ;; https://oremacs.com/2017/03/18/dired-ediff/.
   (defun my/dired-ediff-files ()
