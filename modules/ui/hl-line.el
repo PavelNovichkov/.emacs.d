@@ -4,4 +4,12 @@
   :straight nil
 
   :hook
-  ((prog-mode org-agenda-mode dired-mode) . hl-line-mode))
+  (prog-mode . hl-line-mode))
+
+
+(use-package lin
+  :demand
+
+  :config
+  (setopt lin-face 'region)
+  (lin-global-mode))
