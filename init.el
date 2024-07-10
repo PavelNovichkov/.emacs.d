@@ -44,6 +44,7 @@
                        "tools/bibliography"
                        "tools/dictionary"
                        "tools/link-hint"
+                       "tools/llm"
                        "tools/lsp"
                        "tools/pass"
                        "tools/pdf"
