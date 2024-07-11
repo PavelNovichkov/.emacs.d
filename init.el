@@ -5,6 +5,7 @@
 (dolist (module-name '("secrets"
                        "ui/frame"
                        "ui/color-theme"
+                       "editor/autotype"
                        "evil/plugins"
                        "emacs/dired"
                        "emacs/ediff"

@@ -150,17 +150,3 @@
    '(:padding 0 :stroke 0 :margin 0 :radius 0 :height 0.4 :scale 1.0))
   :config
   (add-to-list 'corfu-margin-formatters #'kind-icon-margin-formatter))
-
-;;; Yasnippet
-
-(use-package yasnippet
-  :commands yas-expand
-  :custom
-  (yas-alias-to-yas/prefix-p nil)
-  :config
-  (general-unbind 'yas-minor-mode-map
-    "<tab>" "TAB")
-  (general-define-key
-   :states 'insert
-   :keymaps 'yas-minor-mode-map
-   "C-e" #'yas-expand))
