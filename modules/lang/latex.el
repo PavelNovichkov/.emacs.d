@@ -48,7 +48,7 @@
   :config
   (general-define-key
    :keymaps 'cdlatex-mode-map
-   ;; Use smartparens to do parens pairing.
+   ;; Use electric-pair-mode to do parens pairing.
    "(" nil
    "{" nil
    "[" nil
