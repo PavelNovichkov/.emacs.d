@@ -67,10 +67,6 @@
   (savehist-autosave-interval nil)
   (savehist-mode t))
 
-(use-package undo-fu
-  :config
-  (general-define-key [remap undo] #'undo-fu-only-undo))
-
 (use-package sudo-edit
   :init
   (general-define-key
