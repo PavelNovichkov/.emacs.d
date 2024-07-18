@@ -52,12 +52,17 @@
   
   ;;; Headers view
 
-  (setq mu4e-headers-date-format "%d/%m/%Y"
+  (add-to-list
+   'mu4e-header-info-custom
+   '(:empty . (:name "Empty" :shortname "" :function (lambda (msg) ""))))
+
+  (setq mu4e-headers-date-format "%d/%m/%y"
         mu4e-headers-fields
-        '((:human-date . 12)
-          (:mailing-list . 16)
-          (:from . 30)
-          (:subject))
+        '((:from-or-to . 24)
+          (:empty . 2)
+          (:subject . 38)
+          (:empty . 2)
+          (:human-date . 8))
         mu4e-hide-index-messages t
         mu4e-search-include-related nil
         mu4e-search-threads nil
