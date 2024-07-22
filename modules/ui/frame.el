@@ -31,6 +31,7 @@
 (use-package mixed-pitch
   :hook
   (text-mode . mixed-pitch-mode)
+  (Info-mode . mixed-pitch-mode)
   (mu4e-view-mode . mixed-pitch-mode))
 
 (defun my/setup-fonts ()
