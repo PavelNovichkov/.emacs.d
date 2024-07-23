@@ -7,4 +7,5 @@
   (local-leader-def
     :keymaps 'c-mode-map
     "t" '("toggle" . (keymap))
-    "tc" '("comment style" . c-toggle-comment-style)))
+    "tc" '("comment style" . c-toggle-comment-style)
+    "te" '("electricity" . c-toggle-electric-state)))
