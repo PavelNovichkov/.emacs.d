@@ -106,8 +106,12 @@
   (evil-collection-corfu-key-themes nil)
   :config
   (defun my/corfu-enable-in-minibuffer ()
-    "Enable Corfu in the minibuffer if `completion-at-point' is bound."
-    (when (where-is-internal #'completion-at-point (list (current-local-map)))
+    "Enable Corfu in the minibuffer."
+    (when (local-variable-p 'completion-at-point-functions)
+      (setq-local
+       ;; Disable automatic echo and popup
+       corfu-echo-delay nil
+       corfu-popupinfo-delay nil)
       (corfu-mode 1)))
   (add-hook 'minibuffer-setup-hook #'my/corfu-enable-in-minibuffer)
   (defun my/corfu-move-to-minibuffer ()
