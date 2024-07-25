@@ -114,18 +114,11 @@
        corfu-popupinfo-delay nil)
       (corfu-mode 1)))
   (add-hook 'minibuffer-setup-hook #'my/corfu-enable-in-minibuffer)
-  (defun my/corfu-move-to-minibuffer ()
-    "Export Corfu completions to the minibuffer for more advanced processing."
-    (interactive)
-    (let ((completion-extra-properties corfu--extra)
-          completion-cycle-threshold completion-cycling)
-      (apply #'consult-completion-in-region completion-in-region--data)))
   (general-define-key
    :keymaps 'corfu-map
    :states 'insert
    "<escape>" #'corfu-quit
-   "C-SPC" #'corfu-insert-separator
-   "C-e" #'my/corfu-move-to-minibuffer))
+   "C-SPC" #'corfu-insert-separator))
 
 (use-package corfu-quick
   :straight nil ;; part of corfu
