@@ -5,9 +5,6 @@
 (defconst my/slip-box-directory (expand-file-name "slip-box" my/org-directory)
   "Slip box directory.")
 
-(setq calendar-week-start-day 1)
-(set-time-zone-rule "CET")
-
 ;; TODO: refactor.
 (use-package org
   ;; pre-loaded in core-packages

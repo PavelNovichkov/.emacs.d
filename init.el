@@ -9,6 +9,7 @@
     "editor/autopair"
     "editor/autotype"
     "evil/plugins"
+    "emacs/calendar"
     "emacs/dired"
     "emacs/ediff"
     "emacs/eldoc"
