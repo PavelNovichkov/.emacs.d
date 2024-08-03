@@ -252,7 +252,6 @@ no other windows are present."
 
 (general-define-key
  :states 'insert
- "C-SPC" #'sp-up-sexp ; Consistent with Mathematica
  "C-n" #'completion-at-point
  "C-t" #'cape-dabbrev
  "C-v" #'my/evil-paste-last-yanked)
