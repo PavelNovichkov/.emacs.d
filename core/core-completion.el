@@ -136,7 +136,6 @@
   :demand :after corfu
   :config
   ; TODO How to set these by default?
-  (add-to-list 'completion-at-point-functions #'cape-dabbrev)
   (add-to-list 'completion-at-point-functions #'cape-file))
 
 (use-package kind-icon
