@@ -94,6 +94,10 @@
   ;;; Compose messages
 
   (setq
+   ;; Correctly set the From address when replying to an email.
+   ;; TODO Should become unnecessary in mu4e 1.14, see here:
+   ;; https://github.com/djcb/mu/issues/2708.
+   message-alternative-emails #'mu4e-user-mail-address-p
    ;; Include date when citing.
    message-citation-line-function #'message-insert-formatted-citation-line
    message-citation-line-format "\n\n%f writes on %Y-%m-%d:\n"
