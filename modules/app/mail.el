@@ -96,7 +96,7 @@
   (setq
    ;; Include date when citing.
    message-citation-line-function #'message-insert-formatted-citation-line
-   message-citation-line-format "%f writes on %Y-%m-%d:\n"
+   message-citation-line-format "\n\n%f writes on %Y-%m-%d:\n"
    ;; Don't reply to myself.
    message-dont-reply-to-names #'mu4e-personal-or-alternative-address-p
    message-signature nil
