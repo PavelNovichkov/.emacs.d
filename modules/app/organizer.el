@@ -200,7 +200,6 @@
     "D" '("archive subtree" . org-archive-subtree-default)
     "e" '("effort" . org-set-effort)
     "i" '("tags" . org-set-tags-command)
-    "l" '("insert link" . org-insert-link)
     "r" '("refile" . org-refile)
     "s" '("todo state" . org-todo)
     "t" '("toggle" . (keymap))
@@ -211,7 +210,15 @@
     "tt" '("latex" . org-latex-preview)
     "u" '("reveal" . org-fold-reveal)
     "y" '("copy as latex" . my/org-copy-as-latex)
-    "'" '("edit" . org-edit-special)))
+    "'" '("edit" . org-edit-special))
+  (general-define-key
+   :states 'insert
+   :keymaps 'org-mode-map
+   :prefix "<C-i>"
+   "l" '("link" . org-insert-link)
+   "d" '("date" . (keymap))
+   "da" '("active" . org-time-stamp)
+   "di" '("inactive" . org-time-stamp-inactive)))
 
 (use-package org-agenda
   :straight nil ;; part of org
