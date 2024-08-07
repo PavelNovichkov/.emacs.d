@@ -523,6 +523,7 @@ Otherwise, use the original version of `server-visited-files'."
 (use-package valign
   :straight (:host github :repo "casouri/valign")
   :commands valign-mode
+  :after org
   :init
   (local-leader-def
     :keymaps 'org-mode-map
