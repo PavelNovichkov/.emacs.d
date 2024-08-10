@@ -11,5 +11,5 @@
   :demand
 
   :config
-  (setopt lin-face 'region)
+  (setopt lin-face 'completions-highlight)
   (lin-global-mode))
