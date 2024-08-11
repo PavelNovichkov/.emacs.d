@@ -38,16 +38,24 @@
       (remove-hook 'evil-collection-setup-hook #'my/dired-override-bindings)))
   (add-hook 'evil-collection-setup-hook #'my/dired-override-bindings)
   :config
-  (setq dired-auto-revert-buffer t
-        dired-create-destination-dirs 'ask
-        dired-do-revert-buffer t
-        dired-dwim-target t
-        dired-hide-details-hide-symlink-targets nil
-        dired-kill-when-opening-new-dired-buffer t
-        ;; Human-readable sizes; directories first.
-        dired-listing-switches "-alh --group-directories-first"
-        dired-recursive-copies 'always
-        dired-recursive-deletes 'top)
+  (setopt
+   dired-auto-revert-buffer #'dired-directory-changed-p
+   dired-create-destination-dirs 'ask
+   dired-create-destination-dirs-on-trailing-dirsep t
+   dired-do-revert-buffer t
+   dired-dwim-target t
+   dired-hide-details-hide-symlink-targets nil
+   dired-keep-marker-copy nil
+   dired-keep-marker-hardlink nil
+   dired-keep-marker-relsymlink nil
+   dired-keep-marker-rename nil
+   dired-keep-marker-symlink nil
+   dired-kill-when-opening-new-dired-buffer t
+   ;; Human-readable sizes; directories first.
+   dired-listing-switches "-alh --group-directories-first"
+   dired-recursive-copies 'always
+   dired-recursive-deletes 'always
+   dired-vc-rename-file t)
   ;; Hide details.
   (add-hook 'dired-mode-hook #'dired-hide-details-mode))
 
