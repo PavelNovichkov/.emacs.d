@@ -1,9 +1,5 @@
 ;;; app/mail.el -*- lexical-binding: t; -*-
 
-(unless (string-match-p "gentoo\\|ARCH" operating-system-release)
-  (add-to-list 'load-path "/usr/local/share/emacs/site-lisp/mu4e"))
-
-
 (use-package mu4e
   :straight nil
   :ensure-system-package mu
