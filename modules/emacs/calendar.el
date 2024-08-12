@@ -14,4 +14,11 @@
    calendar-mode-line-format nil
    calendar-week-start-day 1)
 
-  (add-hook 'calendar-today-visible-hook #'calendar-mark-today))
+  (add-hook 'calendar-today-visible-hook #'calendar-mark-today)
+
+  (add-to-list
+   'display-buffer-alist
+   '("\\*Calendar\\*"
+     (display-buffer-in-side-window)
+     (side . bottom)
+     (slot . 0))))
