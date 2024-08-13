@@ -275,7 +275,7 @@
      (slot . 0)))
   (add-to-list
    'display-buffer-alist
-   '("CAPTURE-.*\.org"
+   '("CAPTURE-.*\.org\\|\\*Capture\\*"
      (display-buffer-in-side-window)
      (side . bottom)
      (slot . 0)))
