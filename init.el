@@ -5,6 +5,7 @@
 (defconst my/modules
   '("secrets"
     "ui/frame"
+    "ui/fonts"
     "ui/color-theme"
     "editor/autopair"
     "editor/autotype"
