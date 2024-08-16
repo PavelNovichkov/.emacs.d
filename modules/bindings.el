@@ -235,11 +235,6 @@ no other windows are present."
  :keymaps 'override
  "M-o" #'other-window)
 
-;; Rebind C-h to backspace globally.
-(general-define-key
- :keymaps 'key-translation-map
- "C-h" "DEL")
-
 ;; OS-wide shortcuts.
 (general-define-key
  :keymaps 'override
