@@ -63,7 +63,7 @@
   :commands (evil-surround-edit
              evil-Surround-edit
              evil-surround-region
-             evil-surround-region)
+             evil-Surround-region)
   :init
   (general-define-key
    :states 'operator
