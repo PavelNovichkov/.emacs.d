@@ -3,13 +3,13 @@
 (defconst leader-key "SPC"
   "The leader prefix key for global commands.")
 
-(defconst leader-key-non-normal "M-m"
+(defconst leader-key-non-normal "C-SPC"
   "The leader prefix key for global commands in emacs and insert states.")
 
-(defconst local-leader-key "DEL"
+(defconst local-leader-key "SPC m"
   "The local leader prefix key for major mode specific commands.")
 
-(defconst local-leader-key-non-normal "M-,"
+(defconst local-leader-key-non-normal "C-SPC m"
   "The local leader prefix key for major mode specific commands in emacs and insert states.")
 
 (use-package general

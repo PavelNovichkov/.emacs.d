@@ -231,9 +231,8 @@ no other windows are present."
 ;;; Global non-leader bindings
 
 (general-define-key
- :states '(motion emacs normal)
  :keymaps 'override
- "M-o" #'other-window)
+ "C-," #'other-window)
 
 ;; OS-wide shortcuts.
 (general-define-key

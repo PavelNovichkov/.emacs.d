@@ -60,8 +60,7 @@
   (general-define-key
    :states '(insert motion normal emacs)
    :keymaps 'override
-   "C-." #'embark-act
-   "M-." #'embark-dwim)
+   "C-." #'embark-act)
   (general-define-key
    :states '(insert normal emacs)
    :keymaps 'vertico-map
