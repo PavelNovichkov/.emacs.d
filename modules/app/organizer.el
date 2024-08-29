@@ -326,7 +326,7 @@ Otherwise, use the original version of `server-visited-files'."
 (use-package evil-org
   :hook (org-mode . evil-org-mode)
   :init
-  (setq evil-org-key-theme '(insert textobjects additional calendar))
+  (setq evil-org-key-theme '(textobjects additional calendar))
   :config
   (evil-org-set-key-theme)
   (evil-normalize-keymaps))
