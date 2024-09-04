@@ -156,7 +156,9 @@ no other windows are present."
   "hv" '("variable" . helpful-variable)
 
   "i" '("insert" . (keymap))
+  "ic" '("citation" . citar-insert-citation)
   "ik" '("kill ring" . consult-yank-pop)
+  "in" '("note" . org-roam-node-insert)
   "iu" '("unicode" . insert-char)
 
   "l" '("layout" . (keymap))
@@ -247,9 +249,18 @@ no other windows are present."
 
 (general-define-key
  :states 'insert
+ "C-d" #'cape-dict
+ "C-e" #'expand-abbrev
+ "C-f" #'cape-file
+ "<C-i>" '("insert" . (keymap))
+ "<C-i> c" '("citation" . citar-insert-citation)
+ "<C-i> k" '("kill ring" . consult-yank-pop)
+ "<C-i> n" '("note" . org-roam-node-insert)
+ "<C-i> u" '("unicode" . insert-char)
  "C-n" #'completion-at-point
  "C-t" #'cape-dabbrev
- "C-v" #'my/evil-paste-last-yanked)
+ "C-v" #'my/evil-paste-last-yanked
+ "C-z" #'undo-only)
 
 (general-define-key
  :states '(motion normal)
