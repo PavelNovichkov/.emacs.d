@@ -202,8 +202,6 @@ no other windows are present."
   "qq" '("quit Emacs" . save-buffers-kill-emacs)
   "qr" '("restart Emacs" . restart-emacs)
 
-  "s" '("snipe" . evil-avy-goto-char-2)
-
   "t" '("toggle" . (keymap))
   "tc" '("fill column" . display-fill-column-indicator-mode)
   "tf" '("fullscreen" . toggle-frame-fullscreen)
@@ -233,6 +231,10 @@ no other windows are present."
 (general-define-key
  :keymaps 'override
  "C-," #'other-window)
+
+(general-define-key
+ :states '(motion normal)
+ "," #'evil-avy-goto-char-2)
 
 ;; OS-wide shortcuts.
 (general-define-key

@@ -48,17 +48,6 @@
         evil-owl-max-string-length 50)
   (evil-owl-mode))
 
-(use-package evil-snipe
-  :demand :after evil
-  :custom
-  (evil-snipe-char-fold t)
-  (evil-snipe-mode t)
-  (evil-snipe-override-mode t)
-  (evil-snipe-scope 'visible)
-  :config
-  (add-to-list 'evil-snipe-disabled-modes 'pdf-view-mode)
-  (add-to-list 'evil-snipe-disabled-modes 'proced-mode))
-
 (use-package evil-surround
   :commands (evil-surround-edit
              evil-Surround-edit
@@ -66,7 +55,7 @@
              evil-Surround-region)
   :init
   (general-define-key
-   :states 'operator
+   :states '(normal operator)
    "s" #'evil-surround-edit
    "S" #'evil-Surround-edit)
   (general-define-key
