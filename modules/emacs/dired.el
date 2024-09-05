@@ -45,11 +45,6 @@
    dired-do-revert-buffer t
    dired-dwim-target t
    dired-hide-details-hide-symlink-targets nil
-   dired-keep-marker-copy nil
-   dired-keep-marker-hardlink nil
-   dired-keep-marker-relsymlink nil
-   dired-keep-marker-rename nil
-   dired-keep-marker-symlink nil
    dired-kill-when-opening-new-dired-buffer t
    ;; Human-readable sizes; directories first.
    dired-listing-switches "-alh --group-directories-first"
