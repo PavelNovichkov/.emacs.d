@@ -134,6 +134,9 @@
 (use-package cape
   :demand :after corfu
   :config
+  (setopt
+   cape-dabbrev-min-length 0
+   dabbrev-case-replace nil)
   (add-hook 'completion-at-point-functions #'cape-file))
 
 (use-package kind-icon
