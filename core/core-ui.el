@@ -24,7 +24,17 @@
   :custom
   (mode-line-format nil)
   :config
-  (nano-modeline-text-mode t))
+  (nano-modeline-text-mode t)
+  ;; HACK Update nano-modeline active face, see
+  ;; https://github.com/rougier/nano-modeline/issues/63.
+  (defun my/nano-modeline-update (&rest _)
+    "Update nano-modeline active face."
+    (custom-set-faces
+     `(nano-modeline-active
+       ((t (:foreground ,(face-foreground 'default)
+            :background ,(face-background 'header-line nil t)
+            :box (:line-width 1 :color ,(face-background 'default))))))))
+  (add-hook 'enable-theme-functions #'my/nano-modeline-update))
 
 ;;; Posframe
 
