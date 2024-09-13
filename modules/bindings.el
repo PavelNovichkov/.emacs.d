@@ -203,14 +203,13 @@ no other windows are present."
   "qr" '("restart Emacs" . restart-emacs)
 
   "t" '("toggle" . (keymap))
-  "tc" '("fill column" . display-fill-column-indicator-mode)
-  "tf" '("fullscreen" . toggle-frame-fullscreen)
+  "tc" '("color theme" . consult-theme)
+  "tf" '("fill column" . display-fill-column-indicator-mode)
   "th" '("highlight line" . hl-line-mode)
   "tl" '("layouts" . toggle-tab-bar-mode-from-frame)
   "tm" '("margins" . visual-fill-column-mode)
   "tn" '("line numbers" . display-line-numbers-mode)
   "tt" '("truncate lines" . visual-line-mode)
-  "tT" '("theme" . consult-theme)
   "tv" '("variable pitch" . variable-pitch-mode)
   "tw" '("whitespace" . whitespace-mode)
 
