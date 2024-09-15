@@ -13,9 +13,7 @@
   (pdf-view-mode . my/pdf-tools-disable-evil-cursor)
   :custom
   (pdf-cache-image-limit 1)
-  (pdf-view-midnight-colors
-   (cons nano-dark-foreground nano-dark-background))
-  (pdf-view-midnight-invert nil)
+  (pdf-view-midnight-invert t)
   (pdf-view-continuous nil)
   (pdf-view-resize-factor 1.1)
   :config
