@@ -209,8 +209,8 @@ no other windows are present."
   "tl" '("layouts" . toggle-tab-bar-mode-from-frame)
   "tm" '("margins" . visual-fill-column-mode)
   "tn" '("line numbers" . display-line-numbers-mode)
+  "tp" '("proportional font" . fixed-pitch-mode)
   "tt" '("truncate lines" . visual-line-mode)
-  "tv" '("variable pitch" . variable-pitch-mode)
   "tw" '("whitespace" . whitespace-mode)
 
   "w" '("window" . (keymap))
