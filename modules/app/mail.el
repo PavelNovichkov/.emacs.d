@@ -56,9 +56,10 @@
         mu4e-headers-fields
         '((:from-or-to . 24)
           (:empty . 2)
-          (:subject . 38)
+          (:subject . 45)
           (:empty . 2)
-          (:human-date . 8))
+          (:human-date . 9))
+        mu4e-headers-precise-alignment t
         mu4e-hide-index-messages t
         mu4e-search-include-related nil
         mu4e-search-threads nil
