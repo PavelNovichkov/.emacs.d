@@ -16,6 +16,8 @@
    :states '(normal visual)
    "zx" #'evil-exchange)
   :config
+  (setopt
+   evil-exchange-highlight-face 'evil-ex-lazy-highlight)
   ;; Cancel exchange on escape.
   (defun my/escape-evil-exchange ()
     "Cancel evil-exchange."
