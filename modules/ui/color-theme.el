@@ -147,7 +147,9 @@
      (fg-heading-5 fg-main)
      (fg-heading-6 fg-main)
      (fg-heading-7 fg-main)
-     (fg-heading-8 fg-main))))
+     (fg-heading-8 fg-main)))
+
+  (modus-themes-load-theme 'modus-operandi))
 
 
 (use-package auto-dark
@@ -155,8 +157,7 @@
 
   :config
   (setopt
-   auto-dark-light-theme 'modus-operandi
-   auto-dark-dark-theme 'modus-vivendi)
+   auto-dark-themes '((modus-vivendi) (modus-operandi)))
 
   (defun my/pdf-tools-set-colors ()
     "Set colors in current PDFView buffer based on the color theme."
