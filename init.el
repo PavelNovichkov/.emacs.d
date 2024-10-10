@@ -25,6 +25,7 @@
     "emacs/word-wrap"
     "lang/cc"
     "lang/elisp"
+    "lang/julia"
     "lang/latex"
     "lang/markdown"
     "lang/wolfram"
