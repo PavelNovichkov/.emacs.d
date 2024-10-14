@@ -116,10 +116,12 @@ no other windows are present."
   "bx" '("kill and close window" . my/kill-buffer-and-window-or-layout)
 
   "c" '("credentials" . (keymap))
+  "cd" '("delete" . password-store-remove)
   "ce" '("edit" . password-store-edit)
   "cf" '("field" . password-store-copy-field)
   "cg" '("go to" . password-store-url)
   "cl" '("login" . my/password-store-copy-login)
+  "cm" '("rename (move)" . password-store-rename)
   "cp" '("password" . password-store-copy)
 
   "d" '("dired" . dired-jump)
