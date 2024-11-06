@@ -200,6 +200,7 @@
     "D" '("archive subtree" . org-archive-subtree-default)
     "e" '("effort" . org-set-effort)
     "i" '("tags" . org-set-tags-command)
+    "p" '("property" . org-set-property)
     "r" '("refile" . org-refile)
     "s" '("todo state" . org-todo)
     "t" '("toggle" . (keymap))
