@@ -11,8 +11,11 @@
   (setq
    ;; retrieving mail
    mu4e-get-mail-command "timeout 120 mbsync -q -a"
-   ;; sending mail
-   message-send-mail-function #'smtpmail-send-it
+   ;; send mail with msmtp
+   sendmail-program "/usr/bin/msmtp"
+   message-send-mail-function #'message-send-mail-with-sendmail
+   message-sendmail-envelope-from 'header ; use From field instead of real address
+   message-sendmail-f-is-evil t
    message-kill-buffer-on-exit t
    ;; moving mail
    mu4e-change-filenames-when-moving t) ; mbsync specific
