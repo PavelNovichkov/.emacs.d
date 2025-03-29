@@ -9,7 +9,7 @@
   ;;; Core
 
   (setq
-   ;; retrieving mail
+   ;; retrieve mail with mbsync
    mu4e-get-mail-command "timeout 120 mbsync -q -a"
    ;; send mail with msmtp
    sendmail-program "/usr/bin/msmtp"
@@ -17,7 +17,7 @@
    message-sendmail-envelope-from 'header ; use From field instead of real address
    message-sendmail-f-is-evil t
    message-kill-buffer-on-exit t
-   ;; moving mail
+   ;; move mail
    mu4e-change-filenames-when-moving t) ; mbsync specific
 
   ;; Move to trash without 'trashed' flag (otherwise server deletes
