@@ -8,10 +8,12 @@
   (global-visual-line-mode))
 
 
-(use-package adaptive-wrap
+(use-package visual-wrap ; built-in
+  :straight nil
+
   :hook
-  (prog-mode . adaptive-wrap-prefix-mode)
-  (org-agenda-mode . adaptive-wrap-prefix-mode)
+  (prog-mode . visual-wrap-prefix-mode)
+  (org-agenda-mode . visual-wrap-prefix-mode)
 
   :config
-  (setopt adaptive-wrap-extra-indent 2))
+  (setopt visual-wrap-extra-indent 2))

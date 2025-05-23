@@ -1,5 +1,4 @@
 (("Emacs-wgrep" . "208b9d01cfffa71037527e3a324684b3ce45ddc4")
- ("adaptive-wrap" . "d75665b9c88e65f91dadd1e5880905bbdb7c09b7")
  ("all-the-icons-completion" . "4c8bcad8033f5d0868ce82ea3807c6cd46c4a198")
  ("all-the-icons-dired" . "e157f0668f22ed586aebe0a2c0186ab07702986c")
  ("all-the-icons-ibuffer" . "280c99bb32dae3f0c43e97756d495beaf4554460")
