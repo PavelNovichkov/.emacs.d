@@ -30,7 +30,8 @@
   (local-leader-def
     "" '("mode" . nil)))
 
-(use-package which-key
+(use-package which-key ; built-in
+  :straight nil
   :demand
   :custom
   (which-key-sort-order #'which-key-description-order)

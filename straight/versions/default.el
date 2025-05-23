@@ -27,7 +27,6 @@
  ("emacs-ibuffer-project" . "9002abd9cb4c8753fe4f6c522d9407b4d52e7873")
  ("emacs-libvterm" . "988279316fc89e6d78947b48513f248597ba969a")
  ("emacs-rotate" . "4e9ac3ff800880bd9b705794ef0f7c99d72900a6")
- ("emacs-which-key" . "38d4308d1143b61e4004b6e7a940686784e51500")
  ("emacsmirror-mirror" . "f261e80a72e8e66b0c19c28914653110c9d62838")
  ("embark" . "19a13e344e04bbf861eaa74491b23da52b398672")
  ("evil" . "ea552efeeb809898932f55d1690da9cbe8ef5fa1")
