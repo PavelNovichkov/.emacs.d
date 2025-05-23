@@ -220,7 +220,7 @@ no other windows are present."
   "wD" '("delete other" . delete-other-windows)
   "wh" '("split horizontally" . my/split-window-horizontally)
   "wo" '("toggle side windows" . window-toggle-side-windows)
-  "wp" '("pin" . my/window-toggle-dedicated)
+  "wp" '("pin" . toggle-window-dedicated)
   "ws" '("swap" . rotate-window)
   "wt" '("transpose" . rotate-layout)
   "wu" '("undo" . winner-undo)
