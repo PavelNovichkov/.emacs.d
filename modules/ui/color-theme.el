@@ -35,28 +35,37 @@
   (add-hook 'enable-theme-functions #'my/customize-modus-themes)
 
   :config
-  ;; Load color palettes.
-  (require-theme 'modus-operandi-theme)
-  (require-theme 'modus-vivendi-theme)
-  ;; Define user colors based on the theme palette.
-  (dolist (palette '(modus-operandi-palette modus-vivendi-palette))
-    (let ((palette-user (intern (format "%s-user" (symbol-name palette)))))
-      (set
-       palette-user
-       (let-alist (eval palette)
-         `((my/string . ,.green-intense)
-           (my/constant . ,.magenta-faint)
-           (my/comment . ,.red-cooler)
-           (my/definition . ,.blue-warmer)
-           (my/highlight . ,.bg-dim)
-           (my/select . ,.bg-hl-line)
-           (my/link . ,.blue-warmer)
-           (my/match . ,.fg-main)
-           )))))
+  (require-theme 'modus-themes)
 
   (setopt
    modus-themes-headings '((t . (1.2)))
-   modus-themes-mixed-fonts t
+   modus-themes-mixed-fonts nil)
+
+  (setopt modus-vivendi-palette-overrides
+   '((bg-main "#1e1e1e")
+     (bg-dim "#303030")
+     (bg-inactive "#404040")
+     (bg-region "#2f3849")))
+
+  (setopt
+   modus-themes-common-palette-user
+   '((my/string green-intense)
+     (my/constant magenta-faint)
+     (my/comment red-cooler)
+     (my/definition blue-warmer)
+     (my/highlight bg-dim)
+     (my/link blue-warmer)
+     (my/match fg-main)))
+
+  (setopt
+   modus-operandi-palette-user
+   '((my/select bg-cyan-nuanced)))
+
+  (setopt
+   modus-vivendi-palette-user
+   '((my/select bg-cyan-subtle)))
+
+  (setopt
    modus-themes-common-palette-overrides
    '(
 
@@ -149,6 +158,8 @@
      (fg-heading-7 fg-main)
      (fg-heading-8 fg-main)))
 
+  ;; Load both themes, otherwise auto-dark does not apply some overrides correctly.
+  (modus-themes-load-theme 'modus-vivendi)
   (modus-themes-load-theme 'modus-operandi))
 
 
