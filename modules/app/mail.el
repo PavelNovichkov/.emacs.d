@@ -169,4 +169,10 @@
 ;;; Send HTML emails
 
 
-(use-package org-mime)
+(use-package org-msg
+  :config
+  (setopt
+   org-msg-default-alternatives
+   '((new . (text)) (reply-to-html . (text html)) (reply-to-text . (text)))
+   ;; TODO Set signature.
+   org-msg-signature nil))
