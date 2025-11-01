@@ -104,6 +104,7 @@
    ;; Don't reply to myself.
    message-dont-reply-to-names #'mu4e-personal-or-alternative-address-p
    message-signature nil
+   message-signature-file "~/.config/emacs/etc/message-signature"
    ;; Allow clients to reflow paragraphs.
    mu4e-compose-format-flowed t)
 
