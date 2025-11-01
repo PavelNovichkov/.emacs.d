@@ -13,7 +13,7 @@
   :custom
   (evil-want-C-d-scroll t)
   (evil-want-C-u-scroll t)
-  (evil-want-C-i-jump t)
+  (evil-want-C-i-jump nil)
   (evil-want-keybinding nil)
   (evil-want-integration t)
   (evil-mode-line-format nil)
@@ -29,6 +29,11 @@
   ;; (evil-mode t)
   :config
   (evil-mode)
+  ;; We cannot use evil-want-C-i-jump to set C-i because we distinguish <tab>
+  ;; from C-i. Therefore, we set C-i keybinding explicitly.
+  (general-define-key
+   :states 'motion
+   "<C-i>" #'evil-jump-forward)
   ;; Make ESC from normal mode the universal escaper.
   (defun my/evil-normal-state-escape (&rest _)
   "Call `my/escape' if `evil-force-normal-state' is called interactively."
