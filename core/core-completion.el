@@ -99,7 +99,6 @@
              :files ("*.el" "extensions/*.el"))
   :demand
   :custom
-  (corfu-auto t)
   (corfu-cycle t)
   (global-corfu-mode t)
   (evil-collection-corfu-key-themes nil)
@@ -147,3 +146,10 @@
    '(:padding 0 :stroke 0 :margin 0 :radius 0 :height 0.4 :scale 1.0))
   :config
   (add-to-list 'corfu-margin-formatters #'kind-icon-margin-formatter))
+
+(use-package completion-preview ; built-in
+  :straight nil
+  :demand :after corfu
+  :config
+  (global-completion-preview-mode)
+  (add-to-list 'completion-preview-commands 'org-self-insert-command))
