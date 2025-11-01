@@ -8,8 +8,8 @@
   (let ((bg (face-background 'default)))
     (custom-set-faces
      ;; Add padding to tabs
-     (my/add-padding 'tab-bar-tab 6)
-     (my/add-padding 'tab-bar-tab-inactive 6)
+     (my/add-padding 'tab-bar-tab 4)
+     (my/add-padding 'tab-bar-tab-inactive 4)
      ;; Invisible borders
      `(fringe ((t :background ,bg :foreground ,bg)))
      `(window-divider ((t :background ,bg :foreground ,bg)))

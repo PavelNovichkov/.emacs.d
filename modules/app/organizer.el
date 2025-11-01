@@ -162,7 +162,7 @@
         org-preview-latex-default-process 'dvisvgm
         org-preview-latex-image-directory ".ltximg/")
 
-  (plist-put org-format-latex-options :scale 1.0)
+  (plist-put org-format-latex-options :scale 0.5)
   (plist-put org-format-latex-options :background "Transparent")
 
   (defun my/org-latex-filter-nbsp (text backend info)

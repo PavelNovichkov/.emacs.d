@@ -13,6 +13,6 @@
 
 (modify-all-frames-parameters
  '((fullscreen . maximized)
-   (internal-border-width . 15)
+   (internal-border-width . 12)
    (right-divider-width . 15)
    (bottom-divider-width . 15)))
