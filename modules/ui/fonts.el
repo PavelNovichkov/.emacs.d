@@ -3,7 +3,7 @@
 ;;; Default fonts
 
 (set-face-attribute
- 'default nil :family "Input Sans Narrow" :height 110 :weight 'normal)
+ 'default nil :family "Input Sans Narrow" :height 100 :weight 'normal)
 (set-face-attribute
  'fixed-pitch nil :family "Input Mono Narrow" :height 1.0 :weight 'normal)
 (set-face-attribute
