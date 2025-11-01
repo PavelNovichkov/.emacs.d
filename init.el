@@ -9,6 +9,7 @@
     "ui/frame"
     "editor/autopair"
     "editor/autotype"
+    "editor/config"
     "evil/plugins"
     "emacs/calendar"
     "emacs/dired"
