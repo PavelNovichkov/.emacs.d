@@ -104,14 +104,12 @@ no other windows are present."
   "b" '("buffer" . (keymap))
   "bb" '("most recent" . my/switch-to-recent-buffer)
   "bc" '("clone" . clone-indirect-buffer)
-  "be" '("revert encoding" . revert-buffer-with-coding-system)
   "bk" '("kill" . kill-current-buffer)
   "bl" '("list" . ibuffer)
   "bn" '("new" . evil-buffer-new)
   "bo" '("other window" . (keymap))
   "boc" '("clone" . clone-indirect-buffer-other-window)
   "bos" '("switch" . consult-buffer-other-window)
-  "br" '("revert" . revert-buffer-quick)
   "bs" '("switch" . consult-buffer)
   "bx" '("kill and close window" . my/kill-buffer-and-window-or-layout)
 
@@ -127,6 +125,7 @@ no other windows are present."
   "d" '("dired" . dired-jump)
 
   "f" '("file" . (keymap))
+  "f." '("at point" . find-file-at-point)
   "fa" '("find alternate" . find-alternate-file)
   "fd" '("delete" . my/delete-file-and-buffer)
   "ff" '("find" . find-file)
@@ -204,6 +203,17 @@ no other windows are present."
   "qq" '("quit Emacs" . save-buffers-kill-emacs)
   "qr" '("restart Emacs" . restart-emacs)
 
+  "r" '("reload" . (keymap))
+  "re" '("encoding" . revert-buffer-with-coding-system)
+  "rr" '("revert" . revert-buffer-quick)
+  "rs" '("with sudo" . tramp-revert-buffer-with-sudo)
+
+  "s" '("settings" . (keymap))
+  "sc" '("customize group" . customize-group)
+  "sf" '("fill column" . set-fill-column)
+  "st" `("text scale" . global-text-scale-adjust)
+  "sv" '("variable" . set-variable)
+
   "t" '("toggle" . (keymap))
   "tc" '("color theme" . consult-theme)
   "tf" '("fill column" . display-fill-column-indicator-mode)
@@ -225,7 +235,12 @@ no other windows are present."
   "wt" '("transpose" . rotate-layout)
   "wu" '("undo" . winner-undo)
   "wr" '("redo" . winner-redo)
-  "wv" '("split vertically" . my/split-window-vertically))
+  "wv" '("split vertically" . my/split-window-vertically)
+
+  "<left>" '("window left" . evil-window-left)
+  "<right>" '("window right" . evil-window-right)
+  "<up>" '("window up" . evil-window-up)
+  "<down>" '("window down" . evil-window-down))
 
 ;;; Global non-leader bindings
 
