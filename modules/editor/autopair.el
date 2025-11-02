@@ -2,7 +2,7 @@
 
 
 (use-package elec-pair ; built-in
-  :straight nil
+  :ensure nil
   :demand
 
   :config

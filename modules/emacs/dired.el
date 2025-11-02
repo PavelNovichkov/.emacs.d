@@ -1,7 +1,7 @@
 ;;; emacs/dired.el -*- lexical-binding: t; -*-
 
 (use-package dired ; built-in
-  :straight nil
+  :ensure nil
   :init
   (defun my/dired-update-default-directory ()
     "Update `default-directory' to parent directory at point."

@@ -16,3 +16,5 @@
    (internal-border-width . 12)
    (right-divider-width . 15)
    (bottom-divider-width . 15)))
+
+(setq package-enable-at-startup nil)

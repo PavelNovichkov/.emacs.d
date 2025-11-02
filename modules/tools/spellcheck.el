@@ -2,7 +2,7 @@
 
 (use-package ispell ; built-in
   :ensure-system-package hunspell
-  :straight nil
+  :ensure nil
   :config
   ;; Advice to inhibit the minibuffer message.
   (defun my/ispell-quiet-init (orig-fun &rest args)
@@ -17,7 +17,7 @@
   (setq ispell-dictionary "en_US,ru_RU"))
 
 (use-package flyspell ; built-in
-  :straight nil
+  :ensure nil
   :hook ((text-mode . flyspell-mode)
          (prog-mode . flyspell-prog-mode))
   :config

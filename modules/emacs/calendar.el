@@ -1,7 +1,7 @@
 ;;; emacs/calendar.el -*- lexical-binding: t; -*-
 
 (use-package calendar ; built-in
-  :straight nil
+  :ensure nil
 
   :init
   (set-time-zone-rule "CET")

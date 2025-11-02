@@ -1,7 +1,7 @@
 ;;; emacs/word-wrap.el -*- lexical-binding: t; -*-
 
 (use-package emacs
-  :straight nil
+  :ensure nil
 
   :config
   (setopt fill-column 80)
@@ -9,7 +9,7 @@
 
 
 (use-package visual-wrap ; built-in
-  :straight nil
+  :ensure nil
 
   :hook
   (prog-mode . visual-wrap-prefix-mode)

@@ -13,6 +13,7 @@
   "The local leader prefix key for major mode specific commands in emacs and insert states.")
 
 (use-package general
+  :ensure (:wait t)
   :demand
   :config
   (general-create-definer leader-def
@@ -31,7 +32,7 @@
     "" '("mode" . nil)))
 
 (use-package which-key ; built-in
-  :straight nil
+  :ensure nil
   :demand
   :custom
   (which-key-sort-order #'which-key-description-order)

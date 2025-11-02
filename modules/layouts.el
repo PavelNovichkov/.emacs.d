@@ -1,7 +1,7 @@
 ;;; layouts.el -*- lexical-binding: t; -*-
 
 (use-package tab-bar ; built-in
-  :straight nil
+  :ensure nil
 
   :custom
   (tab-bar-auto-width nil)

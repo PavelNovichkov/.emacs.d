@@ -1,7 +1,7 @@
 ;;; tools/lsp.el -*- lexical-binding: t; -*-
 
 (use-package eglot ; built-in
-  :straight nil
+  :ensure nil
   :commands (eglot eglot-ensure)
   :config
   (setq eglot-autoshutdown t))

@@ -1,7 +1,7 @@
 ;;; emacs/whitespace.el -*- lexical-binding: t; -*-
 
 (use-package whitespace ; built-in
-  :straight nil
+  :ensure nil
 
   :custom
   (whitespace-line-column -1))

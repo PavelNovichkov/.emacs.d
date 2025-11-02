@@ -1,7 +1,7 @@
 ;;; lang/elisp.el -*- lexical-binding: t; -*-
 
 (use-package elisp-mode ; built-in
-  :straight nil
+  :ensure nil
   :config
   ;; Bindings.
   (local-leader-def

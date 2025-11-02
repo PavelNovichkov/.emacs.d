@@ -1,7 +1,7 @@
 ;;; app/mail.el -*- lexical-binding: t; -*-
 
 (use-package mu4e
-  :straight nil
+  :ensure nil
   :ensure-system-package mu
   :commands mu4e
   :config
@@ -129,7 +129,7 @@
 
 
 (use-package gnus-dired
-  :straight nil ; built-in
+  :ensure nil ; built-in
   :commands gnus-dired-attach
   :init
 

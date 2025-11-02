@@ -1,6 +1,6 @@
 ;;; projects.el -*- lexical-binding: t; -*-
 
 (use-package project ; built-in
-  :straight nil
+  :ensure nil
   :custom
   (project-vc-extra-root-markers '(".project")))

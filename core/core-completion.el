@@ -3,9 +3,6 @@
 ;;; Vertico (completion UI)
 
 (use-package vertico
-  :straight (:host github
-             :repo "emacs-straight/vertico"
-             :files ("*.el" "extensions/*.el"))
   :demand
   :custom
   (enable-recursive-minibuffers t)
@@ -13,7 +10,7 @@
   (vertico-mode t))
 
 (use-package vertico-quick
-  :straight nil ;; part of vertico
+  :ensure nil ;; part of vertico
   :demand :after vertico
   :custom
   (vertico-quick1 "tnseriaodh")
@@ -25,7 +22,7 @@
    "C-s" #'vertico-quick-exit))
 
 (use-package vertico-repeat
-  :straight nil ;; part of vertico
+  :ensure nil ;; part of vertico
   :demand :after vertico
   :hook (minibuffer-setup . vertico-repeat-save))
 
@@ -53,9 +50,6 @@
 ;;; Embark (completion actions and more)
 
 (use-package embark
-  :straight (:host github
-             :repo "oantolin/embark"
-             :files ("*.el"))
   :init
   (general-define-key
    :states '(insert motion normal emacs)
@@ -80,7 +74,6 @@
   (consult-preview-key nil))
 
 (use-package embark-consult
-  :straight nil ;; part or embark
   :demand :after embark
   :hook (embark-collect-mode . consult-preview-at-point-mode))
 
@@ -94,9 +87,6 @@
 ;;; Corfu
 
 (use-package corfu
-  :straight (:host github
-             :repo "minad/corfu"
-             :files ("*.el" "extensions/*.el"))
   :demand
   :custom
   (corfu-cycle t)
@@ -119,7 +109,7 @@
    "C-SPC" #'corfu-insert-separator))
 
 (use-package corfu-quick
-  :straight nil ;; part of corfu
+  :ensure nil ;; part of corfu
   :demand :after corfu
   :custom
   (corfu-quick1 "tnseriaodh")
@@ -148,7 +138,7 @@
   (add-to-list 'corfu-margin-formatters #'kind-icon-margin-formatter))
 
 (use-package completion-preview ; built-in
-  :straight nil
+  :ensure nil
   :demand :after corfu
   :config
   (global-completion-preview-mode)

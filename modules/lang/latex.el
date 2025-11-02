@@ -1,7 +1,15 @@
 ;;; lang/latex.el -*- lexical-binding: t; -*-
 
 (use-package tex
-  :straight auctex
+  :ensure
+  (auctex
+   :repo "https://git.savannah.gnu.org/git/auctex.git"
+   :branch "main"
+   :pre-build (("make" "elpa"))
+   :build (:not elpaca--compile-info) ;; Make will take care of this step
+   :files ("*.el" "doc/*.info*" "etc" "images" "latex" "style")
+   :version (lambda (_) (require 'auctex) AUCTeX-version))
+
   :hook ((TeX-mode . outline-minor-mode)
          (TeX-mode . prettify-symbols-mode)
          (TeX-mode . TeX-source-correlate-mode))
@@ -46,4 +54,5 @@
   :hook (LaTeX-mode . evil-tex-mode))
 
 (use-package reftex ; built-in
+  :ensure nil
   :hook (TeX-mode . reftex-mode))

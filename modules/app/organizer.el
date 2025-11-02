@@ -6,9 +6,8 @@
   "Slip box directory.")
 
 ;; TODO: refactor.
-(use-package org
-  ;; pre-loaded in core-packages
-  :straight nil
+(use-package org ; built-in
+  :ensure nil
   :bind (:map org-mode-map
               ("C-c [" . nil)
               ("C-c ]" . nil))
@@ -222,7 +221,7 @@
    "di" '("inactive" . org-time-stamp-inactive)))
 
 (use-package org-agenda
-  :straight nil ;; part of org
+  :ensure nil ;; part of org
   :custom
   (org-agenda-hide-tags-regexp ".")
   :config
@@ -235,7 +234,7 @@
   (advice-add #'org-agenda-get-restriction-and-command :around #'my/suppress-delete-other-windows))
 
 (use-package org-archive
-  :straight nil ;; part of org
+  :ensure nil ;; part of org
   :custom
   (org-archive-file-header-format
    "#+FILETAGS: ARCHIVE\nArchived entries from file %s\n")
@@ -243,7 +242,7 @@
   (org-archive-subtree-add-inherited-tags t))
 
 (use-package org-capture
-  :straight nil ;; part of org
+  :ensure nil ;; part of org
   :commands (org-capture)
   :config
   (setq org-capture-templates
@@ -292,7 +291,7 @@
 ;; - add webpage to reading list: "javascript:location.href='org-protocol://capture?template=W&url='+encodeURIComponent(window.location.href)+'&title='+encodeURIComponent(document.title)+'&body='+encodeURIComponent(window.getSelection());"
 ;; - add web note: "javascript:location.href='org-protocol://roam-ref?template=w&ref='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title)"
 (use-package org-protocol
-  :straight nil ;; part of org
+  :ensure nil ;; part of org
   :init
   (defun my/org-protocol-lazy-load (orig-fun &rest args)
     "Lazy load org-protocol when visited file matches \":/+\".
@@ -310,7 +309,7 @@ Otherwise, use the original version of `server-visited-files'."
   (advice-add #'server-visit-files :around #'my/org-protocol-lazy-load))
 
 (use-package ox
-  :straight nil ;; part of org
+  :ensure nil ;; part of org
   :config
   (add-to-list
    'display-buffer-alist
@@ -333,7 +332,7 @@ Otherwise, use the original version of `server-visited-files'."
   (evil-normalize-keymaps))
 
 (use-package evil-org-agenda
-  :straight nil ;; part of evil-org
+  :ensure nil ;; part of evil-org
   :demand :after org-agenda
   :config
   (evil-org-agenda-set-keys)
@@ -352,7 +351,7 @@ Otherwise, use the original version of `server-visited-files'."
 ;;; Attachments
 
 (use-package org-attach
-  :straight nil ;; part of org
+  :ensure nil ;; part of org
   :demand :after org
   :config
   (setq org-attach-id-dir (expand-file-name "db" my/org-directory))
@@ -459,7 +458,13 @@ Otherwise, use the original version of `server-visited-files'."
 
 ;;; Password manager
 
+;; TODO Remove this package
 (use-package org-password-manager
+  :ensure
+  (org-password-manager
+   :host github
+   :repo "thisirs/org-password-manager"
+   :branch "master")
   :commands (org-password-manager-generate-password
              org-password-manager-get-password
              org-password-manager-get-username)
@@ -522,7 +527,6 @@ Otherwise, use the original version of `server-visited-files'."
 ;;; Table alignment
 
 (use-package valign
-  :straight (:host github :repo "casouri/valign")
   :commands valign-mode
   :after org
   :init

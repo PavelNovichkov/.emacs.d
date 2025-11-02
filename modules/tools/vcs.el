@@ -1,5 +1,9 @@
 ;;; tools/vcs.el -*- lexical-binding: t; -*-
 
+;; Magit requires a newer version of transient than the one included with Emacs,
+;; so we have to install it explicitly.
+(use-package transient)
+
 (use-package magit
   :ensure-system-package git
   :commands magit-status

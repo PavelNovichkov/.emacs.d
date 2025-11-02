@@ -2,7 +2,7 @@
 
 
 (use-package abbrev ; built-in
-  :straight nil
+  :ensure nil
 
   :hook
   (org-mode . abbrev-mode)
@@ -15,6 +15,7 @@
 
 
 (use-package tempel
+  :ensure (:wait t)
   :demand :after abbrev
 
   :config

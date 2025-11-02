@@ -48,12 +48,6 @@
   (all-the-icons-scale-factor 1.0))
 
 (use-package all-the-icons-completion
-  ;; TODO Remove when
-  ;; https://github.com/iyefrat/all-the-icons-completion/pull/33 gets merged.
-  :straight
-  (:host github
-   :repo "maxecharel/all-the-icons-completion"
-   :branch "contrib")
   :demand
   :custom
   (all-the-icons-completion-mode t))

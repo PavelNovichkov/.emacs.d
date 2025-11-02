@@ -1,7 +1,7 @@
 ;;; ui/windows.el -*- lexical-binding: t; -*-
 
 (use-package window ; built-in
-  :straight nil
+  :ensure nil
 
   :custom
   (hscroll-step 1)
@@ -15,7 +15,7 @@
   (winner-mode t))
 
 (use-package pixel-scroll ; built-in
-  :straight nil
+  :ensure nil
 
   :custom
   (pixel-scroll-precision-mode t))

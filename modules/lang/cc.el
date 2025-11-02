@@ -1,7 +1,7 @@
 ;;; lang/cc.el -*- lexical-binding: t; -*-
 
 (use-package cc-mode ; built-in
-  :straight nil
+  :ensure nil
   :config
   ;; Bindings.
   (local-leader-def

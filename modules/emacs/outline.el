@@ -1,7 +1,7 @@
 ;;; emacs/outline.el -*- lexical-binding: t; -*-
 
 (use-package outline ; built-in
-  :straight nil
+  :ensure nil
   :config
   (setq outline-minor-mode-cycle t)
   ;; Customize the folding marker to be " +" instead of "...". For details, see

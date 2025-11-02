@@ -2,7 +2,7 @@
 
 ;; Enhance security.
 (use-package nsm ; built-in
-  :straight nil
+  :ensure nil
   :custom
   (network-security-level 'paranoid))
 
@@ -51,7 +51,7 @@
 (setq use-short-answers t)
 
 (use-package server ; built-in
-  :straight nil
+  :ensure nil
   :demand
   :custom
   (server-mode t)
@@ -60,7 +60,7 @@
 
 ;; Save minibuffer history across sessions.
 (use-package savehist ; built-in
-  :straight nil
+  :ensure nil
   :demand
   :custom
   (history-length 10)

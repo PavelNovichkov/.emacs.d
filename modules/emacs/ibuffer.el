@@ -1,7 +1,7 @@
 ;;; emacs/ibuffer.el -*- lexical-binding: t; -*-
 
 (use-package ibuffer ; built-in
-  :straight nil
+  :ensure nil
   :hook (ibuffer-mode . ibuffer-auto-mode)
   :config
   (setq ibuffer-show-empty-filter-groups nil))

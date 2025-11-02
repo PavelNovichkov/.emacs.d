@@ -1,7 +1,7 @@
 ;;; ui/hl-line.el -*- lexical-binding: t; -*-
 
 (use-package hl-line ; built-in
-  :straight nil
+  :ensure nil
 
   :hook
   (prog-mode . hl-line-mode))

@@ -1,7 +1,7 @@
 ;;; ui/frame.el -*- lexical-binding: t; -*-
 
 (use-package frame ; built-in
-  :straight nil
+  :ensure nil
 
   :custom
   (blink-cursor-mode nil)
@@ -12,7 +12,7 @@
   (tool-bar-mode nil))
 
 (use-package display-time ; built-in
-  :straight nil
+  :ensure nil
 
   :custom
   (display-time-default-load-average nil)

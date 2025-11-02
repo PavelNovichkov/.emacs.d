@@ -1,7 +1,7 @@
 ;;; emacs/ediff.el -*- lexical-binding: t; -*-
 
 (use-package ediff ; built-in
-  :straight nil
+  :ensure nil
   :init
   ;; Setup in org-mode.
   (defun my/setup-ediff-in-org-mode ()

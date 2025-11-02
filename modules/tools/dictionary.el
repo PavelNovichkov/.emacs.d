@@ -1,7 +1,7 @@
 ;;; tools/dictionary.el -*- lexical-binding: t; -*-
 
 (use-package dictionary ; built-in
-  :straight nil
+  :ensure nil
   :ensure-system-package dictd
 
   :config

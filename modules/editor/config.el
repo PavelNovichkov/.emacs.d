@@ -2,7 +2,7 @@
 
 
 (use-package editorconfig ; built-in
-  :straight nil
+  :ensure nil
   :demand
 
   :config

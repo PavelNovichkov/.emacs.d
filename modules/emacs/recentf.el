@@ -1,7 +1,7 @@
 ;;; emacs/recentf.el -*- lexical-binding: t; -*-
 
 (use-package recentf ; built-in
-  :straight nil
+  :ensure nil
   :demand
   :config
   (setq recentf-filename-handlers '(file-truename abbreviate-file-name)
