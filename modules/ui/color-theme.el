@@ -29,6 +29,7 @@
         (custom-set-faces
          '(bold ((t :weight unspecified)))
          `(calendar-today ((t :underline nil :foreground ,date-scheduled)))
+         `(julia-macro-face ((t :foreground ,fg-main)))
          '(modus-themes-button ((t :box nil))) ; flat buttons
          '(mu4e-header-face ((t :inherit default)))
          '(org-table ((t :inherit unspecified)))))))
