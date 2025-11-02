@@ -41,29 +41,33 @@
    modus-themes-headings '((t . (1.2)))
    modus-themes-mixed-fonts nil)
 
+  (setopt
+   modus-operandi-palette-user
+   '((my/string "#008900") ; green-intense
+     (my/constant "#7c318f") ; magenta-faint
+     (my/comment "#a0132f") ; red-cooler
+     (my/definition "#3548cf") ; blue-warmer
+     (my/highlight "#f2f2f2") ; bg-dim
+     (my/link "#3548cf") ; blue-warmer
+     (my/match "#000000") ; fg-main
+     (my/select "#bfefff"))) ; bg-cyan-nuanced
+
+  (setopt
+   modus-vivendi-palette-user
+   '((my/string "#88ca9f") ; green-faint
+     (my/constant "#caa6df") ; magenta-faint
+     (my/comment "#ff9580") ; red-faint
+     (my/definition "#82b0ec") ; blue-faint
+     (my/highlight "#303030") ; bg-dim
+     (my/link "#82b0ec") ; blue-faint
+     (my/match "#ffffff") ; fg-main
+     (my/select "#004065"))) ; bg-cyan-subtle
+
   (setopt modus-vivendi-palette-overrides
    '((bg-main "#1e1e1e")
      (bg-dim "#303030")
      (bg-inactive "#404040")
      (bg-region "#2f3849")))
-
-  (setopt
-   modus-themes-common-palette-user
-   '((my/string green-intense)
-     (my/constant magenta-faint)
-     (my/comment red-cooler)
-     (my/definition blue-warmer)
-     (my/highlight bg-dim)
-     (my/link blue-warmer)
-     (my/match fg-main)))
-
-  (setopt
-   modus-operandi-palette-user
-   '((my/select bg-cyan-nuanced)))
-
-  (setopt
-   modus-vivendi-palette-user
-   '((my/select bg-cyan-subtle)))
 
   (setopt
    modus-themes-common-palette-overrides
