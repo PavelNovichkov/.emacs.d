@@ -39,7 +39,6 @@
     "ui/margins"
     "ui/pulsar"
     "ui/windows"
-    "app/beeminder"
     "app/irc"
     "app/ledger"
     "app/mail"

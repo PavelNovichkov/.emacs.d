@@ -122,18 +122,6 @@
                            "*-tests.el" "LICENSE" "README*" "*-pkg.el"))
                 :source "MELPA" :protocol https :inherit t :depth treeless :ref
                 "933d1f36cca0f71e4acb5fac707e9ae26c536264"))
- (beeminder :source "elpaca-menu-lock-file" :recipe
-            (:package "beeminder" :repo "Sodaware/beeminder.el" :fetcher github
-                      :files
-                      ("*.el" "*.el.in" "dir" "*.info" "*.texi" "*.texinfo"
-                       "doc/dir" "doc/*.info" "doc/*.texi" "doc/*.texinfo"
-                       "lisp/*.el" "docs/dir" "docs/*.info" "docs/*.texi"
-                       "docs/*.texinfo"
-                       (:exclude ".dir-locals.el" "test.el" "tests.el"
-                                 "*-test.el" "*-tests.el" "LICENSE" "README*"
-                                 "*-pkg.el"))
-                      :source "MELPA" :protocol https :inherit t :depth treeless
-                      :ref "161d9c94c594614a01cb08219693d9e000af4f69"))
  (cape :source "elpaca-menu-lock-file" :recipe
        (:package "cape" :repo "minad/cape" :fetcher github :files
                  ("*.el" "*.el.in" "dir" "*.info" "*.texi" "*.texinfo" "doc/dir"
