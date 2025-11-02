@@ -177,7 +177,7 @@
 
   (defun my/pdf-tools-set-colors ()
     "Set colors in current PDFView buffer based on the color theme."
-    (let ((arg (if (auto-dark--is-dark-mode) 1 -1)))
+    (let ((arg (if (eq (auto-dark--current-system-mode) 'dark) 1 -1)))
       (pdf-view-midnight-minor-mode arg)))
 
   (add-hook 'pdf-view-mode-hook #'my/pdf-tools-set-colors)
