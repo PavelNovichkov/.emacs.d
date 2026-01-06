@@ -22,6 +22,7 @@
     "emacs/outline"
     "emacs/recentf"
     "emacs/tramp"
+    "emacs/xref"
     "lang/cc"
     "lang/elisp"
     "lang/julia"
