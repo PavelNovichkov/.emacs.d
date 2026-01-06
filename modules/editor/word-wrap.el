@@ -1,4 +1,4 @@
-;;; emacs/word-wrap.el -*- lexical-binding: t; -*-
+;;; editor/word-wrap.el -*- lexical-binding: t; -*-
 
 (use-package emacs
   :ensure nil

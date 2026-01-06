@@ -1,4 +1,4 @@
-;;; emacs/gpg.el -*- lexical-binding: t; -*-
+;;; tools/gpg.el -*- lexical-binding: t; -*-
 
 ;; Setup GPG-agent for SSH
 (setenv "SSH_AUTH_SOCK"
