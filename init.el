@@ -19,7 +19,6 @@
     "emacs/eldoc"
     "emacs/helpful"
     "emacs/ibuffer"
-    "emacs/line-numbers"
     "emacs/outline"
     "emacs/recentf"
     "emacs/tramp"
