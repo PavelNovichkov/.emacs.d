@@ -30,6 +30,8 @@
     "c" '("run command" . TeX-command-master)
     "p" '("pin region" . TeX-pin-region)
     "r" '("run command for region" . TeX-command-region)
+    "t" '("toggle" . (keymap))
+    "tw" '("warnings" . TeX-toggle-debug-warnings)
     "v" '("view" . TeX-view))
   ;; Do not use LaTeX-indent-tabular as it breaks complex tabular-type environments.
   (setq LaTeX-indent-environment-list
