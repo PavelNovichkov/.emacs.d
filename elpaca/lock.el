@@ -1,14 +1,4 @@
-((alert :source "elpaca-menu-lock-file" :recipe
-        (:package "alert" :fetcher github :repo "jwiegley/alert" :files
-                  ("*.el" "*.el.in" "dir" "*.info" "*.texi" "*.texinfo"
-                   "doc/dir" "doc/*.info" "doc/*.texi" "doc/*.texinfo"
-                   "lisp/*.el" "docs/dir" "docs/*.info" "docs/*.texi"
-                   "docs/*.texinfo"
-                   (:exclude ".dir-locals.el" "test.el" "tests.el" "*-test.el"
-                             "*-tests.el" "LICENSE" "README*" "*-pkg.el"))
-                  :source "MELPA" :protocol https :inherit t :depth treeless
-                  :ref "79f6936ab4d85227530959811143429347a6971b"))
- (all-the-icons :source "elpaca-menu-lock-file" :recipe
+((all-the-icons :source "elpaca-menu-lock-file" :recipe
                 (:package "all-the-icons" :repo "domtronn/all-the-icons.el"
                           :fetcher github :files (:defaults "data") :source
                           "MELPA" :protocol https :inherit t :depth treeless
@@ -727,19 +717,6 @@
                                  :source "MELPA" :protocol https :inherit t
                                  :depth treeless :ref
                                  "7f677c6c14ecf05eab8e0efbfe7f1b00ae68eb1d"))
- (org-mru-clock :source "elpaca-menu-lock-file" :recipe
-                (:package "org-mru-clock" :fetcher github :repo
-                          "unhammer/org-mru-clock" :files
-                          ("*.el" "*.el.in" "dir" "*.info" "*.texi" "*.texinfo"
-                           "doc/dir" "doc/*.info" "doc/*.texi" "doc/*.texinfo"
-                           "lisp/*.el" "docs/dir" "docs/*.info" "docs/*.texi"
-                           "docs/*.texinfo"
-                           (:exclude ".dir-locals.el" "test.el" "tests.el"
-                                     "*-test.el" "*-tests.el" "LICENSE"
-                                     "README*" "*-pkg.el"))
-                          :source "MELPA" :protocol https :inherit t :depth
-                          treeless :ref
-                          "198beb2089ea5e457dd13e8ac64d775eeff8fd89"))
  (org-msg :source "elpaca-menu-lock-file" :recipe
           (:package "org-msg" :repo "jeremy-compostella/org-msg" :fetcher github
                     :files
@@ -757,12 +734,6 @@
                                 "thisirs/org-password-manager" :branch "master"
                                 :package "org-password-manager" :ref
                                 "8048e8d0d59b3eb7c5e8e24441751863d4a6acc2"))
- (org-pomodoro :source "elpaca-menu-lock-file" :recipe
-               (:package "org-pomodoro" :fetcher github :repo
-                         "marcinkoziej/org-pomodoro" :files
-                         (:defaults "resources") :source "MELPA" :protocol https
-                         :inherit t :depth treeless :ref
-                         "3f5bcfb80d61556d35fc29e5ddb09750df962cc6"))
  (org-roam :source "elpaca-menu-lock-file" :recipe
            (:package "org-roam" :fetcher github :repo "org-roam/org-roam" :files
                      (:defaults "extensions/*") :source "MELPA" :protocol https

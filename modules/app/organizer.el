@@ -473,31 +473,6 @@ Otherwise, use the original version of `server-visited-files'."
   (setq org-password-manager-scope
         (list (expand-file-name "reference/secrets.gpg" my/org-directory))))
 
-;;; Pomodoro
-
-(use-package org-pomodoro
-  :commands org-pomodoro
-  :config
-  (setq alert-user-configuration
-        '((((:category . "org-pomodoro")) libnotify nil)))
-  (setq org-pomodoro-audio-player "paplay"
-        org-pomodoro-long-break-frequency 10))
-
-(use-package org-mru-clock
-  :init
-  (defun my/org-clock-files ()
-    (list (expand-file-name "gtd.org" my/org-directory)))
-  (defun my/org-entry-has-sci-tag-p ()
-    (member "SCI" (org-get-tags nil t)))
-  :custom
-  (org-mru-clock-files #'my/org-clock-files)
-  (org-mru-clock-format-function 'substring)
-  (org-mru-clock-how-many 15)
-  (org-mru-clock-include-entry-at-point t)
-  (org-mru-clock-predicate #'my/org-entry-has-sci-tag-p)
-  :config
-  (add-hook 'minibuffer-setup-hook #'org-mru-clock-embark-minibuffer-hook))
-
 ;;; Table alignment
 
 (use-package valign
