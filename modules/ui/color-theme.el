@@ -114,6 +114,8 @@
      (fnname my/definition)
      (variable my/definition)
      ; rest
+     (fnname-call fg-main)
+     (variable-use fg-main)
      (keyword fg-main)
      (preprocessor fg-main)
      (type fg-main)
