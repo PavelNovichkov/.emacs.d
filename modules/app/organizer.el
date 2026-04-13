@@ -209,6 +209,7 @@
     "tl" '("links" . org-toggle-link-display)
     "tt" '("latex" . org-latex-preview)
     "u" '("reveal" . org-fold-reveal)
+    "x" '("export" . org-export-dispatch)
     "y" '("copy as latex" . my/org-copy-as-latex)
     "'" '("edit" . org-edit-special))
   (general-define-key
