@@ -210,6 +210,7 @@ no other windows are present."
 
   "s" '("settings" . (keymap))
   "sc" '("customize group" . customize-group)
+  "sl" '("directory-local variable" . add-dir-local-variable)
   "sf" '("fill column" . set-fill-column)
   "st" `("text scale" . global-text-scale-adjust)
   "sv" '("variable" . set-variable)
@@ -250,13 +251,16 @@ no other windows are present."
 
 (general-define-key
  :states '(motion normal)
- "," #'evil-avy-goto-char-2)
+ "h" #'evil-avy-goto-char-2)
 
 ;; OS-wide shortcuts.
 (general-define-key
+ :states 'motion
  :keymaps 'override
  "C-a" #'mark-whole-buffer
  "C-s" #'save-buffer
+ "C-t" #'tab-bar-new-tab
+ "C-w" #'tab-bar-close-tab
  (kbd "C-<next>") #'tab-bar-switch-to-next-tab
  (kbd "C-<prior>") #'tab-bar-switch-to-prev-tab)
 
