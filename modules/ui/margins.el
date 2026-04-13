@@ -8,11 +8,12 @@
     Custom-mode
     dictionary-mode
     dired-mode
+    mu4e-headers-mode
     mu4e-view-mode
     org-agenda-mode
     text-mode
     prog-mode
-    special-mode) . visual-fill-column-mode)
+    ) . visual-fill-column-mode)
 
   :config
   (setopt
