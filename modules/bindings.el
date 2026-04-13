@@ -99,7 +99,7 @@ no other windows are present."
   "am" '("mail" . mu4e)
   "ap" '("system packages" . my/system-packages/body)
   "ar" '("RSS" . elfeed)
-  "at" '("top" . proced)
+  "at" '("terminal" . my/terminal)
 
   "b" '("buffer" . (keymap))
   "bb" '("most recent" . my/switch-to-recent-buffer)
@@ -193,6 +193,7 @@ no other windows are present."
   "pf" '("find file" . project-find-file)
   "pk" '("kill" . project-kill-buffers)
   "ps" '("switch" . project-switch-project)
+  "pt" '("terminal" . my/project-terminal)
   "p." '("root directory" . project-dired)
   "p/" '("search" . consult-ripgrep)
   "p!" '("run shell command" . project-shell-command)
