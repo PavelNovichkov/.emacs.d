@@ -36,8 +36,6 @@
   (add-hook 'enable-theme-functions #'my/customize-modus-themes)
 
   :config
-  (require-theme 'modus-themes)
-
   (setopt
    modus-themes-headings '((t . (1.2)))
    modus-themes-mixed-fonts nil)
