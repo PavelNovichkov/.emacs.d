@@ -6,7 +6,7 @@
   :custom
   (hscroll-step 1)
   (scroll-conservatively 101)
-  (scroll-margin 0)
+  (scroll-margin 3)
   (scroll-preserve-screen-position t)
   (switch-to-buffer-in-dedicated-window 'pop)
   (switch-to-buffer-obey-display-actions t)
