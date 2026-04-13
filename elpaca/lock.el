@@ -177,19 +177,6 @@
                                "*-tests.el" "LICENSE" "README*" "*-pkg.el"))
                     :source "MELPA" :protocol https :inherit t :depth treeless
                     :ref "da62326326b9b121edb46b0f31adb2569e4e896a"))
- (consult-eglot :source "elpaca-menu-lock-file" :recipe
-                (:package "consult-eglot" :fetcher github :repo
-                          "mohkale/consult-eglot" :files
-                          ("*.el" "*.el.in" "dir" "*.info" "*.texi" "*.texinfo"
-                           "doc/dir" "doc/*.info" "doc/*.texi" "doc/*.texinfo"
-                           "lisp/*.el" "docs/dir" "docs/*.info" "docs/*.texi"
-                           "docs/*.texinfo"
-                           (:exclude ".dir-locals.el" "test.el" "tests.el"
-                                     "*-test.el" "*-tests.el" "LICENSE"
-                                     "README*" "*-pkg.el"))
-                          :source "MELPA" :protocol https :inherit t :depth
-                          treeless :ref
-                          "d8b444aac39edfc6473ffbd228df3e9119451b51"))
  (corfu :source "elpaca-menu-lock-file" :recipe
         (:package "corfu" :repo "minad/corfu" :files
                   (:defaults "extensions/corfu-*.el") :fetcher github :source
