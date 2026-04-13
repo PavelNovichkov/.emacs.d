@@ -497,33 +497,6 @@ Otherwise, use the original version of `server-visited-files'."
   :config
   (add-hook 'minibuffer-setup-hook #'org-mru-clock-embark-minibuffer-hook))
 
-;; (use-package org-mru-clock
-;;   :config
-;;   (defun my/org-clock-files ()
-;;     (expand-file-name "gtd.org" my/org-directory))
-;;   (defun my/org-entry-is-next-p ()
-;;     (string= (org-get-todo-state) "NEXT"))
-;;   (defun my/org-mru-clock--pomodoro (task)
-;;     "Start or stop a pomodoro for a given TASK."
-;;     (let ((marker (cdr task)))
-;;       (with-current-buffer (org-base-buffer (marker-buffer marker))
-;;         (org-with-wide-buffer
-;;          (goto-char (marker-position marker))
-;;          (org-pomodoro)))))
-;;   (defun my/org-mru-clock--extend-pomodoro (task)
-;;     "Extend the last pomodoro ignoring the given TASK."
-;;     (org-pomodoro-extend-last-clock))
-;;   (setq org-mru-clock-keep-formatting t
-;;         org-mru-clock-how-many 5
-;;         org-mru-clock-files #'my/org-clock-files
-;;         org-mru-clock-predicate #'my/org-entry-is-next-p)
-;;   ;; (ivy-add-actions 'org-mru-clock-in
-;;   ;;                   '(("p" my/org-mru-clock--pomodoro "start/stop a pomodoro")
-;;   ;;                     ("x" my/org-mru-clock--extend-pomodoro "extend last pomodoro")))
-;;   ;; Use default sorting instead of prescient.
-;;   ;; (cl-pushnew #'org-mru-clock-in (cdr ivy-prescient-sort-commands))
-;;   )
-
 ;;; Table alignment
 
 (use-package valign
