@@ -8,7 +8,7 @@
         recentf-max-saved-items 30)
   ;; Avoid hanging when remote host is unreachable, see e.g.
   ;; https://github.com/hlissner/doom-emacs/issues/1444.
-  (setq recentf-exclude (list #'file-remote-p))
+  (setopt remote-file-name-access-timeout 3)
   (defun my/recentf-add-dired-directory ()
     "Add dired directory to recentf file list."
     (recentf-add-file default-directory))
