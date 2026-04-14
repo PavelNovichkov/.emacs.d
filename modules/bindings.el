@@ -274,6 +274,7 @@ no other windows are present."
  "C-d" #'cape-dict
  "C-e" #'expand-abbrev
  "C-f" #'cape-file
+ "C-h" #'flyspell-auto-correct-previous-word
  "<C-i>" '("insert" . (keymap))
  "<C-i> c" '("citation" . citar-insert-citation)
  "<C-i> k" '("kill ring" . consult-yank-pop)

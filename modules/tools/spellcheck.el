@@ -28,10 +28,3 @@
         (plist-put underline :style 'line)
         (set-face-attribute face nil :underline underline))))
   (seq-do 'my/straighten-underline '(flyspell-duplicate flyspell-incorrect)))
-
-(use-package flyspell-correct
-  :commands (flyspell-correct-previous)
-  :init
-  (general-define-key :states 'normal "z=" #'flyspell-correct-previous))
-
-;; TODO: add spellcheck hydra.
