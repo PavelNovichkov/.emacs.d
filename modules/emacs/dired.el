@@ -54,10 +54,18 @@
   ;; Hide details.
   (add-hook 'dired-mode-hook #'dired-hide-details-mode))
 
-(use-package dired-filter
+(use-package dired-x ; built-in
+  :ensure nil
   :demand :after dired
-  :init
-  (setq dired-filter-stack nil))
+  :config
+  (setopt
+   ;; Omit hidden files, but keep . and .. directories.
+   dired-omit-files "^\\.[^.].*")
+  (general-define-key
+   :states 'normal
+   :keymaps 'dired-mode-map
+   ;; Match "show hidden files" binding in GUI file managers.
+   "C-h" #'dired-omit-mode))
 
 (use-package dired-subtree
   :commands dired-subtree-toggle
