@@ -43,7 +43,6 @@
     "app/mail"
     "app/organizer"
     "app/rss"
-    "app/system-packages"
     "app/terminal"
     "tools/bibliography"
     "tools/dictionary"
