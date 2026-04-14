@@ -40,9 +40,6 @@
   (which-key-allow-imprecise-window-fit nil)
   (which-key-mode t))
 
-(use-package hydra
-  :commands defhydra)
-
 ;;; Universal escape (stolen from Doom Emacs).
 
 (defvar my/escape-hook nil
