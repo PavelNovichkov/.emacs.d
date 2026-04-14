@@ -67,15 +67,5 @@
    ;; Match "show hidden files" binding in GUI file managers.
    "C-h" #'dired-omit-mode))
 
-(use-package dired-subtree
-  :commands dired-subtree-toggle
-  :init
-  (general-define-key
-   :states 'normal
-   :keymaps 'dired-mode-map
-   "TAB" #'dired-subtree-toggle)
-  :config
-  (setq dired-subtree-use-backgrounds nil))
-
 (use-package all-the-icons-dired
   :hook (dired-mode . all-the-icons-dired-mode))
