@@ -164,15 +164,3 @@
   (advice-add #'gnus-dired-mail-buffers :override #'my/gnus-dired-mail-buffers)
 
   (setq gnus-dired-mail-mode 'mu4e-user-agent))
-
-
-;;; Send HTML emails
-
-
-(use-package org-msg
-  :config
-  (setopt
-   org-msg-default-alternatives
-   '((new . (text)) (reply-to-html . (text html)) (reply-to-text . (text)))
-   ;; TODO Set signature.
-   org-msg-signature nil))
