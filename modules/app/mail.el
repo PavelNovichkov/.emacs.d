@@ -32,7 +32,10 @@
 
   ;;; Contexts
 
-  (setq mu4e-contexts (--map (apply 'make-mu4e-context it) my/mail-contexts)
+  (defun my/mu4e-make-context (ctx)
+    (apply #'make-mu4e-context ctx))
+
+  (setq mu4e-contexts (mapcar 'my/mu4e-make-context my/mail-contexts)
         mu4e-context-policy 'pick-first
         mu4e-compose-context-policy 'always-ask)
 
