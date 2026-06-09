@@ -2,8 +2,7 @@
 
 (use-package vterm
   :ensure-system-package
-  (("/usr/lib64/libvterm.so" . libvterm)
-   (cmake . cmake))
+  ((cmake . cmake))
 
   :commands (vterm my/terminal my/project-terminal)
 
