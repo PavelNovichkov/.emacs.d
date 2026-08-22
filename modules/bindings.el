@@ -97,7 +97,6 @@ no other windows are present."
   "ad" '("dictionary" . dictionary-search)
   "ag" '("git" . magit-status)
   "am" '("mail" . mu4e)
-  "ar" '("RSS" . elfeed)
   "at" '("terminal" . my/terminal)
 
   "b" '("buffer" . (keymap))
