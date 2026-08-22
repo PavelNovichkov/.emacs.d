@@ -232,23 +232,6 @@
                      (:defaults "*.jl" "*.toml") :source "MELPA" :protocol https
                      :inherit t :depth treeless :ref
                      "7c968cc61fb64016ebe6dc8ff83fd05923db4374"))
- (elfeed :source "elpaca-menu-lock-file" :recipe
-         (:package "elfeed" :repo "skeeto/elfeed" :fetcher github :files
-                   (:defaults "README.md") :source "MELPA" :protocol https
-                   :inherit t :depth treeless :ref
-                   "a39fb78e34ee25dc8baea83376f929d7c128344f"))
- (elfeed-org :source "elpaca-menu-lock-file" :recipe
-             (:package "elfeed-org" :repo "remyhonig/elfeed-org" :fetcher github
-                       :files
-                       ("*.el" "*.el.in" "dir" "*.info" "*.texi" "*.texinfo"
-                        "doc/dir" "doc/*.info" "doc/*.texi" "doc/*.texinfo"
-                        "lisp/*.el" "docs/dir" "docs/*.info" "docs/*.texi"
-                        "docs/*.texinfo"
-                        (:exclude ".dir-locals.el" "test.el" "tests.el"
-                                  "*-test.el" "*-tests.el" "LICENSE" "README*"
-                                  "*-pkg.el"))
-                       :source "MELPA" :protocol https :inherit t :depth
-                       treeless :ref "34c0b4d758942822e01a5dbe66b236e49a960583"))
  (elisp-refs :source "elpaca-menu-lock-file" :recipe
              (:package "elisp-refs" :repo "Wilfred/elisp-refs" :fetcher github
                        :files (:defaults (:exclude "elisp-refs-bench.el"))

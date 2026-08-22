@@ -42,7 +42,6 @@
     "app/ledger"
     "app/mail"
     "app/organizer"
-    "app/rss"
     "app/terminal"
     "tools/bibliography"
     "tools/dictionary"
