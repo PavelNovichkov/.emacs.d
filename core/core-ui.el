@@ -41,17 +41,6 @@
 (use-package posframe
   :demand)
 
-;;; All the icons
-
-(use-package all-the-icons
-  :custom
-  (all-the-icons-scale-factor 1.0))
-
-(use-package all-the-icons-completion
-  :demand
-  :custom
-  (all-the-icons-completion-mode t))
-
 ;;; Window management
 
 (defun my/suppress-delete-other-windows (fn &rest args)

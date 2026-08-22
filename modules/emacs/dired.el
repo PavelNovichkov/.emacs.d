@@ -66,6 +66,3 @@
    :keymaps 'dired-mode-map
    ;; Match "show hidden files" binding in GUI file managers.
    "C-h" #'dired-omit-mode))
-
-(use-package all-the-icons-dired
-  :hook (dired-mode . all-the-icons-dired-mode))

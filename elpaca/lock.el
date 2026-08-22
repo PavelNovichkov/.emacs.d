@@ -1,53 +1,3 @@
-((all-the-icons :source "elpaca-menu-lock-file" :recipe
-                (:package "all-the-icons" :repo "domtronn/all-the-icons.el"
-                          :fetcher github :files (:defaults "data") :source
-                          "MELPA" :protocol https :inherit t :depth treeless
-                          :ref "4778632b29c8c8d2b7cd9ce69535d0be01d846f9"))
- (all-the-icons-completion :source "elpaca-menu-lock-file" :recipe
-                           (:package "all-the-icons-completion" :repo
-                                     "iyefrat/all-the-icons-completion" :fetcher
-                                     github :files
-                                     ("*.el" "*.el.in" "dir" "*.info" "*.texi"
-                                      "*.texinfo" "doc/dir" "doc/*.info"
-                                      "doc/*.texi" "doc/*.texinfo" "lisp/*.el"
-                                      "docs/dir" "docs/*.info" "docs/*.texi"
-                                      "docs/*.texinfo"
-                                      (:exclude ".dir-locals.el" "test.el"
-                                                "tests.el" "*-test.el"
-                                                "*-tests.el" "LICENSE" "README*"
-                                                "*-pkg.el"))
-                                     :source "MELPA" :protocol https :inherit t
-                                     :depth treeless :ref
-                                     "4c8bcad8033f5d0868ce82ea3807c6cd46c4a198"))
- (all-the-icons-dired :source "elpaca-menu-lock-file" :recipe
-                      (:package "all-the-icons-dired" :repo
-                                "wyuenho/all-the-icons-dired" :fetcher github
-                                :files
-                                ("*.el" "*.el.in" "dir" "*.info" "*.texi"
-                                 "*.texinfo" "doc/dir" "doc/*.info" "doc/*.texi"
-                                 "doc/*.texinfo" "lisp/*.el" "docs/dir"
-                                 "docs/*.info" "docs/*.texi" "docs/*.texinfo"
-                                 (:exclude ".dir-locals.el" "test.el" "tests.el"
-                                           "*-test.el" "*-tests.el" "LICENSE"
-                                           "README*" "*-pkg.el"))
-                                :source "MELPA" :protocol https :inherit t
-                                :depth treeless :ref
-                                "e157f0668f22ed586aebe0a2c0186ab07702986c"))
- (all-the-icons-ibuffer :source "elpaca-menu-lock-file" :recipe
-                        (:package "all-the-icons-ibuffer" :repo
-                                  "seagle0128/all-the-icons-ibuffer" :fetcher
-                                  github :files
-                                  ("*.el" "*.el.in" "dir" "*.info" "*.texi"
-                                   "*.texinfo" "doc/dir" "doc/*.info"
-                                   "doc/*.texi" "doc/*.texinfo" "lisp/*.el"
-                                   "docs/dir" "docs/*.info" "docs/*.texi"
-                                   "docs/*.texinfo"
-                                   (:exclude ".dir-locals.el" "test.el"
-                                             "tests.el" "*-test.el" "*-tests.el"
-                                             "LICENSE" "README*" "*-pkg.el"))
-                                  :source "MELPA" :protocol https :inherit t
-                                  :depth treeless :ref
-                                  "5357ab96f4dc9d0940d5a1e2e43302e1a04a14b2"))
  (anki-editor :source "elpaca-menu-lock-file" :recipe
               (:package "anki-editor" :fetcher github :repo
                         "anki-editor/anki-editor" :files
@@ -526,12 +476,6 @@
                                   "*-pkg.el"))
                        :source "MELPA" :protocol https :inherit t :depth
                        treeless :ref "681efc14a72ece3390137b01c4ee67f317cd8324"))
- (kind-icon :source "elpaca-menu-lock-file" :recipe
-            (:package "kind-icon" :repo
-                      ("https://github.com/jdtsmith/kind-icon" . "kind-icon")
-                      :files ("*" (:exclude ".git")) :source "GNU ELPA"
-                      :protocol https :inherit t :depth treeless :ref
-                      "556b0fb92aac24979b2c501431c7d48f75a5169f"))
  (ledger-mode :source "elpaca-menu-lock-file" :recipe
               (:package "ledger-mode" :fetcher github :repo "ledger/ledger-mode"
                         :files ("ledger-*.el" "doc/*.texi") :old-names

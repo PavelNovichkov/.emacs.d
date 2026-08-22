@@ -128,15 +128,6 @@
    dabbrev-case-replace nil)
   (add-hook 'completion-at-point-functions #'cape-file))
 
-(use-package kind-icon
-  :demand :after corfu
-  :custom
-  (kind-icon-default-face 'corfu-default)
-  (kind-icon-default-style
-   '(:padding 0 :stroke 0 :margin 0 :radius 0 :height 0.4 :scale 1.0))
-  :config
-  (add-to-list 'corfu-margin-formatters #'kind-icon-margin-formatter))
-
 (use-package completion-preview ; built-in
   :ensure nil
   :demand :after corfu

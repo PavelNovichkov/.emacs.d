@@ -39,30 +39,13 @@
   ;; https://github.com/emacs-citar/citar/issues/802.
   (setq citar--multiple-setup '("<tab>" . "RET"))
 
-  ;; Icons (see https://github.com/emacs-citar/citar/wiki/Indicators).
-  (defvar citar-indicator-files-icons
-    (citar-indicator-create
-     :symbol (all-the-icons-faicon
-              "file-o"
-              :face 'all-the-icons-green
-              :v-adjust -0.1)
-     :function #'citar-has-files
-     :padding "  " ; need this because the default padding is too low for these icons
-     :tag "has:files"))
-
-  (defvar citar-indicator-notes-icons
-    (citar-indicator-create
-     :symbol (all-the-icons-material
-              "speaker_notes"
-              :face 'all-the-icons-blue
-              :v-adjust -0.3)
-     :function #'citar-has-notes
-     :padding "  "
-     :tag "has:notes"))
-
-  (setq citar-indicators
-        (list citar-indicator-files-icons
-              citar-indicator-notes-icons))
+  (add-to-list
+   'citar-templates
+   '(suffix . " [${=key= id}]"))
+  (add-to-list
+   'citar-templates
+   '(main . "${author editor:%sn}, “${title}” (${date year issued:4})"))
+  (setopt citar-indicators nil)
   
   (general-define-key
    :keymaps 'citar-map
