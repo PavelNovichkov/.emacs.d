@@ -627,12 +627,6 @@
                                "*-tests.el" "LICENSE" "README*" "*-pkg.el"))
                     :source "MELPA" :protocol https :inherit t :depth treeless
                     :ref "327768e2c38020f6ea44730e71f2a62f3f0ce3bd"))
- (org-password-manager :source "elpaca-menu-lock-file" :recipe
-                       (:source nil :protocol https :inherit t :depth treeless
-                                :host github :repo
-                                "thisirs/org-password-manager" :branch "master"
-                                :package "org-password-manager" :ref
-                                "8048e8d0d59b3eb7c5e8e24441751863d4a6acc2"))
  (org-roam :source "elpaca-menu-lock-file" :recipe
            (:package "org-roam" :fetcher github :repo "org-roam/org-roam" :files
                      (:defaults "extensions/*") :source "MELPA" :protocol https

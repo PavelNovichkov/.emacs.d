@@ -177,12 +177,9 @@ no other windows are present."
   "oa" '("agenda" . org-agenda)
   "oc" '("capture" . org-capture)
   "oi" '("clock in" . org-mru-clock-in)
-  "og" '("generate password" . org-password-manager-generate-password)
   "ol" '("store link" . org-store-link)
   "on" '("note" . org-roam-node-find)
   "oo" '("clock out" . org-clock-out)
-  "op" '("get password" . org-password-manager-get-password)
-  "ou" '("get username" . org-password-manager-get-username)
 
   "p" '("project" . (keymap))
   "pb" '("switch to buffer" . consult-project-buffer)

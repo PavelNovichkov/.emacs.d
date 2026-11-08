@@ -445,22 +445,6 @@ Otherwise, use the original version of `server-visited-files'."
   (defconst my/anki-file (expand-file-name "anki.org" my/org-directory)))
   ;; TODO Add capture templates
 
-;;; Password manager
-
-;; TODO Remove this package
-(use-package org-password-manager
-  :ensure
-  (org-password-manager
-   :host github
-   :repo "thisirs/org-password-manager"
-   :branch "master")
-  :commands (org-password-manager-generate-password
-             org-password-manager-get-password
-             org-password-manager-get-username)
-  :config
-  (setq org-password-manager-scope
-        (list (expand-file-name "reference/secrets.gpg" my/org-directory))))
-
 ;;; Beautifying
 
 (use-package org-modern
