@@ -24,7 +24,7 @@
   (setq org-directory my/org-directory
         org-agenda-files
         (mapcar (lambda (name) (expand-file-name name my/org-directory))
-                '("gtd.org" "calendar.org" "inbox.org" "tickler.org")))
+                '("gtd.org" "inbox.org" "tickler.org")))
   ;; Variables.
   (add-to-list 'org-modules 'org-habit t)
   (setq org-enforce-todo-dependencies t
@@ -265,8 +265,6 @@
            ,(concat
              "* TODO %?\nSCHEDULED: %^t\n"
              ":PROPERTIES:\n:CREATED:  %U\n:END:"))
-          ("c" "Calendar" entry (file "calendar.org")
-           "* %?\n%^t%^{TIMEZONE}p")
           ("l" "Link" entry (file "inbox.org")
            "* %a%?\n:PROPERTIES:\n:CREATED:  %U\n:END:")
           ("d" "Diary" entry (file+olp+datetree "reference/diary.org")
