@@ -1,4 +1,4 @@
- (anki-editor :source "elpaca-menu-lock-file" :recipe
+((anki-editor :source "elpaca-menu-lock-file" :recipe
               (:package "anki-editor" :fetcher github :repo
                         "anki-editor/anki-editor" :files
                         ("*.el" "*.el.in" "dir" "*.info" "*.texi" "*.texinfo"
@@ -616,21 +616,6 @@
                          :source "MELPA" :protocol https :inherit t :depth
                          treeless :ref
                          "c8be2611786d1d8d666b7b4f73582de1093f25ac"))
- (org-fancy-priorities :source "elpaca-menu-lock-file" :recipe
-                       (:package "org-fancy-priorities" :repo
-                                 "harrybournis/org-fancy-priorities" :fetcher
-                                 github :files
-                                 ("*.el" "*.el.in" "dir" "*.info" "*.texi"
-                                  "*.texinfo" "doc/dir" "doc/*.info"
-                                  "doc/*.texi" "doc/*.texinfo" "lisp/*.el"
-                                  "docs/dir" "docs/*.info" "docs/*.texi"
-                                  "docs/*.texinfo"
-                                  (:exclude ".dir-locals.el" "test.el"
-                                            "tests.el" "*-test.el" "*-tests.el"
-                                            "LICENSE" "README*" "*-pkg.el"))
-                                 :source "MELPA" :protocol https :inherit t
-                                 :depth treeless :ref
-                                 "7f677c6c14ecf05eab8e0efbfe7f1b00ae68eb1d"))
  (org-msg :source "elpaca-menu-lock-file" :recipe
           (:package "org-msg" :repo "jeremy-compostella/org-msg" :fetcher github
                     :files
@@ -653,19 +638,6 @@
                      (:defaults "extensions/*") :source "MELPA" :protocol https
                      :inherit t :depth treeless :ref
                      "41f9a10be587b47454ca8ef26f6a8247605cbe34"))
- (org-superstar :source "elpaca-menu-lock-file" :recipe
-                (:package "org-superstar" :fetcher github :repo
-                          "integral-dw/org-superstar-mode" :files
-                          ("*.el" "*.el.in" "dir" "*.info" "*.texi" "*.texinfo"
-                           "doc/dir" "doc/*.info" "doc/*.texi" "doc/*.texinfo"
-                           "lisp/*.el" "docs/dir" "docs/*.info" "docs/*.texi"
-                           "docs/*.texinfo"
-                           (:exclude ".dir-locals.el" "test.el" "tests.el"
-                                     "*-test.el" "*-tests.el" "LICENSE"
-                                     "README*" "*-pkg.el"))
-                          :source "MELPA" :protocol https :inherit t :depth
-                          treeless :ref
-                          "ce6f7f421f995893f72d75ffdfa92964b9bea2e3"))
  (parsebib :source "elpaca-menu-lock-file" :recipe
            (:package "parsebib" :fetcher github :repo "joostkremers/parsebib"
                      :files
@@ -813,12 +785,6 @@
                                  "*-pkg.el"))
                       :source "MELPA" :protocol https :inherit t :depth treeless
                       :ref "d192872e589f80a958bfc715df9f61ee9192aaa5"))
- (valign :source "elpaca-menu-lock-file" :recipe
-         (:package "valign" :repo
-                   ("https://github.com/casouri/valign" . "valign") :files
-                   ("*" (:exclude ".git")) :source "GNU ELPA" :protocol https
-                   :inherit t :depth treeless :ref
-                   "be82f6048118cbc81e6e029be1965f933612d871"))
  (vertico :source "elpaca-menu-lock-file" :recipe
           (:package "vertico" :repo "minad/vertico" :files
                     (:defaults "extensions/vertico-*.el") :fetcher github

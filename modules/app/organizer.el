@@ -36,7 +36,6 @@
         org-edit-src-content-indentation 0  ;; another option is (setq org-src-preserve-indentation t)
         org-list-allow-alphabetical t
         org-startup-folded t
-        org-startup-indented t
         org-catch-invisible-edits 'show-and-error
         org-log-done 'time
         org-tags-column 0
@@ -183,6 +182,15 @@
           (copy-region-as-kill (point-min) (point-max)))
         (kill-buffer buf)))
     (setq deactivate-mark t))
+
+  ;; Priorities.
+  (defun my/remove-priority-when-task-done ()
+    "Removes priority from a task if its state is DONE or CANCELED."
+    (when (and (member org-state '("DONE" "CANCELED"))
+               (string-match org-priority-regexp (org-get-heading t t nil)))
+      (org-priority ?\ )))
+  (add-hook 'org-after-todo-state-change-hook
+            #'my/remove-priority-when-task-done)
 
   ;; Bindings.
   (local-leader-def
@@ -382,26 +390,6 @@ Otherwise, use the original version of `server-visited-files'."
       (format "[[attachment:%s]]" (file-name-nondirectory filename)))))
   (advice-add #'org-download-insert-link :override #'my/org-download-insert-link))
 
-;;; Priorities
-
-(use-package org-fancy-priorities
-  :hook (org-mode . org-fancy-priorities-mode)
-  :config
-  (setq org-fancy-priorities-list '("🄰" "🄱" "🄲"))
-  ;; A hack to make priority face in agenda the same as in org files
-  ;; themselves.
-  (setq org-priority-faces '((?A . (error org-priority))
-                             (?B . (warning org-priority))
-                             (?C . (success org-priority))))
-  ;; Remove priority after completing the task.
-  (defun my/remove-priority-when-task-done ()
-    "Removes priority from a task if its state is DONE or CANCELED."
-    (when (and (member org-state '("DONE" "CANCELED"))
-               (string-match org-priority-regexp (org-get-heading t t nil)))
-      (org-priority ?\ )))
-  (add-hook 'org-after-todo-state-change-hook
-            #'my/remove-priority-when-task-done))
-
 ;;; Slip-box aka Zettelkasten
 
 (use-package org-roam
@@ -473,22 +461,12 @@ Otherwise, use the original version of `server-visited-files'."
   (setq org-password-manager-scope
         (list (expand-file-name "reference/secrets.gpg" my/org-directory))))
 
-;;; Table alignment
-
-(use-package valign
-  :commands valign-mode
-  :after org
-  :init
-  (local-leader-def
-    :keymaps 'org-mode-map
-    "tv" '("vertical align" . valign-mode))
-  :config
-  (setq valign-fancy-bar t))
-
 ;;; Beautifying
 
-(use-package org-superstar
-  :hook (org-mode . org-superstar-mode)
+(use-package org-modern
+  :demand :after org
+
   :config
-  (setq org-superstar-prettify-item-bullets t
-        org-superstar-item-bullet-alist '((?+ . ?➤) (?- . ?•))))
+  (setopt
+   org-modern-star 'replace)
+  (global-org-modern-mode))
