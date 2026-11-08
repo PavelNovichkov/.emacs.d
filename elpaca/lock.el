@@ -1,16 +1,4 @@
-((anki-editor :source "elpaca-menu-lock-file" :recipe
-              (:package "anki-editor" :fetcher github :repo
-                        "anki-editor/anki-editor" :files
-                        ("*.el" "*.el.in" "dir" "*.info" "*.texi" "*.texinfo"
-                         "doc/dir" "doc/*.info" "doc/*.texi" "doc/*.texinfo"
-                         "lisp/*.el" "docs/dir" "docs/*.info" "docs/*.texi"
-                         "docs/*.texinfo"
-                         (:exclude ".dir-locals.el" "test.el" "tests.el"
-                                   "*-test.el" "*-tests.el" "LICENSE" "README*"
-                                   "*-pkg.el"))
-                        :source "MELPA" :protocol https :inherit t :depth
-                        treeless :ref "b7d35bacddbe19964709480a796fc4d7f758a4b0"))
- (annalist :source "elpaca-menu-lock-file" :recipe
+((annalist :source "elpaca-menu-lock-file" :recipe
            (:package "annalist" :fetcher github :repo "noctuid/annalist.el"
                      :files
                      ("*.el" "*.el.in" "dir" "*.info" "*.texi" "*.texinfo"

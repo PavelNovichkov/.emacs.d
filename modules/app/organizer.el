@@ -438,13 +438,6 @@ Otherwise, use the original version of `server-visited-files'."
     (org-roam-update-org-id-locations))
   (org-roam-setup))
 
-;;; Integration with Anki for spaced repetition
-
-(use-package anki-editor
-  :init
-  (defconst my/anki-file (expand-file-name "anki.org" my/org-directory)))
-  ;; TODO Add capture templates
-
 ;;; Beautifying
 
 (use-package org-modern
