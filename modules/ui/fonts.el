@@ -3,11 +3,11 @@
 ;;; Default fonts
 
 (set-face-attribute
- 'default nil :family "Input Sans Narrow" :height 100 :weight 'normal)
+ 'default nil :family "Input Sans" :height 100 :weight 'normal)
 (set-face-attribute
- 'fixed-pitch nil :family "Input Mono Narrow" :height 1.0 :weight 'normal)
+ 'fixed-pitch nil :family "Input Mono" :height 1.0 :weight 'normal)
 (set-face-attribute
- 'variable-pitch nil :family "Input Sans Narrow" :height 1.0 :weight 'normal)
+ 'variable-pitch nil :family "Input Sans" :height 1.0 :weight 'normal)
 (set-face-attribute 'variable-pitch-text nil :height 1.0)
 
 ;; Set font for missing characters (Greek and all characters after Cyrillic).
