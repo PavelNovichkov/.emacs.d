@@ -158,19 +158,6 @@
                               ("dired-hacks-utils.el") :source "MELPA" :protocol
                               https :inherit t :depth treeless :ref
                               "de9336f4b47ef901799fe95315fa080fa6d77b48"))
- (dired-open-with :source "elpaca-menu-lock-file" :recipe
-                  (:package "dired-open-with" :fetcher github :repo
-                            "FrostyX/dired-open-with" :files
-                            ("*.el" "*.el.in" "dir" "*.info" "*.texi"
-                             "*.texinfo" "doc/dir" "doc/*.info" "doc/*.texi"
-                             "doc/*.texinfo" "lisp/*.el" "docs/dir"
-                             "docs/*.info" "docs/*.texi" "docs/*.texinfo"
-                             (:exclude ".dir-locals.el" "test.el" "tests.el"
-                                       "*-test.el" "*-tests.el" "LICENSE"
-                                       "README*" "*-pkg.el"))
-                            :source "MELPA" :protocol https :inherit t :depth
-                            treeless :ref
-                            "5f9fddecea3d467a6d7bdb6a1863505b92a81e0d"))
  (dired-subtree :source "elpaca-menu-lock-file" :recipe
                 (:package "dired-subtree" :fetcher github :repo
                           "Fuco1/dired-hacks" :files ("dired-subtree.el")
@@ -616,17 +603,6 @@
                          :source "MELPA" :protocol https :inherit t :depth
                          treeless :ref
                          "c8be2611786d1d8d666b7b4f73582de1093f25ac"))
- (org-msg :source "elpaca-menu-lock-file" :recipe
-          (:package "org-msg" :repo "jeremy-compostella/org-msg" :fetcher github
-                    :files
-                    ("*.el" "*.el.in" "dir" "*.info" "*.texi" "*.texinfo"
-                     "doc/dir" "doc/*.info" "doc/*.texi" "doc/*.texinfo"
-                     "lisp/*.el" "docs/dir" "docs/*.info" "docs/*.texi"
-                     "docs/*.texinfo"
-                     (:exclude ".dir-locals.el" "test.el" "tests.el" "*-test.el"
-                               "*-tests.el" "LICENSE" "README*" "*-pkg.el"))
-                    :source "MELPA" :protocol https :inherit t :depth treeless
-                    :ref "327768e2c38020f6ea44730e71f2a62f3f0ce3bd"))
  (org-roam :source "elpaca-menu-lock-file" :recipe
            (:package "org-roam" :fetcher github :repo "org-roam/org-roam" :files
                      (:defaults "extensions/*") :source "MELPA" :protocol https
