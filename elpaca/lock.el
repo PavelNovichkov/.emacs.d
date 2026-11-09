@@ -508,18 +508,6 @@
                           :source "MELPA" :protocol https :inherit t :depth
                           treeless :ref
                           "3d1a008f1894dd087aee099629e3726877956033"))
- (marginalia :source "elpaca-menu-lock-file" :recipe
-             (:package "marginalia" :repo "minad/marginalia" :fetcher github
-                       :files
-                       ("*.el" "*.el.in" "dir" "*.info" "*.texi" "*.texinfo"
-                        "doc/dir" "doc/*.info" "doc/*.texi" "doc/*.texinfo"
-                        "lisp/*.el" "docs/dir" "docs/*.info" "docs/*.texi"
-                        "docs/*.texinfo"
-                        (:exclude ".dir-locals.el" "test.el" "tests.el"
-                                  "*-test.el" "*-tests.el" "LICENSE" "README*"
-                                  "*-pkg.el"))
-                       :source "MELPA" :protocol https :inherit t :depth
-                       treeless :ref "8a07e869577e0b8582db2528b08ec295d0405bb7"))
  (markdown-mode :source "elpaca-menu-lock-file" :recipe
                 (:package "markdown-mode" :fetcher github :repo
                           "jrblevin/markdown-mode" :files

@@ -40,13 +40,6 @@
   (orderless-matching-styles
    '(orderless-literal orderless-regexp orderless-initialism)))
 
-;;; Marginalia (completion annotations)
-
-(use-package marginalia
-  :demand
-  :custom
-  (marginalia-mode t))
-
 ;;; Embark (completion actions and more)
 
 (use-package embark
