@@ -26,7 +26,6 @@
         (mapcar (lambda (name) (expand-file-name name my/org-directory))
                 '("gtd.org" "inbox.org" "tickler.org")))
   ;; Variables.
-  (add-to-list 'org-modules 'org-habit t)
   (setq org-enforce-todo-dependencies t
         org-special-ctrl-a/e t
         org-M-RET-may-split-line '((default . nil))
