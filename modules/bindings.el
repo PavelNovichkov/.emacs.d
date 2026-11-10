@@ -190,6 +190,7 @@ no other windows are present."
   "pk" '("kill" . project-kill-buffers)
   "ps" '("switch" . project-switch-project)
   "pt" '("terminal" . my/project-terminal)
+  "pv" '("version control" . project-vc-dir)
   "p." '("root directory" . project-dired)
   "p/" '("search" . consult-ripgrep)
   "p!" '("run shell command" . project-shell-command)
@@ -222,6 +223,8 @@ no other windows are present."
   "tp" '("proportional font" . fixed-pitch-mode)
   "tt" '("truncate lines" . visual-line-mode)
   "tw" '("whitespace" . whitespace-mode)
+
+  "v" (cons "version control" vc-prefix-map)
 
   "w" '("window" . (keymap))
   "wd" '("delete" . delete-window)
