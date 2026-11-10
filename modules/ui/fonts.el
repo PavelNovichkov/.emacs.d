@@ -36,8 +36,8 @@
     ibuffer-mode-hook
     ledger-report-mode-hook
     magit-mode-hook
-    minibuffer-setup-hook
     org-agenda-mode-hook
+    profiler-report-mode-hook
     vterm-mode-hook
     which-key-init-buffer-hook)
   "List of hooks that should activate fixed-pitch font.")
