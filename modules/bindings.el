@@ -125,7 +125,7 @@ no other windows are present."
   "f" '("file" . (keymap))
   "f." '("at point" . find-file-at-point)
   "fa" '("find alternate" . find-alternate-file)
-  "fd" '("delete" . my/delete-file-and-buffer)
+  "fd" '("delete" . delete-file)
   "ff" '("find" . find-file)
   "fl" '("find library" . find-library)
   "fm" '("rename (move)" . rename-visited-file)
@@ -136,6 +136,7 @@ no other windows are present."
   "fr" '("recent" . consult-recent-file)
   "fs" '("save" . save-buffer)
   "fw" '("write" . write-file)
+  "fx" '("delete this file" . my/delete-file-and-buffer)
 
   "g" '("go" . (keymap))
   "gb" '("bookmark" . consult-bookmark)
