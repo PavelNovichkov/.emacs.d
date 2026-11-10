@@ -8,6 +8,8 @@
     Custom-mode
     dictionary-mode
     dired-mode
+    Info-mode
+    Man-mode
     mu4e-headers-mode
     mu4e-view-mode
     org-agenda-mode
