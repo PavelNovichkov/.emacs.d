@@ -38,7 +38,6 @@
     "ui/margins"
     "ui/pulsar"
     "ui/windows"
-    "app/irc"
     "app/ledger"
     "app/mail"
     "app/organizer"
