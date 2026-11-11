@@ -29,7 +29,7 @@
 
 (use-package diff-hl
   :hook (((prog-mode conf-mode) . diff-hl-mode)
-         (dired-mode . diff-hl-dired-mode))
+         (dired-mode . diff-hl-dired-mode-unless-remote))
   :custom
   (diff-hl-disable-on-remote t)
   :config
