@@ -129,6 +129,14 @@
      (fg-completion-match-2 my/match)
      (fg-completion-match-3 my/match)
 
+;;;; Date mappings
+
+     ;; Disable highlighting of scheduled/deadline items in org agenda.
+     (date-deadline fg-main)
+     (date-deadline-subtle fg-main)
+     (date-scheduled fg-main)
+     (date-scheduled-subtle fg-main)
+
 ;;;; Line number mappings
 
      (bg-line-number-inactive bg-main)
