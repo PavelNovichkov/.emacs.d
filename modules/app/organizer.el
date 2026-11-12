@@ -33,8 +33,10 @@
         org-src-fontify-natively t
         org-src-window-setup 'current-window
         org-edit-src-content-indentation 0  ;; another option is (setq org-src-preserve-indentation t)
+        org-hide-leading-stars t
         org-list-allow-alphabetical t
         org-startup-folded t
+        org-startup-indented t
         org-catch-invisible-edits 'show-and-error
         org-log-done 'time
         org-tags-column 0
@@ -434,13 +436,3 @@ Otherwise, use the original version of `server-visited-files'."
     (org-roam-db-sync)
     (org-roam-update-org-id-locations))
   (org-roam-setup))
-
-;;; Beautifying
-
-(use-package org-modern
-  :demand :after org
-
-  :config
-  (setopt
-   org-modern-star 'replace)
-  (global-org-modern-mode))
