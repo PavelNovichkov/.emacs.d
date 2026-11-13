@@ -2,7 +2,11 @@
 
 ;; Magit requires a newer version of transient than the one included with Emacs,
 ;; so we have to install it explicitly.
-(use-package transient)
+(use-package transient
+  :config
+  (setopt
+   transient-align-variable-pitch t
+   transient-semantic-coloring nil))
 
 (use-package magit
   :ensure-system-package git

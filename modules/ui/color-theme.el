@@ -32,7 +32,8 @@
          `(julia-macro-face ((t :foreground ,fg-main)))
          '(modus-themes-button ((t :box nil))) ; flat buttons
          '(mu4e-header-face ((t :inherit default)))
-         '(org-table ((t :inherit unspecified)))))))
+         '(org-table ((t :inherit unspecified)))
+         '(transient-key ((t :inherit fixed-pitch)))))))
   (add-hook 'enable-theme-functions #'my/customize-modus-themes)
 
   :config
