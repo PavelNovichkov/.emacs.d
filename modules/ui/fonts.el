@@ -43,3 +43,19 @@
   "List of hooks that should activate fixed-pitch font.")
 
 (dolist (hook my/fixed-pitch-hooks) (add-hook hook #'fixed-pitch-mode))
+
+;; Use a monospace font in Org's dispatch buffers.
+;; TODO Remove when Org switches to a new menu system.
+
+(defconst my/org-dispatch-buffers
+  (regexp-opt '("Agenda Commands" "Org Select" "Org Export Dispatcher"))
+  "Regexp matching Org's dispatch menu buffers.")
+
+(defun my/org-dispatch-fixed-pitch (frame)
+  "Use a monospace font in Org's dispatch buffers."
+  (dolist (win (window-list frame 'no-minibuf))
+    (with-current-buffer (window-buffer win)
+      (when (string-match-p my/org-dispatch-buffers (buffer-name))
+        (fixed-pitch-mode t)))))
+
+(add-hook 'window-buffer-change-functions #'my/org-dispatch-fixed-pitch)
